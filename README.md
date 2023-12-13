@@ -1,4 +1,4 @@
-## <a name="_1dqnhyeyex"></a>   **Insider Community:**
+## <a name="_1dqnhyeyex"></a>   **Insider Community**
 - The insider community is shown on home page of alike.io.
 - Insider community code configuration in **app/code/Nik/InsiderPageGraphQl.**
 - Here etc/schema.graphqls file in set insider community block.insiderCommunity It is a Query, and **Nik\\InsiderPageGraphQl\\Model\\Resolver\\InsiderCommunity** is a resolver.
@@ -236,13 +236,13 @@
 - **Nik\\Cities\\Model\\Resolver\\Wallets** is wallets resolver.
 - resolver for retrieving information about a user's wallet transactions and It includes logic for handling authorization, loading credit information, filtering and sorting transactions, and providing pagination details.
 - categoryimageid configuration in **app/code/Nik/CatalogGraphQl/etc/schema.graphqls .**
-- ` `**Nik\\CatalogGraphQl\\Model\\Resolver\\Story\\CategoryImageIdData** is categoryimageid resolver.
+- **Nik\\CatalogGraphQl\\Model\\Resolver\\Story\\CategoryImageIdData** is categoryimageid resolver.
 - A graphQL resolver that retrieves data about category images based on city attributes. It iterates over the options of the 'ins\_city' attribute, fetches corresponding category data, and builds an array containing attribute ID, city name, category ID, and category image URL for each category.
 - Mytrips configuration in **app/code/Nik/InsidersDashboardGraphQl/etc/schema.graphqls.**
 - **Nik\\InsidersDashboardGraphQl\\Model\\Resolver\\MyTripsResolver** is mytrips resolver.
 - In resolver for fetching data about trips. It includes methods to handle authorization, retrieve insider and product information, and build a response containing information about top trips with pagination details. The resolver also includes methods to handle image URLs, including placeholders.
 
-## <a name="_y4kuao7pix1x"></a>  **categoryinterface:**
+## <a name="_y4kuao7pix1x"></a>  **categoryinterface**
 
 - Categoryinterface return data by items.
 - esim\_product configuration in **app/code/Nik/CatalogGraphQl/etc/schema.graphqls.**
