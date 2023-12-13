@@ -1,4 +1,4 @@
-## <a name="_1dqnhyeyex"></a>   **  Insider Community:**
+## <a name="_1dqnhyeyex"></a>     Insider Community
 - The insider community is shown on home page of alike.io.
 - Insider community code configuration in **app/code/Nik/InsiderPageGraphQl.**
 - Here etc/schema.graphqls file in set insider community block.insiderCommunity It is a Query, and **Nik\\InsiderPageGraphQl\\Model\\Resolver\\InsiderCommunity** is a resolver.
