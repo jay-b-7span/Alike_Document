@@ -11,7 +11,7 @@
 - Explore Cities Nearby is shown on <https://alike.io/cities/> page.
 - Explore cities nearby code configuration in **app/code/Nik/Cities/**etc/schema.graphqls.
 - Here CategoryInterface in Citycustom query for this block.
-- ` `**Nik\\Cities\\Model\\Resolver\\CityCustom** is the resolver for city custom.
+- **Nik\\Cities\\Model\\Resolver\\CityCustom** is the resolver for city custom.
 - Admin panel in **Catalog->Category->Content->Explore Nearby** Here admin set a coma separated city’s ID and showed it in Explore Cities Nearby.
 - In the resolver file return data name, image, and highlights load by Explore Nearby cities id.
 
