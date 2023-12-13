@@ -1,4 +1,3 @@
-﻿# <a name="_rc6r9vsc82ga"></a>Alike documentation
 ## <a name="_1dqnhyeyex"></a>   **Insider Community:**
 - The insider community is shown on home page of alike.io.
 - Insider community code configuration in **app/code/Nik/InsiderPageGraphQl.**
@@ -9,7 +8,7 @@
 
 
 ## <a name="_co22t2bxuuho"></a>  **Explore Cities Nearby**
-- ## <a name="_aqi9n45e0yox"></a>Explore Cities Nearby is shown on <https://alike.io/cities/> page.
+- Explore Cities Nearby is shown on <https://alike.io/cities/> page.
 - Explore cities nearby code configuration in **app/code/Nik/Cities/**etc/schema.graphqls.
 - Here CategoryInterface in Citycustom query for this block.
 - ` `**Nik\\Cities\\Model\\Resolver\\CityCustom** is the resolver for city custom.
@@ -92,7 +91,7 @@
 - **Nik\\CatalogGraphQl\\Model\\Resolver\\Product\\GlobaltixAvailability**
 - That resolver use to retrieve data. Using globlatixFactory in which id is active that return product.
 - **hide\_adult, hide\_child, hide\_infant** are attributes to set in store->product attribute.
-- ` `**include\_in\_touristors**  is a custom attribute to add in product interface.here **Nik\\CatalogGraphQl\\Model\\Resolver\\Product\\IncludedTouristors** resolver use.
+- **include\_in\_touristors**  is a custom attribute to add in product interface.here **Nik\\CatalogGraphQl\\Model\\Resolver\\Product\\IncludedTouristors** resolver use.
 - **included\_trips** attribute** to** add in product interface and **Nik\\CatalogGraphQl\\Model\\Resolver\\Product\\IncludedTrips** is a resolver use.in resolver file fetch data from product attribute.
 - **kit\_avability** add in interface and **Nik\\CatalogGraphQl\\Model\\Resolver\\Product\\KitAvailability** resolver use. In resolver get data to fetching kit API and return those data to come from kit API.
 - **strike\_price\_value**  is set in product interface and Nik\\CatalogGraphQl\\Model\\Resolver\\Product\\StrikePrice is a resolver.
@@ -175,7 +174,7 @@
 
 
 ## <a name="_b4am6q73tlr6"></a>  **Signup/Signin Page**
-- ` `Signin page URL is <https://app.alike.io/#/signin>.
+- Signin page URL is <https://app.alike.io/#/signin>.
 - amSocialLoginButtonConfig GraphQL used through work signup/sign-in.
 - amSocialLoginButtonConfig GraphQL is located at **app/code/Amasty/SocialLoginGraphQl module.**
 - **Amasty\\SocialLoginGraphQl\\Model\\Resolver\\SocialButtons** is resolver of amSocialLoginButtonConfig.
