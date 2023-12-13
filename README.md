@@ -118,7 +118,7 @@
 - Also **itineraryPrice** mutation add and **Nik\\CatalogGraphQl\\Model\\Resolver\\Booking\\ItineraryPrice** this resolver use.
 
 ## <a name="_gws9ys9wfr0"></a>  **Travel Passes Page**
-- ` `Travell passes are comes from  <https://alike.io/travel-passes?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu>.
+- Travell passes are comes from  <https://alike.io/travel-passes?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu>.
 - In this page use categories interface and return data.
 - Category interface is located at **app/code/Nik/CataloggraphQl.**
 - Travel passes as a product attribute to add in admin STORE->Attribute->Product.
