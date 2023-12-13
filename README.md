@@ -124,7 +124,7 @@
 - Travel passes as a product attribute to add in admin STORE->Attribute->Product.
 - **Nik\\CatalogGraphQl\\Model\\Resolver\\Esim** is a resolver to set and get data.in this resolver set page size and add filter as a attribute and return data.
 
-`     `**→** If we can click any passes so move to                             <https://alike.io/products/the-london-passr> page.
+**→** If we can click any passes so move to                             <https://alike.io/products/the-london-passr> page.
 
 - Also, this page uses a product interface.
 - Musement api thru select date for ticket and book ticket.
@@ -217,13 +217,13 @@
 - **quoteX** graphql use in when we select hotel room at that time use.in code configuration set quoteX query and **NaS\\Travelgatex\\Model\\Resolver\\Quote** it’s resolver to use.
 - In quoteX add hotelX parameter. 
 
-**Product Comment GraphQL**
+## <a name="_y4kuao7pix1x"></a>  **Product Comment GraphQL**
 
 - Product Comment GraphQL in particular product page.
 - ProductComment located at **app/code/Nik/CatalogGraphQl** module.
 - Nik\\CatalogGraphQl\\Model\\Resolver\\Product\\ProductComment resolver file to use in this graphql.
 
-**Insider Account Graphql**
+## <a name="_y4kuao7pix1x"></a>  **Insider Account Graphql**
 
 - InsiderAccount GraphQl use in particular insider’s page.
 - InsiderAccount GraphQl configure in **app/code/Nik/insiderPageGraphQl** module.
@@ -242,7 +242,7 @@
 - **Nik\\InsidersDashboardGraphQl\\Model\\Resolver\\MyTripsResolver** is mytrips resolver.
 - In resolver for fetching data about trips. It includes methods to handle authorization, retrieve insider and product information, and build a response containing information about top trips with pagination details. The resolver also includes methods to handle image URLs, including placeholders.
 
-**categoryinterface:**
+## <a name="_y4kuao7pix1x"></a>  **categoryinterface:**
 
 - Categoryinterface return data by items.
 - esim\_product configuration in **app/code/Nik/CatalogGraphQl/etc/schema.graphqls.**
