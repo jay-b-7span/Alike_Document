@@ -1,13 +1,13 @@
 ## <a name="_1dqnhyeyex"></a>   **  Insider Community:**
 - The insider community is shown on home page of alike.io.
-- Insider community code configuration in **App/Code/Nik/InsiderPageGraphQl.**
+- Insider community code configuration in **app/code/Nik/InsiderPageGraphQl.**
 - Here etc/schema.graphqls file in set insider community block.insiderCommunity It is a Query, and **Nik\\InsiderPageGraphQl\\Model\\Resolver\\InsiderCommunity** is a resolver.
 - In the resolver file return data like id, name,profile\_picture etc using insiderId.
 - In the admin panel **STORE->Configuration->CUSTOM->Insider->Home Page Configuration** set the Insider Community text field. here admin set a coma separating insider’s ID and showed it in insider community.
 
 
 
-## <a name="_co22t2bxuuho"></a> 2) **Explore Cities Nearby**
+## <a name="_co22t2bxuuho"></a>  **Explore Cities Nearby**
 - ## <a name="_aqi9n45e0yox"></a>Explore Cities Nearby is shown on <https://alike.io/cities/> page.
 - Explore cities nearby code configuration in **app/code/Nik/Cities/**etc/schema.graphqls.
 - Here CategoryInterface in Citycustom query for this block.
@@ -16,7 +16,7 @@
 - In the resolver file return data name, image, and highlights load by Explore Nearby cities id.
 
 
-## <a name="_d3e7c57cdmi"></a>  **3) BlackFriday phse1**
+## <a name="_d3e7c57cdmi"></a>  ** BlackFriday phse1**
 - The Black Friday sale is shown on <https://alike.io/black-friday> page.
 - Black Friday Sale in three phases.
 - StoreConfig GraphQl uses BlackFriday reserve price and SKU.
@@ -31,26 +31,26 @@
 - BlackFriday Phase 1&2 consists text field for set templates for phases. here set the brevo email template ID.
 
 
-## <a name="_j0onkyuj3kk1"></a>    4) **Currency GraphQL**
+## <a name="_j0onkyuj3kk1"></a>     **Currency GraphQL**
 - Currency GraphQL use for setup currency in website.
 - Currency GraphQl is located at **app/code/Magefan/AutoCurrencySwitcher.**
 - **STORE->Congiguration->GENERAL->Currency Setup** to set currency and configuration on it.
 - **\\Magefan\\AutoCurrencySwitcher\\Model\\Resolver\\Currency** resolver use for currency.
 
-## <a name="_h6vb3q50v9di"></a>   **5) VirtualProduct GraphQL**
+## <a name="_h6vb3q50v9di"></a>   ** VirtualProduct GraphQL**
 - New\_product GraphQL call in home page for Best Selling Experiences.
 - new\_producy GraphQL config in **app/code/Nik/CatalogGraphQl**.
 - Here Product interface uses and return data by ID.
 - **Nik\\CatalogGraphQl\\Model\\Resolver\\Product\\NewProducts** resolver for return data.
 
-## <a name="_a7ch9e3i3npn"></a>   **6) PreviewProducts GraphQL**
+## <a name="_a7ch9e3i3npn"></a>   ** PreviewProducts GraphQL**
 - homepage\_stories\_products GraphQL is used for Handcrafted Holiday Packages.
 - Handcrafted Holiday Packages are located on home page.
 - Thair are **Nik\\CatalogGraphQl\\Model\\Resolver\\Product\\HomepageStoriesProducts** resolver in set page size.
 - There are all products in set sort order and this sort order field uses filter homepage\_stories product. 
 
 
-## <a name="_88fegzvmnpti"></a>   **7) Cart GraphQL**
+## <a name="_88fegzvmnpti"></a>   ** Cart GraphQL**
 - Cart GraphQL use for <https://alike.io/cart>  page.
 - AvailablePaymentMethod grapgQl use in cart page.
 - This graphQl located at **app/code/Nik/CheckoutGraphQl** module.
@@ -62,7 +62,7 @@
 - Payment method, Shipping method, coupon, etc configure in this graphql.
 
 
-## <a name="_uz8oj5bqtmap"></a>   **8)Cities page**
+## <a name="_uz8oj5bqtmap"></a>   ** Cities page**
 - In cities, pages are located at <https://alike.io/cities/>.
 - All Cities are one type of category in alike.
 - In code configuration **app/code/Nik/Cities** use.
@@ -77,7 +77,7 @@
 - **getRaynaTickets** is query to using rayna api thru return and book ticket and **Nik\\CatalogGraphQl\\Model\\Resolver\\Booking\\RaynaTickets** is a resolver to use.
 - **getRaynaTicketsSlot** using this query book slot by date.**Nik\\CatalogGraphQl\\Model\\Resolver\\Booking\\RaynaTicketSlot** it is a resolver using rayna api key to fetch and book ticket.
 
-## <a name="_j3iiu082kk5t"></a>    **9) Product Interface**
+## <a name="_j3iiu082kk5t"></a>    ** Product Interface**
 - Product Interface used for retrieving data from product and it’s attribute.
 - <https://alike.io/products> page in using  product interface to return data.
 - It’s located at **app/code/Nik/CataloggraphQl** module.
@@ -117,7 +117,7 @@
 - **insiderTickets** mutation add in product interface, when we select trip story at that time use this mutation and **Nik\\CatalogGraphQl\\Model\\Resolver\\Booking\\InsiderTi** this resolver file use for retrieve the data.
 - Also **itineraryPrice** mutation add and **Nik\\CatalogGraphQl\\Model\\Resolver\\Booking\\ItineraryPrice** this resolver use.
 
-## <a name="_gws9ys9wfr0"></a>     **10)Travel Passes Page**
+## <a name="_gws9ys9wfr0"></a>     ** Travel Passes Page**
 - ` `Travell passes are comes from  <https://alike.io/travel-passes?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu>.
 - In this page use categories interface and return data.
 - Category interface is located at **app/code/Nik/CataloggraphQl.**
@@ -138,7 +138,7 @@
 - In musement tickets resolver fetches Musement ticket data, retrieves associated product information, processes the data, adjusts prices based on certain parameters.
 
 
-## <a name="_3fg65a6doebe"></a>   **11) eSIMs Page**
+## <a name="_3fg65a6doebe"></a>   ** eSIMs Page**
 - <https://alike.io/esims?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu> url for eSIMs page.
 - Here Category use as a filter. And call category interface for category.
 - Also, Product as an eSIMs and use ProductInterface are located in **app/code/Nik/CataloggraphQl.** 
@@ -146,7 +146,7 @@
 - Set E SIM attribute set and use in resolver to filter products for eSIMs.
 
 
-## <a name="_i913qndxs6t2"></a>    **12) Winter Sale**
+## <a name="_i913qndxs6t2"></a>    ** Winter Sale**
 - The Winter Sale page URL is <https://alike.io/winter-sale?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu>.
 - In winter sale use product interface to retrieve product.
 - Here winter sale is only for Dubai.
@@ -158,7 +158,7 @@
 - **NaS\\Ticket\\Model\\Resolver\\PassHotel** resolver to use return hotel data.
 - In this resolver using collectionfacteory to retrieve hotel and return data.
 
-## <a name="_bmypvfcf5q62"></a>**13) Cart Page**
+## <a name="_bmypvfcf5q62"></a>** Cart Page**
 - When we add product to cart then reach <https://uat.alike.host/cart> page.
 - In this page addProductToCart GraphQL call.
 - This GraphQL use in **app/code/Nik/CataloggraphQl** module.
@@ -173,7 +173,7 @@
 
 
 
-## <a name="_b4am6q73tlr6"></a>       **14) Signup/Signin Page**
+## <a name="_b4am6q73tlr6"></a>       ** Signup/Signin Page**
 - ` `Signin page URL is <https://app.alike.io/#/signin>.
 - amSocialLoginButtonConfig GraphQL used through work signup/sign-in.
 - amSocialLoginButtonConfig GraphQL is located at **app/code/Amasty/SocialLoginGraphQl module.**
@@ -189,7 +189,7 @@
 - In this resolver filter and get data using ExtensionAttribute.
 
 
-## <a name="_n2tm5aq07lt5"></a>  **15) Become Insider** 
+## <a name="_n2tm5aq07lt5"></a>  ** Become Insider** 
 - In the customer login page, we create also insider account.
 - <https://app.alike.host/#/my-studio/dashboard> is a become insider page URL.
 - In this page BecomeInsider GraphQL call.
@@ -208,7 +208,7 @@
 - Wallet GraphQl is located at **app/code/Nik/InsidersDashboardgraphQL** module.
 - And **Nik\\Cities\\Model\\Resolver\\Wallets** is a resolver.
 
-## <a name="_y4kuao7pix1x"></a>   **16) Hotels & Stays Page**
+## <a name="_y4kuao7pix1x"></a>   ** Hotels & Stays Page**
 - SearchX GraphQL is use <https://uat.alike.host/hotels> page in search section.
 - SearchX GarphQL is located at **app/code/NaS/Travelgatex** module.
 - Here SearchX GraphQL use for search and **NaS\\Travelgatex\\Model\\Resolver\\Search** is resolver.
@@ -217,13 +217,13 @@
 - **quoteX** graphql use in when we select hotel room at that time use.in code configuration set quoteX query and **NaS\\Travelgatex\\Model\\Resolver\\Quote** it’s resolver to use.
 - In quoteX add hotelX parameter. 
 
-**17) Product Comment GraphQL**
+** Product Comment GraphQL**
 
 - Product Comment GraphQL in particular product page.
 - ProductComment located at **app/code/Nik/CatalogGraphQl** module.
 - Nik\\CatalogGraphQl\\Model\\Resolver\\Product\\ProductComment resolver file to use in this graphql.
 
-**18) Insider Account Graphql**
+** Insider Account Graphql**
 
 - InsiderAccount GraphQl use in particular insider’s page.
 - InsiderAccount GraphQl configure in **app/code/Nik/insiderPageGraphQl** module.
@@ -242,7 +242,7 @@
 - **Nik\\InsidersDashboardGraphQl\\Model\\Resolver\\MyTripsResolver** is mytrips resolver.
 - In resolver for fetching data about trips. It includes methods to handle authorization, retrieve insider and product information, and build a response containing information about top trips with pagination details. The resolver also includes methods to handle image URLs, including placeholders.
 
-**19)categoryinterface:**
+** categoryinterface:**
 
 - Categoryinterface return data by items.
 - esim\_product configuration in **app/code/Nik/CatalogGraphQl/etc/schema.graphqls.**
