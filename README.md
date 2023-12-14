@@ -1,4 +1,3 @@
-# Alike Documentation
 
 ##  **Insider Community**
 
