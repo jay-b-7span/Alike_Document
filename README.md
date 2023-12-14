@@ -1,6 +1,6 @@
 ##  **Insider Community**
 
--   The insider community is shown on home page of `https://alike.io`.
+-   The insider community is shown on home page of `[https://alike.io]`.
 
 -   **Module**: `Nik_InsiderPageGraphQl`**.**
 
