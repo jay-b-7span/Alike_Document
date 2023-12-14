@@ -34,14 +34,14 @@
 ##  **BlackFriday phse1**
 
 -   The Black Friday sale is shown on
-    > [https://alike.io/black-friday] page.
+    > https://alike.io/black-friday page.
 
 -   Black Friday Sale in three phases.
 
 -   StoreConfig GraphQl uses BlackFriday reserve price and SKU.
 
 -   passHotel and passProduct GraphQl use and items Query to retrieve
-    > data.
+    data.
 
 -   **Module**: NaS_Ticket.
 
