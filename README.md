@@ -1,6 +1,6 @@
 ##  **Insider Community**
 
--    <a name="_aqi9n45e0yox"></a>The insider community is shown on home page of <https://alike.io/cities/>.
+-    The insider community is shown on home page of <https://alike.io/>.
 
 -   **Module**: `Nik_InsiderPageGraphQl`**.**
 
