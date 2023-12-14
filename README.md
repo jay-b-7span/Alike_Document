@@ -5,8 +5,7 @@
 
 -   **Module**: `Nik_InsiderPageGraphQl`
 
--   **Resolver**:
-    `Nik\InsiderPageGraphQl\Model\Resolver\InsiderCommunity`
+-   **Resolver**: `Nik\InsiderPageGraphQl\Model\Resolver\InsiderCommunity`
 
 -   In the resolver file return data like id, name,profile_picture etc
     using insiderId.
