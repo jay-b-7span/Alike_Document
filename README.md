@@ -202,7 +202,7 @@
 -   **Resolver**:`Nik\CatalogGraphQl\Model\Resolver\Esim`. In
     this resolver set page size add a filter as an attribute and
     return data.
-**→** If we can click any passes move to
+    **→** If we can click any passes move to
    <https://alike.io/products/the-london-passr> page.
 -   Also, this page uses a product interface.
 -   Musement API through select date for ticket and book ticket.
