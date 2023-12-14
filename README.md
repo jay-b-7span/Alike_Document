@@ -1,3 +1,5 @@
+# Alike Documentation
+
 ##  **Insider Community**
 
 -    The insider community is shown on home page of <https://alike.io/>.
