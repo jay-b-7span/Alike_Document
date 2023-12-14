@@ -2,39 +2,39 @@
 
 -   The insider community is shown on home page of alike.io.
 
--   **Module**: 'Nik_InsiderPageGraphQl'**.**
+-   **Module**: `Nik_InsiderPageGraphQl`**.**
 
 -   **Resolver**:
-    Nik\\\\InsiderPageGraphQl\\\\Model\\\\Resolver\\\\InsiderCommunity.
+    `Nik\\\\InsiderPageGraphQl\\\\Model\\\\Resolver\\\\InsiderCommunity`.
 
 -   In the resolver file return data like id, name,profile_picture etc
     using insiderId.
 
--   **STORE Configuration:** CUSTOM-\>Insider-\>Home Page Configuration
+-   **STORE Configuration:** `CUSTOM`-\>`Insider`-\>`Home Page` Configuration
      set the Insider Community text field. here admin set a coma
      separating insider's ID and showed it in insider community.
 
 ##  **Explore Cities Nearby**
 
--   Explore Cities Nearby is shown on [https://alike.io/cities/] page.
+-   Explore Cities Nearby is shown on `https://alike.io/cities/` page.
 
--   **Module**: Nik_Cities**.**
+-   **Module**: `Nik_Cities`**.**
 
 -   Here CategoryInterface in Citycustom query for this block.
 
--   **Resolver**: Nik\\\\Cities\\\\Model\\\\Resolver\\\\CityCustom.
+-   **Resolver**: `Nik\\\\Cities\\\\Model\\\\Resolver\\\\CityCustom`.
 
--   **Admin Configuration**: Catalog-\>Category-\>Content-\>Explore
-     Nearby Here admin set a coma separated city's ID and showed it in
+-   **Admin Configuration**: `Catalog`-\>`Category`-\>`Content`-\>`Explore
+     Nearby` Here admin set a coma separated city's ID and showed it in
      Explore Cities Nearby.
 
 -   In the resolver file return data name, image, and highlights load by
      Explore Nearby cities id.
 
-##  **BlackFriday phse1**
+##  **BlackFriday Phases**
 
 -   The Black Friday sale is shown on
-    > https://alike.io/black-friday page.
+    `https://alike.io/black-friday page`.
 
 -   Black Friday Sale in three phases.
 
@@ -43,22 +43,22 @@
 -   passHotel and passProduct GraphQl use and items Query to retrieve
     data.
 
--   **Module**: NaS_Ticket.
+-   **Module**: `NaS_Ticket`.
 
--   **Module**: Nik_Sendinblue**.**
+-   **Module**: `Nik_Sendinblue`**.**
 
 -   In schema.graphql file sent mutation
-    **subscribeToBlackFridayPhase**.
+    `subscribeToBlackFridayPhase`.
 
 -   Here set the black friday phase and input like name,first_name, and
     email.
 
 -   **Resolver**:
-    > \\\\Nik\\\\Sendinblue\\\\Model\\\\Resolver\\\\SubscribeToBlackFriday**.**
+    `Nik\\\\Sendinblue\\\\Model\\\\Resolver\\\\SubscribeToBlackFriday`**.**
 
 -   In resolver get data by \$params and set id by scopConfig.
 
--   **STORE_Configuration:** CUSTOM-\>Sendinblue-\>Brevo Lists Settings
+-   **STORE_Configuration:** `CUSTOM`-\>`Sendinblue`-\>`Brevo Lists Settings`
     in set template for BlackFriday.
 
 -   BlackFriday Phase 1&2 consists text field for set templates for
