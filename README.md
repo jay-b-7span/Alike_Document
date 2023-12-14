@@ -10,9 +10,9 @@
 -   In the resolver file return data like id, name,profile_picture etc
     using insiderId.
 
--   **STORE Configuration:** `CUSTOM`-\>`Insider`-\>`Home Page` Configuration
+-   **STORE Configuration:** `CUSTOM`-\>`Insider`-\>`Home Page Configuration`
      set the Insider Community text field. here admin set a coma
-     separating insider's ID and showed it in insider community.
+     separating **insider's ID** and showed it in insider community.
 
 ##  **Explore Cities Nearby**
 
@@ -20,12 +20,12 @@
 
 -   **Module**: `Nik_Cities`**.**
 
--   Here CategoryInterface in Citycustom query for this block.
+-   Here `CategoryInterface` in Citycustom query for this block.
 
 -   **Resolver**: `Nik\Cities\Model\Resolver\CityCustom`.
 
 -   **Admin Configuration**: `Catalog`-\>`Category`-\>`Content`-\>`Explore
-     Nearby` Here admin set a coma separated city's ID and showed it in
+     Nearby` Here admin set a coma separated **city's ID** and showed it in
      Explore Cities Nearby.
 
 -   In the resolver file return data name, image, and highlights load by
@@ -38,9 +38,9 @@
 
 -   Black Friday Sale in three phases.
 
--   StoreConfig GraphQl uses BlackFriday reserve price and SKU.
+-   `StoreConfig` GraphQl uses BlackFriday reserve price and SKU.
 
--   passHotel and passProduct GraphQl use and items Query to retrieve
+-   `passHotel` and `passProduct` GraphQl use and items Query to retrieve
     data.
 
 -   **Module**: `NaS_Ticket`.
@@ -64,9 +64,9 @@
 -   BlackFriday Phase 1&2 consists text field for set templates for
     phases. here set the brevo email template ID.
 
-##  **Currency GraphQL**
+##  **Currency GraphQl**
 
--   Currency GraphQL use for setup currency in website.
+-   Currency GraphQl use for setup currency in website.
 
 -   **Module**: `Magefan_AutoCurrencySwitcher`**.**
 
@@ -75,9 +75,9 @@
 -   **Resolver**:
     `Magefan\AutoCurrencySwitcher\Model\Resolver\Currency`.
 
-##  **VirtualProduct GraphQL**
+##  **VirtualProduct GraphQl**
 
--   `New_product` GraphQL call in home page for Best Selling Experiences.
+-   `New_product` GraphQl call in home page for Best Selling Experiences.
 
 -   **Module**: `Nik_CatalogGraphQl`.
 
@@ -86,9 +86,9 @@
 -   **Resolver**:
     `Nik\CatalogGraphQl\Model\Resolver\Product\NewProducts`.
 
-##  **PreviewProducts GraphQL**
+##  **PreviewProducts GraphQl**
 
--   `homepage_stories_products` GraphQL is used for Handcrafted Holiday
+-   `homepage_stories_products` GraphQl is used for Handcrafted Holiday
     Packages.
 
 -   Handcrafted Holiday Packages are located on home page.
@@ -102,9 +102,9 @@
 -   All products are in set sort order and this sort order field uses
     filter `homepage_stories` product.
 
-##  **Cart GraphQL**
+##  **Cart GraphQl**
 
--   Cart GraphQL use for
+-   Cart GraphQl use for
     `https://alike.io/cart` page.
 
 -   `AvailablePaymentMethod` graohql use in cart page.
@@ -151,13 +151,13 @@
 -   Also, Top Attractions handcrafted holidays block is used on this
     page.
 
--   StoriesProducts & ActivitiesProducts GraphQL call from
+-   StoriesProducts & ActivitiesProducts GraphQl call from
     `NaS_Widgets` module.
 
 -   CityFaqs `Nik_Faqs` module use.
 
 -   `CityCurrency`, `BestTimeToVisit`, `MonthsWeather` set in category
-    interface. `Nik_CataloggraphQl` module.
+    interface. `Nik_CatalogGraphQl` module.
 
 -   `get_product` mutation to use retrieve product by input parameter.
 
@@ -182,7 +182,7 @@
 -   `https://alike.io/products`
     age in using product interface to return data.
 
--   **Module**: `Nik_CataloggraphQl`.
+-   **Module**: `Nik_CatalogGraphQl`.
 
 -   In garphql `items` are denoted as one product to return from the
     product interface.
@@ -196,7 +196,7 @@
      resolver.API connected is one type of attribute to add from the
      admin panel and api_connected_label returns name of attribute.
 
--   **dynamicAttribute** field to add product interface **Module**:
+-   `dynamicAttribute` field to add product interface **Module**:
     `Nik_DynamicAttributes`.
 
 -   **Resolver:**
@@ -260,7 +260,7 @@
     `Nik\CatalogGraphQl\Model\Resolver\Product\IsLiked`.
 
 -    `page_info` and `total_count` are used in the ProductComment query
-     in cataloggraphql schema. graphql file.
+     in CatalogGraphQl schema. graphql file.
 
 -   `base_vedio` use in trip story page and code configuration in
      **Module:** `Nik_CatalaogGaraphQl`.
@@ -338,14 +338,18 @@
 -   **STORE Configuration:** `NAS`-\>`Musement API` path.
 -   Musement activity configuration in **Resolver**:
     `app/code/Nik/CatalogGraphQl/etc/schema.graphqls`**.**
+    
 -   **Resolver:**
     `Nik\CatalogGraphQl\Model\Resolver\Booking\MusementActivity`.
--   This code fetches Musement activity data based on GraphQL input
+    
+-   This code fetches Musement activity data based on GraphQl input
     parameters and handles exceptions during the process and
     `booking_type` and `order_box` a input parameters of musement
     activity.
+    
 -   Musement tickets configuration in **Module**:
     `Nik_CatalogGraphQl`.
+    
 -   **Resolver**:
     `Nik\CatalogGraphQl\Model\Resolver\Booking\MusementTickets`.
 
@@ -358,7 +362,7 @@
 -   `https://alike.io/esims?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu` page
     URL for eSIMs page.
 
--   Here Category is used as a filter. And call category interface for a
+-   Here Category is used as a filter. And call `CategoryInterface` for a
     category.
 
 -   **Module:** `Nik_CataloggraphQl`.
@@ -379,14 +383,14 @@
 
 -   **Module**: `NaS_Ticket`.
 
--   Here is another GraphQL use for Attraction Bundle
+-   Here is another GraphQl use for Attraction Bundle
     `passProduct`.
 
 -   `passProduct` query located at `NaS_Ticket` module.
 
 -   **Resolver:** `NaS\Ticket\Model\Resolver\PassProducts`.
 
--   `passHotel` GraphQL used for Hotel.
+-   `passHotel` GraphQl used for Hotel.
 
 -   **Resolver:** `NaS\Ticket\Model\Resolver\PassHotel`.
 
@@ -396,9 +400,9 @@
 ## **Cart Page**
 
 -   When we add a product to the cart then reach
-    https://uat.alike.host/cart page.
+    `https://uat.alike.host/cart` page.
 
--   On this page `addProductToCart` GraphQL call.
+-   On this page `addProductToCart` GraphQl call.
 
 -   **Module**: `Nik_CataloggraphQl`.
 -   **Resolver**: `Nik\CatalogGraphQl\Model\Resolver\Booking\AddProductToCart`.
@@ -406,12 +410,12 @@
 -   In this resolver get items in the cart and configure it.
 
 -   Then we can continue to the next step `setShippingAddressesOnCart`
-    GraphQL call.
+    GraphQl call.
 
 -   After the next step add our details between contact detail and
-    payment option step to call `abandonedCartCapture` GraphQL call.
+    payment option step to call `abandonedCartCapture` GraphQl call.
 
--   `abandonedCartCapture` GraphQL at `Nik_AbandonedCartCapture` module.
+-   `abandonedCartCapture` GraphQl at `Nik_AbandonedCartCapture` module.
 
 -   **Resolver:**
      `Nik\AbandonedGraphQl\Model\Resolver\AbandonedCartCapture`.
@@ -426,7 +430,7 @@
 -   Signin page URL is
     `https://app.alike.io/#/signin`.
 
--   `amSocialLoginButtonConfig` GraphQL used through work signup/sign-in.
+-   `amSocialLoginButtonConfig` GraphQl used through work signup/sign-in.
 
 -   **Module**: `Amasty_SocialLoginGraphQl`.
 
@@ -437,7 +441,7 @@
     enabled social login buttons using the **SocialData** model from
     the Amasty Social Login extension for Magento 2.
 
--   Then user creates a successful after-call createCustomerv2 GraphQL
+-   Then user creates a successful after-call createCustomerv2 GraphQl
 
 -   **Module**: `Nik_Cities` used for creating customers.
 
@@ -448,7 +452,7 @@
 
 -   https://app.alike.host/#/my-trips/my-bookings/upcoming-order on this page, the `CustomerOrder` graphql call
 
--   **Module**: `Nik_SalesGraphQL`.
+-   **Module**: `Nik_SalesGraphQl`.
 
 -   **Resolver:**
     `Magento\SalesGraphQl\Model\Resolver\CustomerOrders`.
@@ -462,14 +466,14 @@
 -   `https://app.alike.host/#/my-studio/dashboard`
     is a become insider page URL.
 
--   In this page `BecomeInsider` GraphQL call.
+-   In this page `BecomeInsider` GraphQl call.
 
 -   **Module**: `Nik_Cities`.
 
 -   **Resolver:**
     `Nik\Cities\Model\Resolver\Insider\BecomeInsider`.
 
--   `MyDeshboard` GraphQL is used for insider's data we can see on the
+-   `MyDeshboard` GraphQl is used for insider's data we can see on the
     dashboard page.
 
 -   **Resolver:**
@@ -481,7 +485,7 @@
 
 -   `MyStudioAccount` garphql is used for customizing accounts.
 
--   **Module**: `Nik_InsidersConfigGraphQL`.
+-   **Module**: `Nik_InsidersConfigGraphQl`.
 
 -   **Resolver:**
     `Nik\InsidersConfigGraphQl\Model\Resolver\MyStudioAccountResolver`.
@@ -489,10 +493,10 @@
 -   **Admin Config:** `INSIDERS`-\>`Profile`-\>`Manage Insiders` section
     configure.
 
--   `MyTripData` GraphQL is used for listening trip stories. Is located
+-   `MyTripData` GraphQl is used for listening trip stories. Is located
     `Nik_InsidersDashboardgraphQL` module.
 
--   `Wallet` GraphQL for account wallet.
+-   `Wallet` GraphQl for account wallet.
 
 -   **Module**: `Nik_InsidersDashboardgraphQL`.
 
@@ -500,12 +504,12 @@
 
 ##  **Hotels & Stays Page**
 
--   SearchX GraphQL is use
+-   `SearchX` GraphQl is use
     `https://uat.alike.host/hotels` page in the search section.
 
 -   **Module**: `NaS_Travelgatex`.
 
--   Here `SearchX` GraphQL is used for search and **Resolver**:
+-   Here `SearchX` GraphQl is used for search and **Resolver**:
     `NaS\Travelgatex\Model\Resolver\Search`.
 
 -   **Resolver:** `NaS\Travelgatex\Model\Resolver\SearchList`.
@@ -520,16 +524,16 @@
      `NaS\Travelgatex\Model\Resolver\Quote`.
 -   In `quoteX` add `hotelX` parameter.
 
-**Product Comment GraphQL**
+## **Product Comment GraphQl**
 
--   `Product Comment` GraphQL in the particular product page.
+-   `Product Comment` GraphQl in the particular product page.
 
 -   **Module**: `Nik_CatalogGraphQl`.
 
 -   **Resolver:**
     `Nik\CatalogGraphQl\Model\Resolver\Product\ProductComment`.
 
-**Insider Account Graphql**
+## **Insider Account Graphql**
 
 -   `InsiderAccount` GraphQl use in particular insider's page.
 
@@ -564,7 +568,7 @@
     pagination details. The resolver also includes methods to handle
     `image URLs`, `including placeholders`.
 
-**categoryInterface**
+## **categoryInterface**
 
 -   `CategoryInterface` returns data by items.
 
