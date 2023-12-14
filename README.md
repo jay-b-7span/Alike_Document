@@ -2,10 +2,10 @@
 
 -   The insider community is shown on home page of alike.io.
 
--   **Module**: Nik_InsiderPageGraphQl**.**
+-   **Module**: 'Nik_InsiderPageGraphQl'**.**
 
 -   **Resolver**:
-    > Nik\\\\InsiderPageGraphQl\\\\Model\\\\Resolver\\\\InsiderCommunity.
+    Nik\\\\InsiderPageGraphQl\\\\Model\\\\Resolver\\\\InsiderCommunity.
 
 -   In the resolver file return data like id, name,profile_picture etc
     using insiderId.
@@ -72,7 +72,6 @@
 
 -   **STORE_Congiguration:** GENERAL-\>Currency Setup to set currency
     and configuration on it.
-
 -   **Resolver**:
     > Magefan\\\\AutoCurrencySwitcher\\\\Model\\\\Resolver\\\\Currency.
 
@@ -106,7 +105,7 @@
 ##  **Cart GraphQL**
 
 -   Cart GraphQL use for
-    > [https://alike.io/cart] page.
+    > https://alike.io/cart page.
 
 -   AvailablePaymentMethod grapgQl use in cart page.
 
@@ -126,7 +125,8 @@
     > Nik\\\\CheckoutGraphQl\\\\Model\\\\Resolver\\\\OrderCustomOptions.
 
 -   **addHotelXProductToCart** mutation use for after we select hotel
-    rooms. **Resolver**:
+    rooms.
+-   **Resolver**:
     > NaS\\\\Travelgatex\\\\Model\\\\Resolver\\\\AddHotelXProductsToCart
     it is.
 
@@ -136,7 +136,7 @@
 ##  **Cities page**
 
 -   In cities, pages are located at
-    > [https://alike.io/cities/] page.
+    > https://alike.io/cities/ page.
 
 -   All Cities are one type of category in alike.
 
@@ -166,7 +166,8 @@
     > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Booking\\\\RaynaProduct.
 
 -   **getRaynaTickets** is query to using rayna api thru return and book
-    ticket and **Resolver**:
+    ticket and
+-   **Resolver**:
     > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Booking\\\\RaynaTickets.
 
 -   **getRaynaTicketsSlot** using this query book slot by date.
