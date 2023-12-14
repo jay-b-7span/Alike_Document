@@ -1,37 +1,41 @@
-##  **Insider Community**
+##  **Insider Community** {#insider-community .unnumbered}
 
 -   The insider community is shown on home page of alike.io.
 
 -   **Module**: Nik_InsiderPageGraphQl**.**
 
 -   **Resolver**:
-    > Nik\\\\InsiderPageGraphQl\\\\Model\\\\Resolver\\\\InsiderCommunity.
+    > [Nik\\\\InsiderPageGraphQl\\\\Model\\\\Resolver\\\\InsiderCommunity]{.mark}.
 
 -   In the resolver file return data like id, name,profile_picture etc
     > using insiderId.
 
 -   **STORE Configuration:** CUSTOM-\>Insider-\>Home Page Configuration
-    > set the Insider Community text field. here admin set a coma
-    > separating insider's ID and showed it in insider community.
+    > set the [Insider Community text field. here admin set a coma
+    > separating insider's ID and showed it in insider
+    > community.]{.mark}
 
-##  **Explore Cities Nearby**
+[]{.mark}
 
--   ## Explore Cities Nearby is shown on [[https://alike.io/cities/]{.underline}](https://alike.io/cities/) page.
+##  **Explore Cities Nearby** {#explore-cities-nearby .unnumbered}
 
--   **Module**: Nik_Cities**.**
+## [Explore Cities Nearby is shown on [[https://alike.io/cities/]{.underline}](https://alike.io/cities/) page.]{.mark}
 
--   Here CategoryInterface in Citycustom query for this block.
+-   **Module**: [Nik_Cities**.**]{.mark}
 
--   **Resolver**: Nik\\\\Cities\\\\Model\\\\Resolver\\\\CityCustom.
+-   [Here CategoryInterface in Citycustom query for this block.]{.mark}
 
--   **Admin Configuration**: Catalog-\>Category-\>Content-\>Explore
+-   **Resolver**:
+    > [Nik\\\\Cities\\\\Model\\\\Resolver\\\\CityCustom.]{.mark}
+
+-   [**Admin Configuration**: Catalog-\>Category-\>Content-\>Explore
     > Nearby Here admin set a coma separated city's ID and showed it in
-    > Explore Cities Nearby.
+    > Explore Cities Nearby.]{.mark}
 
--   In the resolver file return data name, image, and highlights load by
-    > Explore Nearby cities id.
+-   [In the resolver file return data name, image, and highlights load
+    > by Explore Nearby cities id.]{.mark}
 
-##  **BlackFriday phse1**
+##  **BlackFriday phse1** {#blackfriday-phse1 .unnumbered}
 
 -   The Black Friday sale is shown on
     > [[https://alike.io/black-friday]{.underline}](https://alike.io/black-friday)
@@ -46,26 +50,26 @@
 
 -   **Module**: NaS_Ticket.
 
--   **Module**: Nik_Sendinblue**.**
+-   **Module**: [Nik_Sendinblue**.**]{.mark}
 
--   In schema.graphql file sent mutation
-    > **subscribeToBlackFridayPhase**.
+-   [In schema.graphql file sent mutation
+    > **subscribeToBlackFridayPhase**.]{.mark}
 
--   Here set the black friday phase and input like name,first_name, and
-    > email.
+-   [Here set the black friday phase and input like name,first_name, and
+    > email.]{.mark}
 
--   **Resolver**:
-    > \\\\Nik\\\\Sendinblue\\\\Model\\\\Resolver\\\\SubscribeToBlackFriday**.**
+-   [**Resolver**:
+    > \\\\Nik\\\\Sendinblue\\\\Model\\\\Resolver\\\\SubscribeToBlackFriday**.**]{.mark}
 
--   In resolver get data by \$params and set id by scopConfig.
+-   [In resolver get data by \$params and set id by scopConfig.]{.mark}
 
--   **STORE_Configuration:** CUSTOM-\>Sendinblue-\>Brevo Lists Settings
-    > in set template for BlackFriday.
+-   [**STORE_Configuration:** CUSTOM-\>Sendinblue-\>Brevo Lists Settings
+    > in set template for BlackFriday.]{.mark}
 
--   BlackFriday Phase 1&2 consists text field for set templates for
-    > phases. here set the brevo email template ID.
+-   [BlackFriday Phase 1&2 consists text field for set templates for
+    > phases. here set the brevo email template ID.]{.mark}
 
-##  **Currency GraphQL**
+##  **Currency GraphQL** {#currency-graphql .unnumbered}
 
 -   Currency GraphQL use for setup currency in website.
 
@@ -77,7 +81,7 @@
 -   **Resolver**:
     > Magefan\\\\AutoCurrencySwitcher\\\\Model\\\\Resolver\\\\Currency.
 
-##  **VirtualProduct GraphQL**
+##  **VirtualProduct GraphQL** {#virtualproduct-graphql .unnumbered}
 
 -   New_product GraphQL call in home page for Best Selling Experiences.
 
@@ -88,7 +92,7 @@
 -   **Resolver**:
     > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Product\\\\NewProducts.
 
-##  **PreviewProducts GraphQL**
+##  **[PreviewProducts]{.mark} GraphQL** {#previewproducts-graphql .unnumbered}
 
 -   homepage_stories_products GraphQL is used for Handcrafted Holiday
     > Packages.
@@ -104,7 +108,7 @@
 -   All products are in set sort order and this sort order field uses
     > filter homepage_stories product.
 
-##  **Cart GraphQL**
+##  **Cart GraphQL** {#cart-graphql .unnumbered}
 
 -   Cart GraphQL use for
     > [[https://alike.io/cart]{.underline}](https://alike.io/cart) page.
@@ -134,31 +138,32 @@
 -   Payment method, Shipping method, coupon, etc configure in this
     > graphql.
 
-##  **Cities page**
+##  **Cities page** {#cities-page .unnumbered}
 
--   In cities, pages are located at
-    > [[https://alike.io/cities/]{.underline}](https://alike.io/cities/).
+-   [In cities, pages are located at
+    > [[https://alike.io/cities/]{.underline}](https://alike.io/cities/).]{.mark}
 
--   All Cities are one type of category in alike.
+-   [All Cities are one type of category in alike.]{.mark}
 
--   **Module**: Nik_Cities.
+-   [**Module**: Nik_Cities.]{.mark}
 
--   **custom** graphql use for city custom.
+-   [**custom** graphql use for city custom.]{.mark}
 
--   **Resolver:** Nik\\\\Cities\\\\Model\\\\Resolver\\\\CityCustom.
+-   [**Resolver:**
+    > Nik\\\\Cities\\\\Model\\\\Resolver\\\\CityCustom.]{.mark}
 
--   Citycustom, Explore Nearby, and Faq also use the city page.
+-   [Citycustom, Explore Nearby, and Faq also use the city page.]{.mark}
 
--   Also, Top Attractions handcrafted holidays block is used on this
-    > page.
+-   [Also, Top Attractions handcrafted holidays block is used on this
+    > page.]{.mark}
 
--   StoriesProducts & ActivitiesProducts GraphQL call from
-    > **NaS_Widgets** module.
+-   [StoriesProducts & ActivitiesProducts GraphQL call from
+    > **NaS_Widgets** module.]{.mark}
 
--   CityFaqs **Nik_Faqs** module.
+-   [CityFaqs **Nik_Faqs** module.]{.mark}
 
--   CityCurrency, BestTimeToVisit, MonthsWeather set in category
-    > interface. **Nik_CataloggraphQl** module.
+-   [CityCurrency, BestTimeToVisit, MonthsWeather set in category
+    > interface. **Nik_CataloggraphQl** module.]{.mark}
 
 -   **get_peoduct** mutation to use retrieve product by input parameter.
 
@@ -174,41 +179,43 @@
 -   **Resolver**:
     > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Booking\\\\RaynaTicketSlot.
 
-##  **Product Interface**
+##  **Product Interface** {#product-interface .unnumbered}
 
--   Product Interface used for retrieving data from product and it's
-    > attribute.
+-   [Product Interface used for retrieving data from product and it's
+    > attribute.]{.mark}
 
--   [[https://alike.io/products]{.underline}](https://alike.io/products)
-    > page in using product interface to return data.
+-   [[[https://alike.io/products]{.underline}](https://alike.io/products)
+    > page in using product interface to return data.]{.mark}
 
--   **Module**: Nik_CataloggraphQl.
+-   [**Module**: Nik_CataloggraphQl.]{.mark}
 
--   In garphql "items" are denoted as one product to return from the
-    > product interface.
+-   [In garphql "items" are denoted as one product to return from the
+    > product interface.]{.mark}
 
--   **adult_lable** is a custom field to add in the interface. it
+-   [**adult_lable** is a custom field to add in the interface. it
     > **Resolver**:
-    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Product\\\\AdultLabel**.**
+    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Product\\\\AdultLabel**.**]{.mark}
 
--   **api_connected_label returns** the connected name. **Resolver**:
+-   [**api_connected_label returns** the connected name. **Resolver**:
     > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Product\\\\ApiLabel
     > resolver.API connected is one type of attribute to add from the
-    > admin panel and api_connected_label returns name of attribute.
+    > admin panel and api_connected_label returns name of
+    > attribute.]{.mark}
 
--   **dynamicAttribute** field to add product interface **Module**:
-    > Nik_DynamicAttributes.
+-   [**dynamicAttribute** field to add product interface **Module**:
+    > Nik_DynamicAttributes.]{.mark}
 
--   **Resolver:**
-    > \\\\Nik\\\\DynamicAttributesGraphql\\\\Model\\\\Resolver\\\\Product\\\\DynamicAttributes.
+-   [**Resolver:**
+    > \\\\Nik\\\\DynamicAttributesGraphql\\\\Model\\\\Resolver\\\\Product\\\\DynamicAttributes.]{.mark}
 
--   **dynamicAttribute** return data in array foam. It is a one type of
-    > collection of some attribute.
+-   [**dynamicAttribute** return data in array foam. It is a one type of
+    > collection of some attribute.]{.mark}
 
--   **GlobaltixAvailability** query also use in product interface.
+-   [**GlobaltixAvailability** query also use in product
+    > interface.]{.mark}
 
--   **Resolver:**
-    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Product\\\\GlobaltixAvailability
+-   [**Resolver:**
+    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Product\\\\GlobaltixAvailability]{.mark}
 
 -   That resolver use to retrieve data. Using globlatixFactory in which
     > id is active that return product.
@@ -309,227 +316,242 @@
 -   Also, **itineraryPrice** mutation add and **Resolver**:
     > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Booking\\\\ItineraryPrice.
 
-##  **Travel Passes Page**
+##  **Travel Passes Page** {#travel-passes-page .unnumbered}
 
 -   Travell passes are coming from
     > [[https://alike.io/travel-passes?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu]{.underline}](https://alike.io/travel-passes?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu).
 
 -   On this page use the categories interface and return data.
 
--   **Module**: Nik_CataloggraphQl.
+-   **Module**: [Nik_CataloggraphQl.]{.mark}
 
--   **Admin Config:** STORE-\>Attribute-\>Product.
+-   [**Admin Config:** STORE-\>Attribute-\>Product.]{.mark}
 
--   **Resolver**: Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Esim. In
-    > this resolver set page size add a filter as an attribute and
-    > return data.
+-   [**Resolver**: Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Esim.
+    > In this resolver set page size add a filter as an attribute and
+    > return data.]{.mark}
 
-**→** If we can click any passes move to
+[**→** If we can click any passes move to
 [[https://alike.io/products/the-london-passr]{.underline}](https://alike.io/products/the-london-passr)
-page.
+page.]{.mark}
 
--   Also, this page uses a product interface.
+-   [Also, this page uses a product interface.]{.mark}
 
--   Musement API through select date for ticket and book ticket.
+-   [Musement API through select date for ticket and book
+    > ticket.]{.mark}
 
--   **Resolver:**
-    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Booking\\\\MusementTickets.
+-   [**Resolver:**
+    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Booking\\\\MusementTickets.]{.mark}
 
--   **STORE Configuration:** NAS-\>Musement API path.
+-   [**STORE Configuration:** NAS-\>Musement API path.]{.mark}
 
--   Musement activity configuration in **Resolver**:
-    > app/code/Nik/CatalogGraphQl/etc/schema.graphqls**.**
+-   [Musement activity configuration in **Resolver**:
+    > app/code/Nik/CatalogGraphQl/etc/schema.graphqls**.**]{.mark}
 
--   **Resolver:**
-    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Booking\\\\MusementActivity.
+-   [**Resolver:**
+    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Booking\\\\MusementActivity.]{.mark}
 
--   This code fetches Musement activity data based on GraphQL input
+-   [This code fetches Musement activity data based on GraphQL input
     > parameters and handles exceptions during the process and
     > booking_type and order_box a input parameters of musement
-    > activity.
+    > activity.]{.mark}
 
--   Musement tickets configuration in **Module**:
-    > Nik_CatalogGraphQl**.**
+-   [Musement tickets configuration in **Module**:
+    > Nik_CatalogGraphQl**.**]{.mark}
 
--   **Resolver**:
-    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Booking\\\\MusementTickets.
+-   [**Resolver**:
+    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Booking\\\\MusementTickets.]{.mark}
 
--   In Musement tickets, resolver fetches Musement ticket data,
+-   [In Musement tickets, resolver fetches Musement ticket data,
     > retrieves associated product information, processes the data, and
-    > adjusts prices based on certain parameters.
+    > adjusts prices based on certain parameters.]{.mark}
 
-##  **eSIMs Page**
+##  **eSIMs Page** {#esims-page .unnumbered}
 
--   [[https://alike.io/esims?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu]{.underline}](https://alike.io/esims?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu)
-    > URL for eSIMs page.
+-   [[[https://alike.io/esims?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu]{.underline}](https://alike.io/esims?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu)
+    > URL for eSIMs page.]{.mark}
 
--   Here Category is used as a filter. And call category interface for a
-    > category.
+-   [Here Category is used as a filter. And call category interface for
+    > a category.]{.mark}
 
--   **Module:** Nik_CataloggraphQl**.**
+-   [**Module:** Nik_CataloggraphQl**. **]{.mark}
 
--   **Resolver**: Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Esim.
+-   [**Resolver**:
+    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Esim.]{.mark}
 
--   Set E SIM attribute set and use in resolver to filter products for
-    > eSIMs.
+-   [Set E SIM attribute set and use in resolver to filter products for
+    > eSIMs.]{.mark}
 
-##  **Winter Sale**
+##  **Winter Sale** {#winter-sale .unnumbered}
 
--   The Winter Sale page URL is
-    > [[https://alike.io/winter-sale?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu]{.underline}](https://alike.io/winter-sale?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu).
+-   [The Winter Sale page URL is
+    > [[https://alike.io/winter-sale?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu]{.underline}](https://alike.io/winter-sale?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu).]{.mark}
 
--   In winter sales use product interface to retrieve product.
+-   [In winter sales use product interface to retrieve product.]{.mark}
 
--   Here winter sale is only for Dubai.
+-   [Here winter sale is only for Dubai.]{.mark}
 
--   **Module**: NaS_Ticket.
+-   [**Module**: NaS_Ticket.]{.mark}
 
--   Here is another GraphQL use for Attraction Bundle
-    > [passProduct.]{.underline}
+-   [Here is another GraphQL use for Attraction Bundle
+    > [passProduct.]{.underline}]{.mark}
 
--   passProduct query located at **NaS_Ticket** module.
+-   [passProduct query located at **NaS_Ticket** module.]{.mark}
 
--   **Resolver:** NaS\\\\Ticket\\\\Model\\\\Resolver\\\\PassProducts.
+-   [**Resolver:**
+    > NaS\\\\Ticket\\\\Model\\\\Resolver\\\\PassProducts.]{.mark}
 
--   passHotel GraphQL used for Hotel.
+-   [passHotel GraphQL used for Hotel.]{.mark}
 
--   **Resolver:** NaS\\\\Ticket\\\\Model\\\\Resolver\\\\PassHotel.
+-   [**Resolver:**
+    > NaS\\\\Ticket\\\\Model\\\\Resolver\\\\PassHotel.]{.mark}
 
--   This resolver uses collectionFacteory to retrieve hotel and return
-    > data.
+-   [This resolver uses collectionFacteory to retrieve hotel and return
+    > data.]{.mark}
 
-## **Cart Page**
+## **Cart Page** {#cart-page .unnumbered}
 
--   When we add a product to the cart then reach
+-   [When we add a product to the cart then reach
     > [[https://uat.alike.host/cart]{.underline}](https://uat.alike.host/cart)
-    > page.
+    > page.]{.mark}
 
--   On this page addProductToCart GraphQL call.
+-   [On this page addProductToCart GraphQL call.]{.mark}
 
--   **Module**: Nik_CataloggraphQl.**Resolver**:
+-   [**Module**: Nik_CataloggraphQl.**Resolver**:]{.mark}
 
-> Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Booking\\\\AddProductToCart.
+> [Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Booking\\\\AddProductToCart.]{.mark}
 
--   In this resolver get items in the cart and configure it.
+-   [In this resolver get items in the cart and configure it.]{.mark}
 
--   Then we can continue to the next step setShippingAddressesOnCart
-    > GraphQL call.
+-   [Then we can continue to the next step setShippingAddressesOnCart
+    > GraphQL call.]{.mark}
 
--   After the next step add our details between contact detail and
-    > payment option step to call abandonedCartCapture GraphQL call.
+-   [After the next step add our details between contact detail and
+    > payment option step to call abandonedCartCapture GraphQL
+    > call.]{.mark}
 
--   abandonedCartCapture GraphQL at **Nik_AbandonedCartCapture** module.
+-   [abandonedCartCapture GraphQL at **Nik_AbandonedCartCapture**
+    > module.]{.mark}
 
--   **Resolver:**
-    > Nik\\\\AbandonedGraphQl\\\\Model\\\\Resolver\\\\AbandonedCartCapture.
+-   [**Resolver:**
+    > Nik\\\\AbandonedGraphQl\\\\Model\\\\Resolver\\\\AbandonedCartCapture.]{.mark}
 
--   **Admin Config:** REPORTING-\>Anamdoned-\>Reports.
+-   [**Admin Config:** REPORTING-\>Anamdoned-\>Reports.]{.mark}
 
--   Abandoned email configuration on **STORE Configuration**:
-    > CUSTOM-\>Abandoned in Admin panel.
+-   [Abandoned email configuration on **STORE Configuration**:
+    > CUSTOM-\>Abandoned in Admin panel.]{.mark}
 
-##  **Signup/Signin Page**
+[]{.mark}
 
--   Signin page URL is
-    > [[https://app.alike.io/#/signin]{.underline}](https://app.alike.io/#/signin).
+##  **Signup/Signin Page** {#signupsignin-page .unnumbered}
 
--   amSocialLoginButtonConfig GraphQL used through work signup/sign-in.
+-   [Signin page URL is
+    > [[https://app.alike.io/#/signin]{.underline}](https://app.alike.io/#/signin).]{.mark}
 
--   **Module**: Amasty_SocialLoginGraphQl.
+-   [amSocialLoginButtonConfig GraphQL used through work
+    > signup/sign-in.]{.mark}
 
--   **Resolver**:
-    > Amasty\\\\SocialLoginGraphQl\\\\Model\\\\Resolver\\\\SocialButtons.
+-   [**Module**: Amasty_SocialLoginGraphQl.]{.mark}
 
--   In resolver (**SocialButtons**) that retrieves information about
+-   [**Resolver**:
+    > Amasty\\\\SocialLoginGraphQl\\\\Model\\\\Resolver\\\\SocialButtons.]{.mark}
+
+-   [In resolver (**SocialButtons**) that retrieves information about
     > enabled social login buttons using the **SocialData** model from
-    > the Amasty Social Login extension for Magento 2.
+    > the Amasty Social Login extension for Magento 2.]{.mark}
 
--   Then user creates a successful after-call createCustomerv2 GraphQL
+-   [Then user creates a successful after-call createCustomerv2
+    > GraphQL]{.mark}
 
--   **Module**: **Nik_Cities** used for creating customers.
+-   [**Module**: **Nik_Cities** used for creating customers.]{.mark}
 
--   **Resolver:**
-    > \\\\Nik\\\\Cities\\\\Model\\\\Resolver\\\\Insider\\\\CreateCustomer.
+-   [**Resolver:**
+    > \\\\Nik\\\\Cities\\\\Model\\\\Resolver\\\\Insider\\\\CreateCustomer.]{.mark}
 
--   [[https://app.alike.host/#/account/general]{.underline}](https://app.alike.host/#/account/general)
-    > After sign-in as a user reach this page.
+-   [[[https://app.alike.host/#/account/general]{.underline}](https://app.alike.host/#/account/general)
+    > After sign-in as a user reach this page.]{.mark}
 
--   [[https://app.alike.host/#/my-trips/my-bookings/upcoming-order]{.underline}](https://app.alike.host/#/my-trips/my-bookings/upcoming-order)
-    > On this page, the customer order graphql call
+-   [[[https://app.alike.host/#/my-trips/my-bookings/upcoming-order]{.underline}](https://app.alike.host/#/my-trips/my-bookings/upcoming-order)
+    > On this page, the customer order graphql call]{.mark}
 
--   **Module**: Nik_SalesGraphQL.
+-   [**Module**: Nik_SalesGraphQL.]{.mark}
 
--   **Resolver:**
-    > Magento\\\\SalesGraphQl\\\\Model\\\\Resolver\\\\CustomerOrders.
+-   [**Resolver:**
+    > Magento\\\\SalesGraphQl\\\\Model\\\\Resolver\\\\CustomerOrders.]{.mark}
 
--   In this resolver filter and get data using ExtensionAttribute.
+-   [In this resolver filter and get data using
+    > ExtensionAttribute.]{.mark}
 
-##  **Become Insider** 
+##  **Become Insider**  {#become-insider .unnumbered}
 
--   In the customer login page, we create also insider account.
+-   [In the customer login page, we create also insider account.]{.mark}
 
--   [[https://app.alike.host/#/my-studio/dashboard]{.underline}](https://app.alike.host/#/my-studio/dashboard)
-    > is a become insider page URL.
+-   [[[https://app.alike.host/#/my-studio/dashboard]{.underline}](https://app.alike.host/#/my-studio/dashboard)
+    > is a become insider page URL.]{.mark}
 
--   In this page BecomeInsider GraphQL call.
+-   [In this page BecomeInsider GraphQL call.]{.mark}
 
--   **Module**: Nik_Cities.
+-   [**Module**: Nik_Cities.]{.mark}
 
--   **Resolver:**
-    > \\\\Nik\\\\Cities\\\\Model\\\\Resolver\\\\Insider\\\\BecomeInsider.
+-   [**Resolver:**
+    > \\\\Nik\\\\Cities\\\\Model\\\\Resolver\\\\Insider\\\\BecomeInsider.]{.mark}
 
--   MyDeshboard GraphQL is used for insider's data we can see on the
-    > dashboard page.
+-   [MyDeshboard GraphQL is used for insider's data we can see on the
+    > dashboard page.]{.mark}
 
--   **Resolver:**
-    > Nik\\\\InsidersDashboardGraphQl\\\\Model\\\\Resolver\\\\MyDashboardResolver.
+-   [**Resolver:**
+    > Nik\\\\InsidersDashboardGraphQl\\\\Model\\\\Resolver\\\\MyDashboardResolver.]{.mark}
 
--   Get data using insiderFactory.
+-   [Get data using insiderFactory.]{.mark}
 
--   **Admin Config:** INSIDERS section for customization insider.
+-   [**Admin Config:** INSIDERS section for customization
+    > insider.]{.mark}
 
--   MyStudioAccount garphql is used for customizing accounts.
+-   [MyStudioAccount garphql is used for customizing accounts.]{.mark}
 
--   **Module**: Nik_InsidersConfigGraphQL.
+-   [**Module**: Nik_InsidersConfigGraphQL.]{.mark}
 
--   **Resolver:**
-    > Nik\\\\InsidersConfigGraphQl\\\\Model\\\\Resolver\\\\MyStudioAccountResolver.
+-   [**Resolver:**
+    > Nik\\\\InsidersConfigGraphQl\\\\Model\\\\Resolver\\\\MyStudioAccountResolver.]{.mark}
 
--   **Admin Config:** INSIDERS-\>Profile-\>Manage Insiders section
-    > configure.
+-   [**Admin Config:** INSIDERS-\>Profile-\>Manage Insiders section
+    > configure.]{.mark}
 
--   MyTripData GraphQL is used for listening trip stories. Is located
-    > **Nik_InsidersDashboardgraphQL** module.
+-   [MyTripData GraphQL is used for listening trip stories. Is located
+    > **Nik_InsidersDashboardgraphQL** module.]{.mark}
 
--   Wallet GraphQL for account wallet.
+-   [Wallet GraphQL for account wallet.]{.mark}
 
--   **Module**: Nik_InsidersDashboardgraphQL.
+-   [**Module**: Nik_InsidersDashboardgraphQL.]{.mark}
 
--   **Resolver:** Nik\\\\Cities\\\\Model\\\\Resolver\\\\Wallets.
+-   [**Resolver:**
+    > Nik\\\\Cities\\\\Model\\\\Resolver\\\\Wallets.]{.mark}
 
-##  **Hotels & Stays Page**
+##  **Hotels & Stays Page** {#hotels-stays-page .unnumbered}
 
--   SearchX GraphQL is use
+-   [SearchX GraphQL is use
     > [[https://uat.alike.host/hotels]{.underline}](https://uat.alike.host/hotels)
-    > page in the search section.
+    > page in the search section.]{.mark}
 
--   **Module**: NaS_Travelgatex.
+-   [**Module**: NaS_Travelgatex.]{.mark}
 
--   Here SearchX GraphQL is used for search and **Resolver**:
-    > NaS\\\\Travelgatex\\\\Model\\\\Resolver\\\\Search.
+-   [Here SearchX GraphQL is used for search and **Resolver**:
+    > NaS\\\\Travelgatex\\\\Model\\\\Resolver\\\\Search.]{.mark}
 
--   **Resolver:** NaS\\\\Travelgatex\\\\Model\\\\Resolver\\\\SearchList.
+-   [**Resolver:**
+    > NaS\\\\Travelgatex\\\\Model\\\\Resolver\\\\SearchList.]{.mark}
 
--   map & pagination use in **Hotel** query. Here **Resolver**:
-    > NaS\\\\Hotelbeds\\\\Model\\\\Resolver\\\\Hotels.
+-   [map & pagination use in **Hotel** query. Here **Resolver**:
+    > NaS\\\\Hotelbeds\\\\Model\\\\Resolver\\\\Hotels.]{.mark}
 
--   **STORE Configuration**: NaS-\>HotelBedsApi in set configuration.
+-   [**STORE Configuration**: NaS-\>HotelBedsApi in set
+    > configuration.]{.mark}
 
--   **quoteX** graphql use in when we select a hotel room at that time
+-   [**quoteX** graphql use in when we select a hotel room at that time
     > use.in code configuration set quoteX query and **Resolver**:
-    > NaS\\\\Travelgatex\\\\Model\\\\Resolver\\\\Quote.
+    > NaS\\\\Travelgatex\\\\Model\\\\Resolver\\\\Quote.]{.mark}
 
--   In quoteX add hotelX parameter.
+-   [In quoteX add hotelX parameter.]{.mark}
 
 **Product Comment GraphQL**
 
@@ -559,40 +581,46 @@ page.
     > **NaS\\SocialAddon\\Model\\ResourceModel\\Follow\\CollectionFactory**
     > class.
 
--   categoryImageId configuration in the **Nik_CatalogGraphQ** module.
+-   [categoryImageId configuration in the **Nik_CatalogGraphQ**
+    > module.]{.mark}
 
--   **Resolver:**
-    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Story\\\\CategoryImageIdData.
+-   [**Resolver:**
+    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Story\\\\CategoryImageIdData.]{.mark}
 
--   Mytrips configuration in **Nik_InsidersDashboardGraphQl** module.
+-   [Mytrips configuration in **Nik_InsidersDashboardGraphQl**
+    > module.]{.mark}
 
--   **Resolver:**
-    > Nik\\\\InsidersDashboardGraphQl\\\\Model\\\\Resolver\\\\MyTripsResolver.
+-   [**Resolver:**
+    > Nik\\\\InsidersDashboardGraphQl\\\\Model\\\\Resolver\\\\MyTripsResolver.]{.mark}
 
--   In resolver for fetching data about trips. It includes methods to
+-   [In resolver for fetching data about trips. It includes methods to
     > handle authorization, retrieve insider and product information,
     > and build a response containing information about top trips with
     > pagination details. The resolver also includes methods to handle
-    > image URLs, including placeholders.
+    > image URLs, including placeholders.]{.mark}
 
-**categoryInterface**
+**[categoryInterface]{.mark}**
 
--   CategoryInterface returns data by items.
+-   [CategoryInterface returns data by items.]{.mark}
 
--   esim_product configuration in **Nik_CatalogGraphQl** module.
+-   [esim_product configuration in **Nik_CatalogGraphQl**
+    > module.]{.mark}
 
--   **Resolver:** Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Esim.
+-   [**Resolver:**
+    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Esim.]{.mark}
 
--   In resolver (Esim) that retrieves data about eSIM products based on
+-   [In resolver (Esim) that retrieves data about eSIM products based on
     > various filters. The resolver constructs a product collection,
     > applies filters, and returns relevant information in the output
     > arrayTop_travelpass_products configuration in the
-    > **Nik_CatalogGraphQl** module.
+    > **Nik_CatalogGraphQl** module.]{.mark}
 
--   **Resolver:**
-    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Travelpass.
+-   [**Resolver:**
+    > Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Travelpass.]{.mark}
 
--   resolver (**Travelpass**) that retrieves data about top-rated travel
-    > passes based on various filters. The resolver constructs a product
-    > collection, applies filters, and returns relevant information in
-    > the output array.
+-   [resolver (**Travelpass**) that retrieves data about top-rated
+    > travel passes based on various filters. The resolver constructs a
+    > product collection, applies filters, and returns relevant
+    > information in the output array.]{.mark}
+
+[]{.mark}
