@@ -10,7 +10,7 @@
 -   In the resolver file return data like id, name,profile_picture etc
     using insiderId.
 
--   **Admin Menu** `STORE`->`Configuration`->`CUSTOM`-\>`Insider`-\>`Home Page Configuration`
+-   **Admin Menu**: `STORE`->`Configuration`->`CUSTOM`-\>`Insider`-\>`Home Page Configuration`
      set the Insider Community text field. here admin set a coma
      separating **insider's ID** and showed it in insider community.
 
@@ -277,7 +277,7 @@
 -   `Ins_highlights` is added in product interface and **Resolver**:
      `Nik\CatalogGraphQl\Model\Resolver\Product\InsHighlights`.
 
--   **Admin Menu:** `STORE`->`Configuration`->`CONTENT`-\>`Cities`-\>`City Highlights Listing`.
+-   **Admin Menu:** `STORE`->`Configuration`->`CONTENT`-\>`Cities`-\>`City Highlights Listing`
 
 -   `insider_data` set in the product interface and **Resolver**:
     `Nik\CatalogGraphQl\Model\Resolver\Product\ProductInsider`.here
@@ -316,7 +316,7 @@
 
 -   **Module**: `Nik_CataloggraphQl`
 
--   **Admin Menu:** `STORE`-\>`Attribute`-\>`Product`.
+-   **Admin Menu:** `STORE`-\>`Attribute`-\>`Product`
 
 -   **Resolver**:
 -   `Nik\CatalogGraphQl\Model\Resolver\Esim`. In
