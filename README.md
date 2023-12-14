@@ -127,7 +127,7 @@
 -   `dynamicAttribute` return data in array foam. It is a one type of
     collection of some attribute.
 -   `GlobaltixAvailability` query also use in product interface.
--   **Resolver:** `Nik\CatalogGraphQl\Model\Resolver\Product\GlobaltixAvailability`
+-   **Resolver:**`Nik\CatalogGraphQl\Model\Resolver\Product\GlobaltixAvailability`
 -   That resolver use to retrieve data. Using globlatixFactory in which
      id is active that return product.
 -   `hide_adult`, `hide_child`, `hide_infant` are attributes to set in
