@@ -162,7 +162,7 @@
     `Nik\CatalogGraphQl\Model\Resolver\Product\IsLiked`.
 -    `page_info` and `total_count` are used in the ProductComment query
      in CatalogGraphQl schema. graphql file.
--   `base_vedio` use in trip story page and code configuration in
+-   `base_video` use in trip story page and code configuration in
      **Module:** `Nik_CatalaogGaraphQl`
 -    **Resolver:**`Nik\CatalogGraphQl\Model\Resolver\Product\BaseVideo`
 -   `icons` are set in product attribute and **Resolver**:
