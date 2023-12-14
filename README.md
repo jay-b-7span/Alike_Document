@@ -70,7 +70,7 @@
 
 -   **Module**: `Magefan_AutoCurrencySwitcher`**.**
 
--   **STORE_Congiguration:** `GENERAL`-\>`Currency Setup` to set currency
+-   **STORE_Configuration:** `GENERAL`-\>`Currency Setup` to set currency
     and configuration on it.
 -   **Resolver**:
     `Magefan\AutoCurrencySwitcher\Model\Resolver\Currency`.
