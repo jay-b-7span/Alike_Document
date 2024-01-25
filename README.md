@@ -345,7 +345,7 @@
     pagination details. The resolver also includes methods to handle
     `image URLs`, `including placeholders`.
 
-## **categoryInterface**
+## **CategoryInterface**
 -   `CategoryInterface` returns data by items.
 -   `esim_product` configuration in `Nik_CatalogGraphQl` module.
 -   **Resolver:** `Nik\CatalogGraphQl\Model\Resolver\Esim`
