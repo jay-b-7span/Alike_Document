@@ -366,8 +366,8 @@
 -   `Brevo Lists Customer Group Settings` fieldset in a defined List of some area. We have here given a dropdown for list configuration.
 -   `Brevo Lists Template Settings` fieldset in given all types of email configuration.
   -   Like signup, email configuration gives a drop-down for selecting brevo email template.
-  -   If we don’t select a template that time use Magento default template.
-  -   Here all brevo template shows in a droup-down and select a template for use.
+    -   If we don’t select a template that time use Magento default template.
+    -   Here all brevo template shows in a droup-down and select a template for use.
 
 
 
