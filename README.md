@@ -359,3 +359,18 @@
     passes based on various filters. The resolver constructs a product
     collection, applies filters, and returns relevant information in
     the output array.
+    
+## **Brevo Lists Customer Group Settings**
+-   Admin Menu: `STORE`->`Configuration`->`CUSTOM`->`Sendinblue` here Three fieldset.
+-   In `General` fieldset enable/disable the configuration set.
+-   `Brevo Lists Customer Group Settings` fieldset in a defined List of some area. We have here given a dropdown for list configuration.
+-   `Brevo Lists Template Settings` fieldset in given all types of email configuration.
+-   Like signup, email configuration gives a drop-down for selecting brevo email template.
+-   If we don’t select a template that time use Magento default template.
+-   Here all brevo template shows in a group-down and select a template for use.
+
+
+
+
+
+
