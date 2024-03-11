@@ -369,6 +369,8 @@
 -   If we don’t select a template that time use Magento default template.
 -   Here all brevo template shows in a droup-down and select a template for use.
 
+## **Trip Planer**
+-  `Trip Planner` is a one the new prodcut
 
 
 
