@@ -426,3 +426,9 @@
 - `Bucket List` is a wishlist in we add some product to future use.
 - Using `Search` future we can search products from alike.
 - And also we add new products like attractions, hotels add on a trip planner.
+## **Winter Sale**
+- `Winter Sale` is located at <https://uat.alike.host/winter-sale?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu>.
+- In winter sale same as black friday sale.
+- in `Winter Sale` sale passes attraction with hotels in discount price.
+- Here two type of passes `Genius` and `Sparkle`.
+- 
