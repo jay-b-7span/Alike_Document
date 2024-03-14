@@ -373,7 +373,7 @@
 -  `Trip Planner` is a one the new prodcut we add in Magento 2.
 -  Trip Planner is a almost same as bundle product.
 -  In trip planner create your trip road map for future trip.
--  In trip planner add visa,hotels,airport transfer and sim for trip.
+-  In trip planner add visa, hotels,airport transfer and sim for trip.
 -  <https://app.alike.host/#/my-trips/trip-planner> here create trip roadmap.
 -  In trip planner here provide for type of view provide for trip `Timeline`, `Calendar`, `Map`, and `Summary`.
 -  Trip planners can be shared with other people. but need admin login access for any customization.
@@ -403,6 +403,10 @@
 -  `CreateTripPlanner` GraphQl use for create trip plane using insider id.trip planner is a almost same as a create trip.
 -  **Module**: `Nik_TripPlanner`
 -  **Resolver**: `Nik\TripPlanner\Model\Resolver\CreateTripPlanner`
+-  `tripPlannerActivitiesSerach` GraphQl used for retrieve different attribute types and different category-type products.Like `thing to do`, `sim`, `visa` ia a one product to use in trip planner.
+-  Using this GraphQl filter all products set some labels and use on when creating trip planner.
+-  Here we can add some Notes or Files for the trip planner.
+-  
 
 
 
