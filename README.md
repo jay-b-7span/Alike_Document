@@ -1,4 +1,4 @@
-**This Document for Backend(GraphQl) customization**
+    **This Document for Backend(GraphQl) customization**
 ##  **Insider Community**
 
 -    The insider community is shown on home page of <https://alike.io/>.
@@ -384,8 +384,9 @@
 -  **Resolver**: `Magento\WishlistGraphQl\Model\Resolver\WishlistById`
 -  `CreateTripPlanner` GraphQl use for create trip plane using insider id.trip planner is a almost same as a create trip.
 -  **Module**: `Nik_TripPlanner`
--  **Resolver**: `Nik\TripPlanner\Model\Resolver\CreateTripPlanner`:shipit:
--  
+-  **Resolver**: `Nik\TripPlanner\Model\Resolver\CreateTripPlanner`
+>  [!TIP]
+>  Helpful advice for doing things better or more easily.
 
 
 
