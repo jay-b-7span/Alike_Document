@@ -377,12 +377,23 @@
 -  <https://app.alike.host/#/my-trips/trip-planner> here create trip roadmap.
 -  In trip planner here provide for type of view provide for trip `Timeline`, `Calendar`, `Map`, and `Summary`.
 -  Trip planners can be shared with other people. but need admin login access for any customization.
--  How to create new product type in magento like trip planner.
+-  How to create a new product type in magento like trip planner.
    -   Step 1: Generate registration.php file
-        - Setup the Nik\TripPlanner\Mageplaza\HelloWorld\registration.php file
+        - Setup the Nik\TripPlanner\registration.php file
+        - Generate the Nik\TripPlanner\etc\module.xml
+        - Next, the creation of the `etc/product_types.xml` file is necessary to determine the model of the new product type.
+        - Name: the name you need to set for the new product type
+        - Label: the label which is visible in the Magento backend
+        - Model instance: endorse the product type’s attributes
+        - Price Model: endorse the charge of the new product type
    -   Step 2: Add the code NewProductType model
+        - Enter the code below: Nik\TripPlanner\Model\Product\Type\NewProductType model, that should be based on Magento\Catalog\Model\Product\Type\AbstractType.
+        - After that, it is possible to rewrite some functions and implement some changes you want there.
    -   Step 3: Add the Price model
-   -   Step 4: Publish the new Magento 2 Product type 
+        - Enter Nik\TripPlanner\Model\Product\Price model, which should be based on the Magento\Catalog\Model\Product\Type\Price.
+        - Besides, you can also set the new product type as versatile type with some custom functions after extending the Magento\Catalog\Model\Product\Type\Price class
+   -   Step 4: Publish the new Magento 2 Product type
+        - This is the step allowing you to check the result in the Magento 2 Administrator when completing the above steps. The New Product type will display as the old types (Simple or Configurable Product).
 -  `hotel_activity_search` GraphQl used for serval hotel.
 -  **Module**: `Nik_CatalogGraphQl`
 -  **Resolver**: `Nik\CatalogGraphQl\Model\Resolver\Story\HotelSerachData`
