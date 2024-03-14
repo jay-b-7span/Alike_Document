@@ -376,6 +376,13 @@
 -  In trip planner add visa,hotels,airport transfer and sim for trip.
 -  <https://app.alike.host/#/my-trips/trip-planner> here create trip roadmap.
 -  In trip planner here provide for type of view provide for trip `Timeline`, `Calendar`, `Map`, and `Summary`.
+-  Trip planners can be shared with other people. but need admin login access for any customization.
+-  How to create new product type in magento like trip planner.
+   -   Step 1: Generate registration.php file
+        - Setup the Nik\TripPlanner\Mageplaza\HelloWorld\registration.php file
+   -   Step 2: Add the code NewProductType model
+   -   Step 3: Add the Price model
+   -   Step 4: Publish the new Magento 2 Product type 
 -  `hotel_activity_search` GraphQl used for serval hotel.
 -  **Module**: `Nik_CatalogGraphQl`
 -  **Resolver**: `Nik\CatalogGraphQl\Model\Resolver\Story\HotelSerachData`
@@ -385,8 +392,6 @@
 -  `CreateTripPlanner` GraphQl use for create trip plane using insider id.trip planner is a almost same as a create trip.
 -  **Module**: `Nik_TripPlanner`
 -  **Resolver**: `Nik\TripPlanner\Model\Resolver\CreateTripPlanner`
->  [!TIP]
->  Helpful advice for doing things better or more easily.
 
 
 
