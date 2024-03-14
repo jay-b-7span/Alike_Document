@@ -384,7 +384,7 @@
 -  **Resolver**: `Magento\WishlistGraphQl\Model\Resolver\WishlistById`
 -  `CreateTripPlanner` GraphQl use for create trip plane using insider id.trip planner is a almost same as a create trip.
 -  **Module**: `Nik_TripPlanner`
--  **Resolver**: `Nik\TripPlanner\Model\Resolver\CreateTripPlanner`
+-  **Resolver**: `Nik\TripPlanner\Model\Resolver\CreateTripPlanner`:shipit:
 -  
 
 
