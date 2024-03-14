@@ -417,8 +417,11 @@
    - `Catalog`->`Product` in product detail save itinerary detail.
    - In future some need to change itinerary so that time we can configure from admin panel.
 - When we add some product to the itinerary at a time give 3 ways to add product on trip planner.
-- ``` Search
+- ```
       Bucket List
       Add My Entry
+      Search
   ````
-
+- `Bucket List` is a wishlist in we add some product to future use.
+- Using `Search` future we can search products from alike.
+- And also we add new products like attractions, hotels add on a trip planner.
