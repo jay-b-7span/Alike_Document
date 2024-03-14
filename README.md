@@ -370,9 +370,22 @@
 -   Here all brevo template shows in a droup-down and select a template for use.
 
 ## **Trip Planer**
--  `Trip Planner` is a one the new prodcut
-
-
+-  `Trip Planner` is a one the new prodcut we add in Magento 2.
+-  Trip Planner is a almost same as bundle product.
+-  In trip planner create your trip road map for future trip.
+-  In trip planner add visa,hotels,airport transfer and sim for trip.
+-  <https://app.alike.host/#/my-trips/trip-planner> here create trip roadmap.
+-  In trip planner here provide for type of view provide for trip `Timeline`, `Calendar`, `Map`, and `Summary`.
+-  `hotel_activity_search` GraphQl used for serval hotel.
+-  **Module**: `Nik_CatalogGraphQl`
+-  **Resolver**: `Nik\CatalogGraphQl\Model\Resolver\Story\HotelSerachData`
+-  `wishlist_v2` GraphQl used for add products in Wishlist. When we plane a trip at time use wishlist to add serval products to the trip.
+-  **Module**: `WishlistGraphQl`
+-  **Resolver**: `Magento\WishlistGraphQl\Model\Resolver\WishlistById`
+-  `CreateTripPlanner` GraphQl use for create trip plane using insider id.trip planner is a almost same as a create trip.
+-  **Module**: `Nik_TripPlanner`
+-  **Resolver**: `Nik\TripPlanner\Model\Resolver\CreateTripPlanner`
+-  
 
 
 
