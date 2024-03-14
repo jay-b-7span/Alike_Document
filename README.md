@@ -403,10 +403,22 @@
 -  `CreateTripPlanner` GraphQl use for create trip plane using insider id.trip planner is a almost same as a create trip.
 -  **Module**: `Nik_TripPlanner`
 -  **Resolver**: `Nik\TripPlanner\Model\Resolver\CreateTripPlanner`
--  `tripPlannerActivitiesSerach` GraphQl used for retrieve different attribute types and different category-type products.Like `thing to do`, `sim`, `visa` ia a one product to use in trip planner.
+-  `tripPlannerActivitiesSerach` GraphQl used for retrieving different attribute types and different category-type products.Like `thing to do`, `sim`, `visa` ia a one product to use in trip planner.
 -  Using this GraphQl filter all products set some labels and use on when creating trip planner.
 -  Here we can add some Notes or Files for the trip planner.
--  
-
-
+   - All files are stored in amazon s3.
+   - When adding Notes on the trip planner at time `travel_notes` GraphQl call.
+   - **Resolver**: `Nik\\TripPlanner\\Model\\Resolver\\TravelNotes` use for notes and `Nik\\TripPlanner\\Model\\Resolver\\FileAttachments` use for files.
+   - In notes, we can add a checkbox and area(text) for notes.
+- **Itinerary**
+   - An itinerary is a detailed plan for a journey, especially a list of places to visit.
+   - In the Admin panel admin can change itinerary.
+   - we can save all itinerary data in Magento admin panel.
+   - `Catalog`->`Product` in product detail save itinerary detail.
+   - In future some need to change itinerary so that time we can configure from admin panel.
+- When we add some product to the itinerary at a time give 3 ways to add product on trip planner.
+- ``` Search
+      Bucket List
+      Add My Entry
+  ````
 
