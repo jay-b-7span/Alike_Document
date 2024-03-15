@@ -173,7 +173,7 @@
      to return data from collectionFactory.
 -   `Ins_highlights` is added in product interface and **Resolver**:
      `Nik\CatalogGraphQl\Model\Resolver\Product\InsHighlights`.
--   **Admin Menu:** `STORE`->`Configuration`->`CONTENT`-\>`Cities`-\>`City Highlights Listing`
+-   **Admin Menu:** `Catalog`->`Category`->`Content`-\>`City Highlight`
 -   `insider_data` set in the product interface and **Resolver**:
     `Nik\CatalogGraphQl\Model\Resolver\Product\ProductInsider`.here
      fetch data from insiderFactory.
@@ -409,7 +409,7 @@
 -  Here we can add some Notes or Files for the trip planner.
    - All files are stored in amazon s3.
    - When adding Notes on the trip planner at time `travel_notes` GraphQl call.
-   - **Resolver**: `Nik\\TripPlanner\\Model\\Resolver\\TravelNotes` use for notes and `Nik\\TripPlanner\\Model\\Resolver\\FileAttachments` use for files.
+   - **Resolver**: `Nik\TripPlanner\Model\Resolver\TravelNotes` use for notes and `Nik\TripPlanner\Model\Resolver\FileAttachments` use for files.
    - In notes, we can add a checkbox and area(text) for notes.
 - **Itinerary**
    - An itinerary is a detailed plan for a journey, especially a list of places to visit.
@@ -426,9 +426,3 @@
 - `Bucket List` is a wishlist in we add some product to future use.
 - Using `Search` future we can search products from alike.
 - And also we add new products like attractions, hotels add on a trip planner.
-## **Winter Sale**
-- `Winter Sale` is located at <https://uat.alike.host/winter-sale?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu>.
-- In winter sale same as black friday sale.
-- in `Winter Sale` sale passes attraction with hotels in discount price.
-- Here two type of passes `Genius` and `Sparkle`.
-- 
