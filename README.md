@@ -370,7 +370,7 @@
 -   If we don’t select a template that time use Magento default template.
 -   Here all brevo template shows in a droup-down and select a template for use.
 
-## **Trip Planer**
+## **Trip Planner**
 -  `Trip Planner` is a one the new prodcut we add in Magento 2.
 -  Trip Planner is a almost same as bundle product.
 -  In trip planner create your trip road map for future trip.
