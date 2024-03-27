@@ -904,6 +904,7 @@
           }
         }
      ```
+     
 ##  **Product Page:**
  -    **URL:** <https://alike.io/products/farewell-tour-half-day-dubai-city-tour>
  -    **API:** `products`
@@ -2685,3 +2686,218 @@
           "identifier": "tourist-plan"
         } 
      ```
+
+##  **Travel Passes Page**
+-   **URL:** <https://alike.io/travel-passes?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu>
+-   **API:** `categories`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/34422e77-0bf8-4051-b56c-8e1ce06aca84)
+-   **Query:**
+     ```graphql
+        query categories($filters: CategoryFilterInput) {
+          categories(filters: $filters) {
+            total_count
+            items {
+              uid
+              level
+              name
+              path
+              esim_products {
+                title
+                items {
+                  url_key
+                  id
+                  name
+                  __typename
+                  image {
+                    url
+                    __typename
+                  }
+                  tour_cities
+                  tour_category
+                  exp_duration
+                  exp_good_for
+                  exp_languages
+                  exp_transport_available
+                  exp_ticket_confirmation
+                  exp_type_of_ticket
+                  exp_cancellation
+                  exp_included_in_touristor
+                  short_description_alike
+                  strike_price_value
+                  price_range {
+                    maximum_price {
+                      final_price {
+                        value
+                        __typename
+                      }
+                      __typename
+                    }
+                    minimum_price {
+                      final_price {
+                        value
+                        __typename
+                      }
+                      __typename
+                    }
+                    __typename
+                  }
+                  dynamicAttributes(fields: ["tour_cities", "tour_category"])
+                }
+                __typename
+              }
+              top_travelpass_products {
+                title
+                items {
+                  url_key
+                  id
+                  name
+                  __typename
+                  image {
+                    url
+                    __typename
+                  }
+                  tour_cities
+                  tour_category
+                  exp_duration
+                  exp_good_for
+                  exp_languages
+                  exp_transport_available
+                  exp_ticket_confirmation
+                  exp_type_of_ticket
+                  exp_cancellation
+                  exp_included_in_touristor
+                  short_description_alike
+                  strike_price_value
+                  price_range {
+                    maximum_price {
+                      final_price {
+                        value
+                        __typename
+                      }
+                      __typename
+                    }
+                    minimum_price {
+                      final_price {
+                        value
+                        __typename
+                      }
+                      __typename
+                    }
+                    __typename
+                  }
+                  dynamicAttributes(fields: ["tour_cities", "tour_category"])
+                }
+                __typename
+              }
+              __typename
+            }
+            page_info {
+              current_page
+              page_size
+              total_pages
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+     ```graphql
+        {
+          "filters": {
+            "parent_id": {
+              "in": [
+                "717"
+              ]
+            },
+            "category_uid": {
+              "in": [
+                "NzE4",
+                "NzI1",
+                "NzQ5",
+                "ODE3",
+                "ODY3",
+                "ODc2"
+              ]
+            }
+          }
+        }
+     ```
+-   **API:** `products`
+-   this API is used to show products on the travel passes page.
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/7e35feb0-1959-4b41-b28e-279558895402)
+-   **Query:**
+    ```garphql
+        query products($search: String, $filter: ProductAttributeFilterInput, $pageSize: Int, $currentPage: Int, $sort: ProductAttributeSortInput) {
+          products(
+            search: $search
+            filter: $filter
+            pageSize: $pageSize
+            currentPage: $currentPage
+            sort: $sort
+          ) {
+            total_count
+            items {
+              sort_order
+              url_key
+              name
+              country_of_manufacture
+              image {
+                url
+                __typename
+              }
+              small_image {
+                url
+                __typename
+              }
+              thumbnail {
+                url
+                __typename
+              }
+              price_range {
+                minimum_price {
+                  final_price {
+                    currency
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              is_liked
+              ins_city
+              dynamicAttributes(fields: ["ins_city", "ins_tags"])
+              attribute_set_id
+              __typename
+            }
+            page_info {
+              current_page
+              page_size
+              total_pages
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+     ```garphql
+        {
+          "search": null,
+          "filter": {
+            "category_uid": {
+              "in": null
+            },
+            "tour_category": {
+              "eq": "5465"
+            }
+          },
+          "pageSize": 8,
+          "currentPage": 1,
+          "sort": {
+            "sort_order": "ASC"
+          }
+        }
+     ```
+     
