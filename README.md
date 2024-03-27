@@ -2153,7 +2153,8 @@
           "onlyStatic": false
         }
      ```
-## **Hotel Detail Page**
+     
+##  **Hotel Detail Page**
 -   **URL:** <https://alike.io/hotels/lapita-dubai-parks-resorts-autograph-collection-in-united-arab-emirates-dubai--lapita_dubai_parks_and_resorts?search=Dubai,%20United%20Arab%20Emirates&destinations=ChIJRcbZaklDXz4RYlEphFBu5r0&checkIn=2024-04-04&checkOut=2024-04-06&occupancies=%5B%7B%22paxes%22%3A%5B%7B%22age%22%3A25%7D,%7B%22age%22%3A29%7D%5D%7D%5D>
 -   **API:** `searchX`
 -   ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/3b100555-74cf-4057-8f0c-dfcb95a6dc52)
