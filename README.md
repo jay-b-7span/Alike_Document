@@ -2628,3 +2628,50 @@
           }
         }
     ```
+
+##  **Tourist Plan Page**
+-    **URL:** <https://alike.io/tourist-plan>
+-    **API:** `touristPlans`
+-    ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/45f26314-0aa4-4b75-ad4c-91818bc2ecf7)
+-    **Query:**
+      ```graphql
+        {
+          touristPlans {
+            data
+            data_label
+            minute
+            name
+            price
+            sort_order
+            validity
+            product_id
+            unlimited_internet_calls
+            attraction_discount
+            most_popular
+            best_value
+            __typename
+          }
+        }
+      ```
+-   **API:** `cmsPage`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/12ec604c-d156-4ede-9dda-2085bd73cd7b)
+-   **Query:**
+    ```graphql
+        query cmsPage($identifier: String) {
+          cmsPage(identifier: $identifier) {
+            identifier
+            url_key
+            title
+            meta_title
+            meta_description
+            meta_keywords
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+    ```graphql:
+        {
+          "identifier": "tourist-plan"
+        }
+     ```
