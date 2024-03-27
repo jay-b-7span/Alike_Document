@@ -1,428 +1,2629 @@
-     **This Document for Backend(GraphQl) customization **
+     **This Document for All backend API's**
      
-##  **Insider Community**
+##  **Home Page**
 
--    The insider community is shown on home page of <https://alike.io/>.
--   **Module**: `Nik_InsiderPageGraphQl`
--   **Resolver**: `Nik\InsiderPageGraphQl\Model\Resolver\InsiderCommunity`
--   In the resolver file return data like id, name,profile_picture etc
-    using insiderId.
--   **Admin Menu**: `STORE`->`Configuration`->`CUSTOM`-\>`Insider`-\>`Home Page Configuration`
-     set the Insider Community text field. here admin set a coma
-     separating **insider's ID** and showed it in insider community.
+-    **URL**: <https://alike.io/>.
+-    **API**: `homepage_stories_products`
+    -  This Graphql used for **Handcrafted Holiday Packages** section.
+      -  ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/004f3825-6818-4189-9c37-40309ff6f235)
+      - **Query**:
+        ```graphql
+        query homepage_stories_products($pageSize: Int) {
+          homepage_stories_products(pageSize: $pageSize) {
+            items { 
+              uid 
+              id
+              url_key
+              product_likes
+              ins_days
+              name
+              short_description_alike
+              ins_tags
+              ins_city
+              is_liked
+              insider_data {
+                insider_name
+                insider_logo
+                insider_id
+                profile_url
+                is_followed
+                username
+                __typename
+              }
+              ins_traveller_type
+              image {
+                url
+                __typename
+              }
+              icons {
+                icon_url
+                label
+                count
+                __typename
+              }
+              sku
+              type_id
+              price_range {
+                minimum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              dynamicAttributes(fields: ["ins_city", "ins_tags"])
+              __typename
+            }
+            __typename
+             }
+             }
+          ```
+           
+   - **variables:**
+        ``` graphql
+              {
+                 "pageSize": 9
+              }
+        ```
 
-##  **Explore Cities Nearby**
--   Explore Cities Nearby is shown on <https://alike.io/cities/> page.
--   **Module**: `Nik_Cities`
--   Here `CategoryInterface` in Citycustom query for this block.
--   **Resolver**: `Nik\Cities\Model\Resolver\CityCustom`
--   **Admin Menu**: `Catalog`-\>`Category`-\>`Content`-\>`Explore
-     Nearby` Here admin set a coma separated **city's ID** and showed it in
-     Explore Cities Nearby.
--   In the resolver file return data name, image, and highlights load by
-     Explore Nearby cities id.
+  - **API:** `currency`
+    - This GraphQl is used for **currency**.
+    - here are five types of currency code available `GBP`, `EUR`, `INR`, `USD`, `AED`.
+    - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/02b1109d-1dcf-44a3-b7fe-00ec5d0656e4)
+    - **Query:**
+      ```graphql
+          {
+           currency {
+            ip_currency
+            available_currency_codes
+            base_currency_code
+            base_currency_symbol
+            default_display_currecy_code
+            default_display_currecy_symbol
+            default_display_currency_code
+            default_display_currency_symbol
+             exchange_rates {s
+             currency_to
+              rate
+              __typename
+                }
+            __typename
+              }
+          }
+      ```
+  - **API:** `new_products`
+    - this Graphql used for **Best Selling Experiences** section.
+    - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/2ad1088a-b293-447b-bf7d-8f1f37701048)
+    - **Query:**
+        ```graphql
+            query new_products($input: NewProductsLimit!) {
+           new_products(input: $input) {
+            url_key
+            id
+            name
+            __typename
+            image {
+              url
+              __typename
+            }        
+            small_image {
+              url
+              __typename
+            }
+            thumbnail {
+              url
+              __typename
+            }
+            tour_cities
+            tour_category
+            exp_duration
+            exp_good_for
+            exp_languages
+            exp_transport_available
+            exp_ticket_confirmation
+            exp_type_of_ticket
+            exp_cancellation
+            exp_included_in_touristor
+            short_description_alike
+            strike_price_value
+            price_range {
+               maximum_price {
+                final_price {
+                  value
+                  __typename
+                }
+                __typename
+              }
+              minimum_price {
+                final_price {
+                  value
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            dynamicAttributes(fields: ["tour_cities", "tour_category"])
+          }
+        }
+        ```
+    - **variables:**
+       - ```graphql
+             {
+                "input": {
+                 "limit": 9
+                }
+             } 
+          ```
+    - **API:** `cart`
+    - Cart GraphQl and Currency GraphQl default set for all pages.
+    - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/316ced0b-c97b-48eb-9a0b-158c2edee01a)
+    - **Query:**
+       ```graphql
+         query cart($cart_id: String!) {
+          cart(cart_id: $cart_id) {
+            email
+            is_virtual
+            available_payment_methods {
+              code
+              title
+              description
+              know_more
+              icon
+              merchant_icons
+              __typename
+            }
+            wallet {
+              canUseWallet
+              walletBalance {
+                currency
+                value
+                __typename
+              }
+              usedWallet {
+                currency
+                value
+                __typename
+              }
+              __typename
+            }
+            billing_address {
+              city
+              country {
+                code
+                label
+                __typename
+              }
+              mobile_country_code
+              firstname
+              lastname
+              postcode
+              region {
+                code
+                label
+                __typename
+              }
+              street
+              telephone
+              __typename
+            }
+            shipping_addresses {
+              firstname
+              lastname
+              street
+              city
+              region {
+                code
+                label
+                __typename
+              }
+              country {
+                code
+                label
+                __typename
+              }
+              telephone
+              available_shipping_methods {
+                amount {
+                  currency
+                  value
+                  __typename
+                }
+                available
+                carrier_code
+                carrier_title
+                error_message
+                method_code
+                method_title
+                price_excl_tax {
+                  value
+                  currency
+                  __typename
+                }
+                price_incl_tax {
+                  value
+                  currency
+                  __typename
+                }
+                __typename
+              }
+              selected_shipping_method {
+                amount {
+                  value
+                  currency
+                  __typename
+                }
+                carrier_code
+                carrier_title
+                method_code
+                method_title
+                __typename
+              }
+              __typename
+            }
+            items {
+              id
+              saved_price
+              strike_price_value
+              product {
+                name
+                sku
+                url_key
+                thumbnail {
+                  label
+                  url
+                  __typename
+                }
+                strike_price_value
+                strike_price_percentage
+                __typename
+              }
+              prices {
+                price {
+                  currency
+                  value
+                  __typename
+                }
+                row_total {
+                  currency
+                  value
+                  __typename
+                }
+                row_total_including_tax {
+                  currency
+                  value
+                  __typename
+                }
+                total_item_discount {
+                  currency
+                  value
+                  __typename
+                }
+                __typename
+              }
+              quantity
+              custom_info {
+                tour_category
+                item_category
+                name
+                type
+                location
+                image
+                original_price
+                saving_price
+                custom_options {
+                  key
+                  label
+                  value
+                  __typename
+                }
+                dtpass_jcb_pass_type
+                __typename
+              }
+              __typename
+            }
+            selected_payment_method {
+              code
+              title
+              __typename
+            }
+            applied_coupons {
+              code
+              label
+              __typename
+            }
+            prices {
+              applied_taxes {
+                amount {
+                  currency
+                  value
+                  __typename
+                }
+                label
+                __typename
+              }
+              discounts {
+                amount {
+                  currency
+                  value
+                  __typename
+                }
+                label
+                __typename
+              }
+              discount {
+                amount {
+                  currency
+                  value
+                  __typename
+                }
+                __typename
+              }
+              grand_total {
+                value
+                currency
+                __typename
+              }
+              subtotal_excluding_tax {
+                currency
+                value
+                __typename
+              }
+              subtotal_including_tax {
+                currency
+                value
+                __typename
+              }
+              subtotal_with_discount_excluding_tax {
+                currency
+                value
+                __typename
+              }
+              fee {
+                currency
+                value
+                __typename
+              }
+              credit {
+                currency
+                value
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+       ```
+     - **variables:**
+       ```graphql
+           {
+             "cart_id": "o7WaADKQ6ICyNefpLatbPgMZBqC013hZ"
+           }
+       ```
 
-##  **BlackFriday Phases**
--   The Black Friday sale is shown on <https://alike.io/black-friday/> page.
--   Black Friday Sale in three phases.
--   `StoreConfig` GraphQl uses BlackFriday reserve price and SKU.
--   `passHotel` and `passProduct` GraphQl use and items Query to retrieve
-    data.
--   **Module**: `NaS_Ticket`
--   **Module**: `Nik_Sendinblue`
--   In schema.graphql file sent mutation
-    `subscribeToBlackFridayPhase`.
--   Here set the black friday phase and input like `name`,`first_name`, and
-    `email`.
--   **Resolver**:
-    `Nik\Sendinblue\Model\Resolver\SubscribeToBlackFriday`
--   In resolver get data by \$params and set id by scopConfig.
--   **Admin Menu:** `STORE`->`Configuration`->`CUSTOM`-\>`Sendinblue`-\>`Brevo Lists Settings`
-    in set template for BlackFriday.
--   BlackFriday Phase 1 & 2 consists text field for set templates for
-    phases. here set the brevo email template ID.
+## **City Page**
+-    **URL:** <https://alike.io/cities/>
+-    **API:** `categoryList`
+-    This GraphQl is used for serval cities.
+-   ![image](https://github.com/jay-b-7span/alike_api_document/assets/114227263/0f3e6104-b748-49af-b7e0-136d72434732)
+-    **Query:**
+       ```graphql
+         query categoryList($filters: CategoryFilterInput) {
+          categories(filters: $filters) {
+            total_count
+            items {
+              uid
+              level
+              name
+              url_key
+              image
+              children {
+                uid
+                level
+                name
+                children {
+                  uid
+                  level
+                  name
+                  image
+                  url_key
+                  product_count
+                  highlights {
+                    title
+                    url
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+       ```
+   **variables:**
+   ```graphql
+        {
+          "filters": {
+            "parent_id": {
+              "in": [
+                "717"
+              ]
+            },
+            "category_uid": {
+              "in": [
+                "NzE4",
+                "NzI1",
+                "NzQ5",
+                "ODE3",
+                "ODY3",
+                "ODc2"
+              ]
+            }
+          }
+        }
+   ```
+-   **API:** `Cities`
+-   This GraphQl used for **Best Places to visit** section.
+-   ![image](https://github.com/jay-b-7span/alike_api_document/assets/114227263/4392e211-fc8a-4051-b4b6-baf7121dffbb)
+-   **Query:**
+    ```graphql
+        {
+          Cities {
+            best {
+              title
+              months {
+                city {
+                  highlights {
+                    title
+                    url
+                    __typename
+                  }
+                  category_id
+                  category_uid
+                  image
+                  name
+                  url_key
+                  __typename
+                }
+                month
+                __typename
+              }
+              __typename
+            }
+            mostVisited {
+              title
+              city {
+                highlights {
+                  title
+                  url
+                  __typename
+                }
+                category_id
+                category_uid
+                image
+                name
+                url_key
+                __typename
+              }
+              __typename
+            }
+            discover {
+              title
+              city {
+                highlights {
+                  title
+                  url
+                  __typename
+                }
+                category_id
+                category_uid
+                image
+                name
+                url_key
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+## **City Detail Page**
+-    **URL:** <https://alike.host/cities/dubai>
+-    **API:** `categories`
+-    Here categories GraphQl used for preticular city details and also used fro **faq** section.
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/aede09c7-df8e-44c0-bb86-443ebc2025cf)
+-    **Query:**
+     ```graphql
+         query categories($filters: CategoryFilterInput) {
+          categories(filters: $filters) {
+            items {
+              uid
+              id
+              name
+              url_key
+              latitude_longitude
+              weather_description
+              best_time_to_visit {
+                best_month_to_visit
+                things_to_do
+                __typename
+              }
+              months_weather {
+                months
+                temperature
+                __typename
+              }
+              city_currency
+              city_timezone
+              city_faqs {
+                questions
+                answers
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+        {
+          "filters": {
+            "ids": {
+              "eq": 720
+            }
+          }
+        }
+     ```
+-    **API:** `products`
+-    This GraphQl used for a particular product's detail here **Filters** block.
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/c9427ad2-9078-4114-9af1-0ee94f8ee5e0)
+-    **Query:**
+-    ```graphql
+         query products($search: String, $filter: ProductAttributeFilterInput, $pageSize: Int, $currentPage: Int, $sort: ProductAttributeSortInput) {
+          products(
+            search: $search
+            filter: $filter
+            pageSize: $pageSize
+            currentPage: $currentPage
+            sort: $sort
+          ) {
+            aggregations {
+              attribute_code
+              count
+              label
+              options {
+                count
+                label
+                value
+                __typename
+              }
+              __typename
+            }
+            items {
+              uid
+              id
+              url_key
+              product_likes
+              ins_days
+              name
+              short_description_alike
+              ins_tags
+              ins_city
+              strike_price_value
+              strike_price_percentage
+              dynamicAttributes(
+                fields: ["tour_cities", "ins_city", "tour_category", "ins_tags"]
+              )
+              is_liked
+              insider_data {
+                insider_name
+                insider_logo
+                insider_id
+                profile_url
+                is_followed
+                username
+                __typename
+              }
+              ins_traveller_type
+              __typename
+              image {
+                url
+                __typename
+              }
+              small_image {
+                url
+                __typename
+              }
+              thumbnail {
+                url
+                __typename
+              }
+              sku
+              type_id
+              tour_cities
+              tour_category
+              exp_duration
+              exp_good_for
+              exp_languages
+              exp_transport_available
+              exp_ticket_confirmation
+              exp_type_of_ticket
+              exp_cancellation
+              exp_included_in_touristor
+              price_range {
+                maximum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  final_price {
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                minimum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  final_price {
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+            }
+            custom {
+              filters {
+                attribute_code
+                attribute_value
+                image
+                title
+                __typename
+              }
+              __typename
+            }
+            sort_fields {
+              default
+              options {
+                label
+                value
+                __typename
+              }
+              __typename
+            }
+            related_search_terms
+            did_you_know
+            total_count
+            page_info {
+              current_page
+              page_size
+              total_pages
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+        {
+          "currentPage": 1,
+          "pageSize": 6,
+          "search": "",
+          "filter": {
+            "tour_category": {
+              "in": []
+            },
+            "item_category": {
+              "in": []
+            },
+            "category_id": {
+              "in": [
+                720
+              ]
+            },
+            "insider_approval": {
+              "eq": "2"
+            }
+          },
+          "sort": {}
+        }
+     ```
+-    **API:** `categoryList`
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/ffb2c1cd-4146-469b-92ce-32f7b0226549)
+-    **Query:**
+      ```graphql
+        query categoryList($filters: CategoryFilterInput) {
+          categoryList(filters: $filters) {
+            name
+            uid
+            id
+            custom {
+              banner_title
+              banner_description
+              banner_image
+              hide_activity
+              hide_story
+              filters {
+                title
+                image
+                attribute_code
+                attribute_value
+                __typename
+              }
+              know_more_about {
+                content
+                identifier
+                title
+                __typename
+              }
+              faq {
+                content
+                identifier
+                title
+                __typename
+              }
+              __typename
+            }
+            activities_products {
+              title
+              items {
+                id
+                uid
+                sku
+                url_key
+                name
+                dynamicAttributes(fields: ["tour_cities", "tour_category"])
+                exp_cancellation
+                exp_duration
+                review_count
+                rating_summary
+                image {
+                  url
+                  __typename
+                }
+                small_image {
+                  url
+                  __typename
+                }
+                thumbnail {
+                  url
+                  __typename
+                }
+                price_range {
+                  minimum_price {
+                    final_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            stories_products {
+              title
+              items {
+                uid
+                id
+                url_key
+                product_likes
+                ins_days
+                name
+                short_description_alike
+                ins_tags
+                ins_city
+                icons {
+                  icon_url
+                  label
+                  count
+                  __typename
+                }
+                dynamicAttributes(fields: ["ins_city", "ins_traveller_type", "ins_tags"])
+                is_liked
+                insider_data {
+                  insider_name
+                  insider_logo
+                  insider_id
+                  profile_url
+                  is_followed
+                  username
+                  __typename
+                }
+                ins_traveller_type
+                image {
+                  url
+                  __typename
+                }
+                small_image {
+                  url
+                  __typename
+                }
+                icons {
+                  icon_url
+                  label
+                  count
+                  __typename
+                }
+                sku
+                type_id
+                price_range {
+                  maximum_price {
+                    regular_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  minimum_price {
+                    regular_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+        {
+          "filters": {
+            "url_key": {
+              "eq": "singapore"
+            }
+          }
+        }
+     ```
+ ## **Product Page:**
+ -    **URL:** <https://alike.io/products/farewell-tour-half-day-dubai-city-tour>
+ -    **API:** `products`
+ -    This is GraphQl also used for product detail page.
+ -    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/e865a99d-800f-4286-af2e-49b22e2e8054)
+-    **Query:**
+     ```graphql
+         query products($search: String, $filter: ProductAttributeFilterInput) {
+          products(search: $search, filter: $filter) {
+            items {
+              api_connected
+              api_connected_label
+              attribute_set_id
+              available_from
+              available_to
+              musement_id
+              url_key
+              sku
+              id
+              name
+              categories {
+                name
+                uid
+                url_key
+                level
+                __typename
+              }
+              ticket_advance_time
+              strike_price_value
+              strike_price_percentage
+              __typename
+              ... on BundleProduct {
+                items {
+                  options {
+                    position
+                    product {
+                      sku
+                      id
+                      name
+                      is_transfer
+                      strike_price_value
+                      strike_price_percentage
+                      pass_included_zomato
+                      pass_included_text_zomato
+                      pass_included_tour
+                      pass_included_text_tour
+                      pass_included_sim
+                      pass_included_text_sim
+                      pass_included_wifi
+                      pass_included_text_wifi
+                      pass_included_nol
+                      pass_included_text_nol
+                      pass_included_visa
+                      pass_included_text_visa
+                      price_range {
+                        minimum_price {
+                          final_price {
+                            value
+                            __typename
+                          }
+                          __typename
+                        }
+                        __typename
+                      }
+                      exp_included
+                      exp_excluded
+                      touristor_saver {
+                        final_price
+                        image
+                        label
+                        name
+                        original_price
+                        type
+                        __typename
+                      }
+                      hide_adult
+                      hide_child
+                      hide_infant
+                      kit_availability {
+                        available {
+                          from
+                          to
+                          __typename
+                        }
+                        kit_id
+                        name
+                        not_available
+                        price
+                        price_adult
+                        price_child
+                        timeslots
+                        transfer_type
+                        type
+                        __typename
+                      }
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              globaltix_availability {
+                activity_id
+                id
+                name
+                price
+                variations {
+                  id
+                  isOpenDated
+                  maximumPax
+                  minimumPax
+                  name
+                  type
+                  visitDate {
+                    advanceBookingDays
+                    advanceBookingHours
+                    advanceBookingMinutes
+                    class
+                    id
+                    isAdvanceBooking
+                    isRequestVisitDate
+                    isVisitDateCompulsory
+                    ticketTypeGroup {
+                      class
+                      id
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              is_transfer
+              adult_label
+              hide_adult
+              hide_child
+              hide_infant
+              kit_availability {
+                available {
+                  from
+                  to
+                  timeslots
+                  __typename
+                }
+                kit_id
+                name
+                not_available
+                price
+                price_adult
+                price_child
+                timeslots
+                transfer_type
+                type
+                __typename
+              }
+              image {
+                url
+                __typename
+              }
+              tour_cities
+              exp_itinerary
+              tour_category
+              exp_duration
+              exp_good_for
+              exp_languages
+              exp_transport_available
+              exp_ticket_confirmation
+              exp_type_of_ticket
+              exp_cancellation
+              exp_included_in_touristor
+              short_description_alike
+              exp_included
+              exp_excluded
+              exp_more_information
+              description_alike
+              exp_cancellation_policy
+              exp_child_policy
+              exp_activity_details
+              exp_address
+              exp_timings
+              rayna_id
+              rayna_country_id
+              rayna_city_id
+              rayna_contract_id
+              media_gallery {
+                url
+                label
+                disabled
+                __typename
+              }
+              included_in_touristors {
+                url_key
+                id
+                name
+                dynamicAttributes(fields: ["tour_cities", "tour_category"])
+                exp_cancellation
+                exp_duration
+                exp_good_for
+                price_range {
+                  minimum_price {
+                    final_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                image {
+                  url
+                  __typename
+                }
+                small_image {
+                  url
+                  __typename
+                }
+                thumbnail {
+                  url
+                  __typename
+                }
+                __typename
+              }
+              included_trips {
+                uid
+                id
+                url_key
+                product_likes
+                ins_days
+                name
+                short_description_alike
+                ins_tags
+                ins_city
+                is_liked
+                dynamicAttributes(fields: ["ins_city", "ins_traveller_type", "ins_tags"])
+                insider_data {
+                  insider_name
+                  insider_logo
+                  insider_id
+                  profile_url
+                  is_followed
+                  username
+                  __typename
+                }
+                ins_traveller_type
+                image {
+                  url
+                  __typename
+                }
+                small_image {
+                  url
+                  __typename
+                }
+                thumbnail {
+                  url
+                  __typename
+                }
+                story_icons_count
+                icons {
+                  icon_url
+                  label
+                  count
+                  __typename
+                }
+                sku
+                type_id
+                price_range {
+                  maximum_price {
+                    regular_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  minimum_price {
+                    regular_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              related_products {
+                url_key
+                id
+                name
+                dynamicAttributes(fields: ["tour_cities", "tour_category"])
+                exp_cancellation
+                exp_duration
+                exp_good_for
+                price_range {
+                  minimum_price {
+                    final_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                image {
+                  url
+                  __typename
+                }
+                small_image {
+                  url
+                  __typename
+                }
+                thumbnail {
+                  url
+                  __typename
+                }
+                __typename
+              }
+              price_range {
+                maximum_price {
+                  final_price {
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                minimum_price {
+                  final_price {
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              pass_included_zomato
+              pass_included_text_zomato
+              pass_included_tour
+              pass_included_text_tour
+              pass_included_sim
+              pass_included_text_sim
+              pass_included_wifi
+              pass_included_text_wifi
+              pass_included_nol
+              pass_included_text_nol
+              pass_included_visa
+              pass_included_text_visa
+              touristor_saver {
+                final_price
+                image
+                label
+                name
+                order
+                original_price
+                type
+                url_key
+                tour_category
+                __typename
+              }
+              dynamicAttributes(
+                fields: ["tour_cities", "exp_languages", "exp_good_for", "tour_category", "off_days", "api_connected", "api_connected_label"]
+              )
+            }
+            total_count
+            page_info {
+              current_page
+              page_size
+              total_pages
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+        {
+          "filter": {
+            "url_key": {
+              "eq": "farewell-tour-half-day-dubai-city-tour"
+            }
+          },
+          "pageSize": 1,
+          "currentPage": 1
+        }
+     ```
+-    **API:** `getRaynaTickets`
+-    this API used for ticket.
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/7e58652b-a11f-4cb0-bda4-ad7391500bbd)
+-    **Query:**
+     ```graphql
+       query getRaynaTickets($input: RaynaProductInput!) {
+          getRaynaTickets(input: $input) {
+            default
+            display_price
+            id
+            name
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+         {
+          "input": {
+            "id": "5116",
+            "product_id": 2490,
+            "group": "group_r",
+            "transfer": "41865",
+            "date": "2024/03/29",
+            "contract": "300"
+          }
+        }
+     ```   
+-    **API:** `getProduct`
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/ef1b018a-6176-4edd-aca1-3ed3dd71df0a)
+-    **Query:**
+      ```graphql
+         query getProduct($input: RaynaProductInput!) {
+          getProduct(input: $input) {
+            transfer_type {
+              id
+              is_default
+              max_pax
+              min_pax
+              name
+              __typename
+            }
+            __typename
+          }
+        }
+      ```
+-    **variables:**
+      ```graphql
+        {
+          "input": {
+            "id": "5116",
+            "product_id": 2490,
+            "group": "group_r",
+            "country": "13063",
+            "city": "13668",
+            "contract": "300"
+          }
+        }
+      ```
+-    **API:** `globaltix_variation_type`
+-    this API used for ticket selection in product page.
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/cce576b5-069d-4dc9-a0aa-e69e3e83051d)
+-    **Query:**
+      ```graphql
+         query globaltix_variation_type($product_id: String, $variation_id: [String]) {
+          globaltix_variation_type(product_id: $product_id, variation_id: $variation_id) {
+            tickets {
+              id
+              advanceBookingDays
+              applyCapacity
+              availability
+              isAdvanceBooking
+              isRequestVisitDate
+              isVisitDateCompulsory
+              price
+              publishEnd
+              publishStart
+              questions {
+                class
+                id
+                optional
+                options
+                question
+                tourInfo
+                type {
+                  enumType
+                  name
+                  __typename
+                }
+                __typename
+              }
+              series
+              status
+              __typename
+            }
+            __typename
+          }
+        }
+      ```
+-    **variables:**
+      ```graphql
+        {
+          "variation_id": [
+            "61532",
+            "61533"
+          ],
+          "product_id": "2074"
+        }
+      ```
 
-##  **Currency GraphQl**
--   Currency GraphQl use for setup currency in website.
--   **Module**: `Magefan_AutoCurrencySwitcher`
--   **STORE_Configuration:** `GENERAL`-\>`Currency Setup` to set currency
-    and configuration on it.
--   **Resolver**:
-    `Magefan\AutoCurrencySwitcher\Model\Resolver\Currency`
-    
-##  **VirtualProduct GraphQl**
--   `New_product` GraphQl call in home page for Best Selling Experiences.
--   **Module**: `Nik_CatalogGraphQl`
--   Here Product interface uses and return data by ID.
--   **Resolver**:`Nik\CatalogGraphQl\Model\Resolver\Product\NewProducts`
-
-##  **PreviewProducts GraphQl**
--   `homepage_stories_products` GraphQl is used for Handcrafted Holiday
-    Packages.
--   Handcrafted Holiday Packages are located on home page.
--   **Module**: `Nik_CatalogGraphQl`
--   **Resolver**:`Nik\CatalogGraphQl\Model\Resolver\Product\HomepageStoriesProducts`
-     in set page size
--   All products are in set sort order and this sort order field uses
-    filter `homepage_stories` product.
-    
-##  **Cart GraphQl**
--   Cart GraphQl use for
-    <https://alike.io/cart> page.
--   `AvailablePaymentMethod` graohql use in cart page.
--   **Module**: `Nik_CheckoutGraphQl`
--   **customInfo** GraphQl also use in cart page.
--   **customInfo** GraphQl set in `CartItemsInterface`.
--   **Resolver:**`Nik\CheckoutGraphQl\Model\Resolver\CustomOptions`
-     resolver use for CartItems.
--   **Module**: `Nik_CheckoutGraphQl` module use for CustomInfo GraphQl.
--   **Resolver:** `nik\CheckoutGraphQl\Model\Resolver\OrderCustomOptions`
--   `addHotelXProductToCart` mutation use for after we select hotel
-    rooms.
--   **Resolver**:
-   `NaS\Travelgatex\Model\Resolver\AddHotelXProductsToCart`
--   `Payment method`, `Shipping method`, `coupon`, etc configure in this
-    graphql.
-
-##  **Cities page**
--   In cities, pages are located at
-    <https://alike.io/cities/> page.
--   All Cities are one type of category in alike.
--   **Module**: `Nik_Cities`
--   `custom` graphql use for city custom.
--   **Resolver:**
--    `Nik\Cities\Model\Resolver\CityCustom`
--   `Citycustom`, `Explore Nearby`, and `Faq` also use the city page.
--   Also, Top Attractions handcrafted holidays block is used on this
-    page.
--   StoriesProducts & ActivitiesProducts GraphQl call from
-    `NaS_Widgets` module.
--   CityFaqs `Nik_Faqs` module use.
--   `CityCurrency`, `BestTimeToVisit`, `MonthsWeather` set in category
-    interface. `Nik_CatalogGraphQl` module.
--   `get_product` mutation to use retrieve product by input parameter.
--   **Resolver**:`Nik\CatalogGraphQl\Model\Resolver\Booking\RaynaProduct`
--   `getRaynaTickets` is query to using rayna api thru return and book
-    ticket and
--   **Resolver**:`Nik\CatalogGraphQl\Model\Resolver\Booking\RaynaTickets`
--   `getRaynaTicketsSlot` using this query book slot by date.
--   **Resolver**:`Nik\CatalogGraphQl\Model\Resolver\Booking\RaynaTicketSlot`
-
-##  **Product Interface**
--   Product Interface used for retrieving data from product and it's
-    attribute.
--   <https://alike.io/products>
-    age in using product interface to return data.
--   **Module**: `Nik_CatalogGraphQl`
--   In garphql `items` are denoted as one product to return from the
-    product interface.
--   `adult_lable` is a custom field to add in the interface. it
-    **Resolver**:`Nik\CatalogGraphQl\Model\Resolver\Product\AdultLabel`
--   `api_connected_label returns` the connected name. **Resolver**:
-    `Nik\CatalogGraphQl\Model\Resolver\Product\ApiLabel`
-     resolver.API connected is one type of attribute to add from the
-     admin panel and api_connected_label returns name of attribute.
--   `dynamicAttribute` field to add product interface **Module**:
-    `Nik_DynamicAttributes`.
--   **Resolver:**`Nik\DynamicAttributesGraphql\Model\Resolver\Product\DynamicAttributes`
--   `dynamicAttribute` return data in array foam. It is a one type of
-    collection of some attribute.
--   `GlobaltixAvailability` query also use in product interface.
--   **Resolver:**`Nik\CatalogGraphQl\Model\Resolver\Product\GlobaltixAvailability`
--   That resolver use to retrieve data. Using globlatixFactory in which
-     id is active that return product.
--   `hide_adult`, `hide_child`, `hide_infant` are attributes to set in
-     `store`-\>`product attribute`.
--   `include_in_touristors` is a custom attribute to add in product
-     interface. **Resolver**:`Nik\\\\CatalogGraphQl\\\\Model\\\\Resolver\\\\Product\\\\IncludedTouristors`
--   `included_trips` attribute to add in product interface and
-     **Resolver**:`Nik\CatalogGraphQl\Model\Resolver\Product\IncludedTrips`
--   `kit_avability` add in interface and **Resolver**:
-    `Nik\CatalogGraphQl\Model\Resolver\Product\KitAvailability`
-     In resolver get data to fetching kit API and return those data to
-     come from kit API.
--   `strike_price_value` is set in product interface and **Resolver**:
-     `Nik\CatalogGraphQl\Model\Resolver\Product\StrikePrice`.
--   `rayna_city_id`, `rayna_contract_id`, `rayna_country_id`, `rayna_ id`
-     thru return city to `city`,`rayna_contract_id`, `rayna_country_id`
-     and `rayna_id`attributes.
--   `sort_discription_alike` input parameter to input description when
-     create a trip story.
--   `strike_price_value` set in product interface and **Resolver**:
-    `Nik\CatalogGraphQl\Model\Resolver\Product\StrikePrice`.
--   `touristor_saver` also add-in product interface and **Resolver**:
-     `Nik\CatalogGraphQl\Model\Resolver\Product\TouristorSaver`
-     is a.
--   `url_key` is set in touristor_saver query, and **Resolver**:
-    `Nik\CatalogGraphQl\Model\Resolver\Product\Tourist`.here
-     retrieve url_key from product factory.
--   `ins_city` attribute is set from the admin product attribute and
-     config from the `Nik_CatalogGraphQl` module.
--   **Resolver:**`Nik\CatalogGraphQl\Model\Resolver\Product\InsCustomAttributes`
--   `is_liked` also set in product attribute and **Resolver**:
-    `Nik\CatalogGraphQl\Model\Resolver\Product\IsLiked`.
--    `page_info` and `total_count` are used in the ProductComment query
-     in CatalogGraphQl schema. graphql file.
--   `base_video` use in trip story page and code configuration in
-     **Module:** `Nik_CatalaogGaraphQl`
--    **Resolver:**`Nik\CatalogGraphQl\Model\Resolver\Product\BaseVideo`
--   `icons` are set in product attribute and **Resolver**:
-    `Nik\CatalogGraphQl\Model\Resolver\Product\HeaderIcons`.
--   `ins_days` is a filter input to add in preview_product query.
--   **Resolver:**`Nik\CatalogGraphQl\Model\Resolver\Product\PreviewProducts`
-     to return data from collectionFactory.
--   `Ins_highlights` is added in product interface and **Resolver**:
-     `Nik\CatalogGraphQl\Model\Resolver\Product\InsHighlights`.
--   **Admin Menu:** `Catalog`->`Category`->`Content`-\>`City Highlight`
--   `insider_data` set in the product interface and **Resolver**:
-    `Nik\CatalogGraphQl\Model\Resolver\Product\ProductInsider`.here
-     fetch data from insiderFactory.
--   `itinerary` is a added in product graphql and **Resolver**:
-     `Nik\CatalogGraphQl\Model\Resolver\Product\Itinerary`.
--   `product_like` is a product interface and
--   **Resolver:**`Nik\CatalogGraphQl\Model\Resolver\Product\ProductLikeAttribute`
--   `story_type` is product interface parameter and **Resolver**:
-    `Nik\CatalogGraphQl\Model\Resolver\Product\ProductStoryType`.
--   `product_comment` is a product interface used and **Resolver**:
-     `Nik\CatalogGraphQl\Model\Resolver\Product\ProductComment`.
--   `getProduct` add-in product interface and **Resolver**:
-    `Nik\CatalogGraphQl\Model\Resolver\Booking\RaynaProduct`.in
-     resolver return data using kit API.
--   `insiderTickets` mutation added in the product interface, when we
-     select trip story at that time use this mutation and **Resolver**:
-    `Nik\CatalogGraphQl\Model\Resolver\Booking\Insider`.
--   Also, `itineraryPrice` mutation add and **Resolver**:
-    `Nik\CatalogGraphQl\Model\Resolver\Booking\ItineraryPrice`.
-    
-##  **Travel Passes Page**
--   Travell passes are coming from
-    <https://alike.io/travel-passes?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu> page.
--   On this page use the categories interface and return data.
--   **Module**: `Nik_CataloggraphQl`
--   **Admin Menu:** `STORE`-\>`Attribute`-\>`Product`
--   **Resolver**:`Nik\CatalogGraphQl\Model\Resolver\Esim`. In
-    this resolver set page size add a filter as an attribute and
-    return data.
--   If we can click any passes move to <https://alike.io/products/the-london-passr> page.
--   Also, this page uses a product interface.
--   Musement API through select date for ticket and book ticket.
--   **Resolver:**`Nik\CatalogGraphQl\Model\Resolver\Booking\MusementTickets`
--   **Admin Menu:** `STORE`->`Configuration`->`NAS`-\>`Musement API` path.
--   Musement activity configuration in **Resolver**:
-    `app/code/Nik/CatalogGraphQl/etc/schema.graphqls`**.**
--   **Resolver:**`Nik\CatalogGraphQl\Model\Resolver\Booking\MusementActivity`
--   This code fetches Musement activity data based on GraphQl input
-    parameters and handles exceptions during the process and
-    `booking_type` and `order_box` a input parameters of musement
-    activity.
--   Musement tickets configuration in **Module**:
-    `Nik_CatalogGraphQl`.
--   **Resolver**:`Nik\CatalogGraphQl\Model\Resolver\Booking\MusementTickets`
--   In Musement tickets, resolver fetches Musement ticket data,
-    retrieves associated product information, processes the data, and
-    adjusts prices based on certain parameters.
-
-##  **eSIMs Page**
--   <https://alike.io/esims?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu> page
-    URL for eSIMs page.
--   Here Category is used as a filter. And call `CategoryInterface` for a
-    category.
--   **Module:** `Nik_CataloggraphQl`
--   **Resolver**: `Nik\CatalogGraphQl\Model\Resolver\Esim`
--   Set `E SIM` attribute set and use in resolver to filter products for
-    eSIMs.
-    
-##  **Winter Sale**
--   The Winter Sale page URL is
-    <https://alike.io/winter-sale?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu>.
--   In winter sales use product interface to retrieve product.
--   Here winter sale is only for Dubai.
--   **Module**: `NaS_Ticket`
--   Here is another GraphQl use for Attraction Bundle
-    `passProduct`.
--   `passProduct` query located at `NaS_Ticket` module.
--   **Resolver:** `NaS\Ticket\Model\Resolver\PassProducts`
--   `passHotel` GraphQl used for Hotel.
--   **Resolver:** `NaS\Ticket\Model\Resolver\PassHotel`
--   This resolver uses collectionFacteory to retrieve hotel and return
-    data.
-
-## **Cart Page**
--   When we add a product to the cart then reach
-    <https://uat.alike.host/cart> page.
--   On this page `addProductToCart` GraphQl call.
--   **Module**: `Nik_CataloggraphQl`
--   **Resolver**: `Nik\CatalogGraphQl\Model\Resolver\Booking\AddProductToCart`
--   In this resolver get items in the cart and configure it.
--   Then we can continue to the next step `setShippingAddressesOnCart`
-    GraphQl call.
--   After the next step add our details between contact detail and
-    payment option step to call `abandonedCartCapture` GraphQl call.
--   `abandonedCartCapture` GraphQl at `Nik_AbandonedCartCapture` module.
--   **Resolver:** `Nik\AbandonedGraphQl\Model\Resolver\AbandonedCartCapture`
--   **Admin Menu:** `REPORTING`-\>`Anamdoned`-\>`Reports`
--   Abandoned email configuration on **Admin Menu**:
-    `STORE`->`Configuration`->`CUSTOM`-\>`Abandoned`.
-    
-##  **Signup/Signin Page**
--   Signin page URL is
-    <https://app.alike.io/#/signin>.
--   `amSocialLoginButtonConfig` GraphQl used through work signup/sign-in.
--   **Module**: `Amasty_SocialLoginGraphQl`
--   **Resolver**:`Amasty\SocialLoginGraphQl\Model\Resolver\SocialButtons`
--   In resolver (**SocialButtons**) that retrieves information about
-    enabled social login buttons using the **SocialData** model from
-    the Amasty Social Login extension for Magento 2.
--   Then user creates a successful after-call createCustomerv2 GraphQl
--   **Module**: `Nik_Cities` used for creating customers.
--   **Resolver:** `Nik\Cities\Model\Resolver\Insider\CreateCustomer`
--   <https://app.alike.host/#/account/general> after sign-in as a user reach this page.
--   <https://app.alike.host/#/my-trips/my-bookings/upcoming-order> on this page, the `CustomerOrder` graphql call
--   **Module**: `Nik_SalesGraphQl`
--   **Resolver:**`Magento\SalesGraphQl\Model\Resolver\CustomerOrders`
--   In this resolver filter and get data using ExtensionAttribute.
-
-##  **Become Insider** 
--   In the customer login page, we create also insider account.
--   <https://app.alike.host/#/my-studio/dashboard>
-    is a become insider page URL.
--   In this page `BecomeInsider` GraphQl call.
--   **Module**: `Nik_Cities`
--   **Resolver:**`Nik\Cities\Model\Resolver\Insider\BecomeInsider`
--   `MyDeshboard` GraphQl is used for insider's data we can see on the
-    dashboard page.
--   **Resolver:**`Nik\InsidersDashboardGraphQl\Model\Resolver\MyDashboardResolver`
--   Get data using insiderFactory.
--   **Admin Menu:** `INSIDERS` section for customization insider.
--   `MyStudioAccount` garphql is used for customizing accounts.
--   **Module**: `Nik_InsidersConfigGraphQl`
--   **Resolver:**`Nik\InsidersConfigGraphQl\Model\Resolver\MyStudioAccountResolver`
--   **Admin Menu:** `INSIDERS`-\>`Profile`-\>`Manage Insiders` section
-    configure.
--   `MyTripData` GraphQl is used for listening trip stories. Is located
-    `Nik_InsidersDashboardgraphQL` module.
--   `Wallet` GraphQl for account wallet.
--   **Module**: `Nik_InsidersDashboardgraphQL`
--   **Resolver:** `Nik\Cities\Model\Resolver\Wallets`
-
-##  **Hotels & Stays Page**
--   `SearchX` GraphQl is use
-    <https://uat.alike.host/hotels> page in the search section.
--   **Module**: `NaS_Travelgatex`
--   Here `SearchX` GraphQl is used for search and **Resolver**:
-    `NaS\Travelgatex\Model\Resolver\Search`.
--   **Resolver:** `NaS\Travelgatex\Model\Resolver\SearchList`
--   `map` & `pagination` use in `Hotel` query. Here **Resolver**:
-    `NaS\Hotelbeds\Model\Resolver\Hotels`.
--   **Admin Menu**: `STORE`->`Configuration`->`NaS`-\>`HotelBedsApi` in set configuration.
--   `quoteX` graphql use in when we select a hotel room at that time
-     use.in code configuration set `quoteX` query and **Resolver**:
-     `NaS\Travelgatex\Model\Resolver\Quote`.
--   In `quoteX` add `hotelX` parameter.
-
-## **Product Comment GraphQl**
--   `Product Comment` GraphQl in the particular product page.
--   **Module**: `Nik_CatalogGraphQl`
--   **Resolver:**`Nik\CatalogGraphQl\Model\Resolver\Product\ProductComment`
-
-## **Insider Account Graphql**
--   `InsiderAccount` GraphQl use in particular insider's page.
--   **Module**: `Nik_insiderPageGraphQl`
--   **Resolver:**`Nik\InsiderPageGraphQl\Model\Resolver\InsiderPage`
--   Following graphql configuration in `Nik_Cities` module.
--   **Resolver:** `Nik\Cities\Model\Resolver\Following`
--   returns the result with additional details like profile pictures and
-    nicknames. The actual logic for fetching followings is likely
-    implemented in the `getFollowings` method of the
-    `NaS\SocialAddon\Model\ResourceModel\Follow\CollectionFactory`
-    class.
--   `categoryImageId` configuration in the `Nik_CatalogGraphQ` module.
--   **Resolver:**`Nik\CatalogGraphQl\Model\Resolver\Story\CategoryImageIdData`
--   Mytrips configuration in `Nik_InsidersDashboardGraphQl` module.
--   **Resolver:**`Nik\InsidersDashboardGraphQl\Model\Resolver\MyTripsResolver`
--   In resolver for fetching data about trips. It includes methods to
-     handle authorization, retrieve insider and product information,
-    and build a response containing information about top trips with
-    pagination details. The resolver also includes methods to handle
-    `image URLs`, `including placeholders`.
-
-## **CategoryInterface**
--   `CategoryInterface` returns data by items.
--   `esim_product` configuration in `Nik_CatalogGraphQl` module.
--   **Resolver:** `Nik\CatalogGraphQl\Model\Resolver\Esim`
--   In resolver (Esim) that retrieves data about eSIM products based on
-    various filters. The resolver constructs a product collection,
-    applies filters, and returns relevant information in the output
-    arrayTop_travelpass_products configuration in the
-    `Nik_CatalogGraphQl` module.
--   **Resolver:**`Nik\CatalogGraphQl\Model\Resolver\Travelpass`
--   resolver `Travelpass` that retrieves data about top-rated travel
-    passes based on various filters. The resolver constructs a product
-    collection, applies filters, and returns relevant information in
-    the output array.
-    
-## **Brevo Lists Customer Group Settings**
--   Admin Menu: `STORE`->`Configuration`->`CUSTOM`->`Sendinblue` here Three fieldset.
--   In `General` fieldset enable/disable the configuration set.
--   `Brevo Lists Customer Group Settings` fieldset in a defined List of some area. We have here given a droup-down for list configuration.
--   `Brevo Lists Template Settings` fieldset in given all types of email configuration.
--   Like signup, email configuration gives a drop-down for selecting brevo email template.
--   If we don’t select a template that time use Magento default template.
--   Here all brevo template shows in a droup-down and select a template for use.
-
-## **Trip Planner**
--  `Trip Planner` is a one the new prodcut we add in Magento 2.
--  Trip Planner is a almost same as bundle product.
--  In trip planner create your trip road map for future trip.
--  In trip planner add visa, hotels,airport transfer and sim for trip.
--  <https://app.alike.host/#/my-trips/trip-planner> here create trip roadmap.
--  In trip planner here provide for type of view provide for trip `Timeline`, `Calendar`, `Map`, and `Summary`.
--  Trip planners can be shared with other people. but need admin login access for any customization.
--  How to create a new product type in magento like trip planner.
-   -   Step 1: Generate registration.php file
-        - Setup the Nik\TripPlanner\registration.php file
-        - Generate the Nik\TripPlanner\etc\module.xml
-        - Next, the creation of the `etc/product_types.xml` file is necessary to determine the model of the new product type.
-        - Name: the name you need to set for the new product type
-        - Label: the label which is visible in the Magento backend
-        - Model instance: endorse the product type’s attributes
-        - Price Model: endorse the charge of the new product type
-   -   Step 2: Add the code NewProductType model
-        - Enter the code below: Nik\TripPlanner\Model\Product\Type\NewProductType model, that should be based on Magento\Catalog\Model\Product\Type\AbstractType.
-        - After that, it is possible to rewrite some functions and implement some changes you want there.
-   -   Step 3: Add the Price model
-        - Enter Nik\TripPlanner\Model\Product\Price model, which should be based on the Magento\Catalog\Model\Product\Type\Price.
-        - Besides, you can also set the new product type as versatile type with some custom functions after extending the Magento\Catalog\Model\Product\Type\Price class
-   -   Step 4: Publish the new Magento 2 Product type
-        - This is the step allowing you to check the result in the Magento 2 Administrator when completing the above steps. The New Product type will display as the old types (Simple or Configurable Product).
--  `hotel_activity_search` GraphQl used for serval hotel.
--  **Module**: `Nik_CatalogGraphQl`
--  **Resolver**: `Nik\CatalogGraphQl\Model\Resolver\Story\HotelSerachData`
--  `wishlist_v2` GraphQl used for add products in Wishlist. When we plane a trip at time use wishlist to add serval products to the trip.
--  **Module**: `WishlistGraphQl`
--  **Resolver**: `Magento\WishlistGraphQl\Model\Resolver\WishlistById`
--  `CreateTripPlanner` GraphQl use for create trip plane using insider id.trip planner is a almost same as a create trip.
--  **Module**: `Nik_TripPlanner`
--  **Resolver**: `Nik\TripPlanner\Model\Resolver\CreateTripPlanner`
--  `tripPlannerActivitiesSerach` GraphQl used for retrieving different attribute types and different category-type products.Like `thing to do`, `sim`, `visa` ia a one product to use in trip planner.
--  Using this GraphQl filter all products set some labels and use on when creating trip planner.
--  Here we can add some Notes or Files for the trip planner.
-   - All files are stored in amazon s3.
-   - When adding Notes on the trip planner at time `travel_notes` GraphQl call.
-   - **Resolver**: `Nik\TripPlanner\Model\Resolver\TravelNotes` use for notes and `Nik\TripPlanner\Model\Resolver\FileAttachments` use for files.
-   - In notes, we can add a checkbox and area(text) for notes.
-- **Itinerary**
-   - An itinerary is a detailed plan for a journey, especially a list of places to visit.
-   - In the Admin panel admin can change itinerary.
-   - we can save all itinerary data in Magento admin panel.
-   - `Catalog`->`Product` in product detail save itinerary detail.
-   - In future some need to change itinerary so that time we can configure from admin panel.
-- When we add some product to the itinerary at a time give 3 ways to add product on trip planner.
-- ```
-      Bucket List
-      Add My Entry
-      Search
-  ````
-- `Bucket List` is a wishlist in we add some product to future use.
-- Using `Search` future we can search products from alike.
-- And also we add new products like attractions, hotels add on a trip planner.
+## **Hotel Page**
+-   **URL:** <https://alike.io/hotels/list?search=Dubai,%20United%20Arab%20Emirates&destinations=ChIJRcbZaklDXz4RYlEphFBu5r0&checkIn=2024-04-04&checkOut=2024-04-06&occupancies=%5B%7B%22paxes%22%3A%5B%7B%22age%22%3A25%7D,%7B%22age%22%3A29%7D%5D%7D%5D>
+-   **API:** `searchListGuzzleX`
+-   this API is used for serval hotels in particular cities.
+-   ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/4e1020b5-27df-49dd-a752-efbb8f2a6eee)
+-   **Query:**
+    ```graphql
+        query searchListGuzzleX($checkIn: String!, $checkOut: String!, $session: String, $occupancies: [RoomInputX!]!, $slug: String, $destinations: [String!], $hotels: [String!], $pageSize: Int, $onlyStatic: 
+        Boolean, $currentPage: Int, $sort: HotelSortXInput, $filter: [HotelFiltersXInput]) {
+          searchListGuzzleX(
+            checkIn: $checkIn
+            checkOut: $checkOut
+            session: $session
+            occupancies: $occupancies
+            slug: $slug
+            destinations: $destinations
+            hotels: $hotels
+            pageSize: $pageSize
+            onlyStatic: $onlyStatic
+            currentPage: $currentPage
+            sort: $sort
+            filter: $filter
+          ) {
+            error
+            hotels {
+              static
+              hotelCode
+              destinationCode
+              slug
+              status
+              name
+              title
+              boardCode
+              cancelPolicy {
+                cancelPenalties {
+                  currency
+                  deadline
+                  hoursBefore
+                  penaltyType
+                  value
+                  __typename
+                }
+                refundable
+                __typename
+              }
+              amenities {
+                amenityCodeSupplier
+                code
+                texts
+                type
+                value
+                __typename
+              }
+              occupancies {
+                id
+                paxes {
+                  age
+                  __typename
+                }
+                __typename
+              }
+              rating
+              userRating
+              mainImage {
+                code
+                label
+                order
+                type
+                url
+                __typename
+              }
+              medias {
+                code
+                label
+                order
+                type
+                url
+                __typename
+              }
+              minRate {
+                currency
+                net
+                __typename
+              }
+              maxRate {
+                currency
+                net
+                __typename
+              }
+              displayPrice {
+                currency
+                net
+                __typename
+              }
+              propertyType
+              chainName
+              brandName
+              popularityScore
+              contentScore
+              remarks
+              location {
+                address
+                city
+                state
+                zipCode
+                country
+                coordinates {
+                  label
+                  latitude
+                  longitude
+                  __typename
+                }
+                __typename
+              }
+              descriptions {
+                text
+                type
+                __typename
+              }
+              amenities {
+                amenityCodeSupplier
+                code
+                texts
+                type
+                value
+                __typename
+              }
+              facilities {
+                code
+                title
+                items {
+                  code
+                  name
+                  __typename
+                }
+                __typename
+              }
+              reviews {
+                count
+                highlightText
+                rating
+                tagLine
+                type
+                __typename
+              }
+              contact {
+                email
+                fax
+                telephone
+                web
+                __typename
+              }
+              filters {
+                code
+                values
+                __typename
+              }
+              options {
+                tax {
+                  net
+                  currency
+                  __typename
+                }
+                id
+                accommodationType
+                boardLabel
+                amenities {
+                  amenityCodeSupplier
+                  code
+                  texts
+                  type
+                  value
+                  __typename
+                }
+                boardCode
+                boardLabel
+                cancelPolicy {
+                  cancelPenalties {
+                    currency
+                    deadline
+                    hoursBefore
+                    penaltyType
+                    value
+                    __typename
+                  }
+                  refundable
+                  __typename
+                }
+                descriptions {
+                  type
+                  text
+                  __typename
+                }
+                price {
+                  currency
+                  net
+                  __typename
+                }
+                occupancies {
+                  id
+                  paxes {
+                    age
+                    __typename
+                  }
+                  __typename
+                }
+                remarks
+                filters {
+                  code
+                  values
+                  __typename
+                }
+                rooms {
+                  facilities {
+                    code
+                    title
+                    items {
+                      code
+                      name
+                      __typename
+                    }
+                    __typename
+                  }
+                  tax {
+                    net
+                    currency
+                    __typename
+                  }
+                  amenities {
+                    amenityCodeSupplier
+                    code
+                    texts
+                    type
+                    value
+                    __typename
+                  }
+                  beds {
+                    count
+                    shared
+                    type
+                    __typename
+                  }
+                  code
+                  description
+                  features {
+                    code
+                    __typename
+                  }
+                  legacyRoomId
+                  medias {
+                    code
+                    label
+                    order
+                    type
+                    url
+                    __typename
+                  }
+                  name
+                  occupancyRefId
+                  promotions {
+                    code
+                    start
+                    end
+                    name
+                    __typename
+                  }
+                  ratePlans {
+                    code
+                    start
+                    end
+                    name
+                    supplierCode
+                    __typename
+                  }
+                  refundable
+                  roomPrice {
+                    breakdown {
+                      start
+                      end
+                      price {
+                        currency
+                        net
+                        __typename
+                      }
+                      __typename
+                    }
+                    price {
+                      currency
+                      net
+                      __typename
+                    }
+                    __typename
+                  }
+                  supplierCode
+                  surcharges {
+                    chargeType
+                    code
+                    description
+                    mandatory
+                    price {
+                      currency
+                      net
+                      __typename
+                    }
+                    __typename
+                  }
+                  units
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            maps {
+              label
+              slug
+              latitude
+              longitude
+              __typename
+            }
+            isStaticRecords
+            pagination {
+              current
+              full
+              page
+              total
+              __typename
+            }
+            filters {
+              code
+              label
+              options {
+                code
+                count
+                name
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+     ```graphql
+        {
+          "checkIn": "2024-04-04",
+          "checkOut": "2024-04-06",
+          "currentPage": 1,
+          "pageSize": 10,
+          "search": "",
+          "occupancies": [
+            {
+              "paxes": [
+                {
+                  "age": 25
+                },
+                {
+                  "age": 29
+                }
+              ]
+            }
+          ],
+          "destinations": [
+            "ChIJRcbZaklDXz4RYlEphFBu5r0"
+          ],
+          "slug": "",
+          "filter": [],
+          "sort": {
+            "by": "distance",
+            "order": "ASC"
+          },
+          "onlyStatic": true
+        }
+     ```
+-    **API:** `searchListGuzzleX`
+-    this API used for filtration like Star **Rating**, **Property Type**, **Meals**, **Cancellation** etc.
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/39bd6525-b2d2-42ee-8441-90d523c53d7d)
+-    **Query:**
+      ```graphql
+         query searchListGuzzleX($checkIn: String!, $checkOut: String!, $session: String, $occupancies: [RoomInputX!]!, $slug: String, $destinations: [String!], $hotels: [String!], $pageSize: Int, 
+         $onlyStatic: Boolean, $currentPage: Int, $sort: HotelSortXInput, $filter: [HotelFiltersXInput]) {
+          searchListGuzzleX(
+            checkIn: $checkIn
+            checkOut: $checkOut
+            session: $session
+            occupancies: $occupancies
+            slug: $slug
+            destinations: $destinations
+            hotels: $hotels
+            pageSize: $pageSize
+            onlyStatic: $onlyStatic
+            currentPage: $currentPage
+            sort: $sort
+            filter: $filter
+          ) {
+            error
+            hotels {
+              static
+              hotelCode
+              destinationCode
+              slug
+              status
+              name
+              title
+              boardCode
+              cancelPolicy {
+                cancelPenalties {
+                  currency
+                  deadline
+                  hoursBefore
+                  penaltyType
+                  value
+                  __typename
+                }
+                refundable
+                __typename
+              }
+              amenities {
+                amenityCodeSupplier
+                code
+                texts
+                type
+                value
+                __typename
+              }
+              occupancies {
+                id
+                paxes {
+                  age
+                  __typename
+                }
+                __typename
+              }
+              rating
+              userRating
+              mainImage {
+                code
+                label
+                order
+                type
+                url
+                __typename
+              }
+              medias {
+                code
+                label
+                order
+                type
+                url
+                __typename
+              }
+              minRate {
+                currency
+                net
+                __typename
+              }
+              maxRate {
+                currency
+                net
+                __typename
+              }
+              displayPrice {
+                currency
+                net
+                __typename
+              }
+              propertyType
+              chainName
+              brandName
+              popularityScore
+              contentScore
+              remarks
+              location {
+                address
+                city
+                state
+                zipCode
+                country
+                coordinates {
+                  label
+                  latitude
+                  longitude
+                  __typename
+                }
+                __typename
+              }
+              descriptions {
+                text
+                type
+                __typename
+              }
+              amenities {
+                amenityCodeSupplier
+                code
+                texts
+                type
+                value
+                __typename
+              }
+              facilities {
+                code
+                title
+                items {
+                  code
+                  name
+                  __typename
+                }
+                __typename
+              }
+              reviews {
+                count
+                highlightText
+                rating
+                tagLine
+                type
+                __typename
+              }
+              contact {
+                email
+                fax
+                telephone
+                web
+                __typename
+              }
+              filters {
+                code
+                values
+                __typename
+              }
+              options {
+                tax {
+                  net
+                  currency
+                  __typename
+                }
+                id
+                accommodationType
+                boardLabel
+                amenities {
+                  amenityCodeSupplier
+                  code
+                  texts
+                  type
+                  value
+                  __typename
+                }
+                boardCode
+                boardLabel
+                cancelPolicy {
+                  cancelPenalties {
+                    currency
+                    deadline
+                    hoursBefore
+                    penaltyType
+                    value
+                    __typename
+                  }
+                  refundable
+                  __typename
+                }
+                descriptions {
+                  type
+                  text
+                  __typename
+                }
+                price {
+                  currency
+                  net
+                  __typename
+                }
+                occupancies {
+                  id
+                  paxes {
+                    age
+                    __typename
+                  }
+                  __typename
+                }
+                remarks
+                filters {
+                  code
+                  values
+                  __typename
+                }
+                rooms {
+                  facilities {
+                    code
+                    title
+                    items {
+                      code
+                      name
+                      __typename
+                    }
+                    __typename
+                  }
+                  tax {
+                    net
+                    currency
+                    __typename
+                  }
+                  amenities {
+                    amenityCodeSupplier
+                    code
+                    texts
+                    type
+                    value
+                    __typename
+                  }
+                  beds {
+                    count
+                    shared
+                    type
+                    __typename
+                  }
+                  code
+                  description
+                  features {
+                    code
+                    __typename
+                  }
+                  legacyRoomId
+                  medias {
+                    code
+                    label
+                    order
+                    type
+                    url
+                    __typename
+                  }
+                  name
+                  occupancyRefId
+                  promotions {
+                    code
+                    start
+                    end
+                    name
+                    __typename
+                  }
+                  ratePlans {
+                    code
+                    start
+                    end
+                    name
+                    supplierCode
+                    __typename
+                  }
+                  refundable
+                  roomPrice {
+                    breakdown {
+                      start
+                      end
+                      price {
+                        currency
+                        net
+                        __typename
+                      }
+                      __typename
+                    }
+                    price {
+                      currency
+                      net
+                      __typename
+                    }
+                    __typename
+                  }
+                  supplierCode
+                  surcharges {
+                    chargeType
+                    code
+                    description
+                    mandatory
+                    price {
+                      currency
+                      net
+                      __typename
+                    }
+                    __typename
+                  }
+                  units
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            maps {
+              label
+              slug
+              latitude
+              longitude
+              __typename
+            }
+            isStaticRecords
+            pagination {
+              current
+              full
+              page
+              total
+              __typename
+            }
+            filters {
+              code
+              label
+              options {
+                code
+                count
+                name
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+      ```
+-    **variables:**
+     ```graphql
+        {
+          "checkIn": "2024-04-04",
+          "checkOut": "2024-04-06",
+          "currentPage": 1,
+          "pageSize": 10,
+          "search": "",
+          "occupancies": [
+            {
+              "paxes": [
+                {
+                  "age": 25
+                },
+                {
+                  "age": 29
+                }
+              ]
+            }
+          ],
+          "destinations": [
+            "ChIJRcbZaklDXz4RYlEphFBu5r0"
+          ],
+          "slug": "",
+          "filter": [],
+          "sort": {
+            "by": "distance",
+            "order": "ASC"
+          },
+          "onlyStatic": false
+        }
+     ```
+ ## **Hotel Detail Page**
+-   **URL:** <https://alike.io/hotels/lapita-dubai-parks-resorts-autograph-collection-in-united-arab-emirates-dubai--lapita_dubai_parks_and_resorts?search=Dubai,%20United%20Arab%20Emirates&destinations=ChIJRcbZaklDXz4RYlEphFBu5r0&checkIn=2024-04-04&checkOut=2024-04-06&occupancies=%5B%7B%22paxes%22%3A%5B%7B%22age%22%3A25%7D,%7B%22age%22%3A29%7D%5D%7D%5D>
+-   **API:** `searchX`
+-   ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/3b100555-74cf-4057-8f0c-dfcb95a6dc52)
+-   **Query:**
+     ```graphql
+         query searchX($checkIn: String!, $checkOut: String!, $session: String, $occupancies: [RoomInputX!]!, $slug: String, $destinations: [String!], $hotels: [String!], $pageSize: Int, $maxSize: Int, 
+         $currentPage: Int, $sort: HotelSortXInput, $filter: [HotelFiltersXInput]) {
+          searchX(
+            checkIn: $checkIn
+            checkOut: $checkOut
+            session: $session
+            occupancies: $occupancies
+            slug: $slug
+            destinations: $destinations
+            hotels: $hotels
+            pageSize: $pageSize
+            maxSize: $maxSize
+            currentPage: $currentPage
+            sort: $sort
+            filter: $filter
+          ) {
+            error
+            hotels {
+              hotelCode
+              destinationCode
+              slug
+              status
+              name
+              title
+              boardCode
+              cancelPolicy {
+                cancelPenalties {
+                  currency
+                  deadline
+                  hoursBefore
+                  penaltyType
+                  value
+                  __typename
+                }
+                refundable
+                __typename
+              }
+              amenities {
+                amenityCodeSupplier
+                code
+                texts
+                type
+                value
+                __typename
+              }
+              occupancies {
+                id
+                paxes {
+                  age
+                  __typename
+                }
+                __typename
+              }
+              rating
+              userRating
+              mainImage {
+                code
+                label
+                order
+                type
+                url
+                __typename
+              }
+              medias {
+                code
+                label
+                order
+                type
+                url
+                __typename
+              }
+              minRate {
+                currency
+                net
+                __typename
+              }
+              maxRate {
+                currency
+                net
+                __typename
+              }
+              displayPrice {
+                currency
+                net
+                __typename
+              }
+              propertyType
+              chainName
+              brandName
+              popularityScore
+              contentScore
+              remarks
+              location {
+                address
+                city
+                state
+                zipCode
+                country
+                coordinates {
+                  label
+                  latitude
+                  longitude
+                  __typename
+                }
+                __typename
+              }
+              descriptions {
+                text
+                type
+                __typename
+              }
+              amenities {
+                amenityCodeSupplier
+                code
+                texts
+                type
+                value
+                __typename
+              }
+              facilities {
+                code
+                title
+                items {
+                  code
+                  name
+                  __typename
+                }
+                __typename
+              }
+              reviews {
+                count
+                highlightText
+                rating
+                tagLine
+                type
+                __typename
+              }
+              contact {
+                email
+                fax
+                telephone
+                web
+                __typename
+              }
+              filters {
+                code
+                values
+                __typename
+              }
+              options {
+                tax {
+                  net
+                  currency
+                  __typename
+                }
+                id
+                accommodationType
+                boardLabel
+                amenities {
+                  amenityCodeSupplier
+                  code
+                  texts
+                  type
+                  value
+                  __typename
+                }
+                boardCode
+                boardLabel
+                cancelPolicy {
+                  cancelPenalties {
+                    currency
+                    deadline
+                    hoursBefore
+                    penaltyType
+                    value
+                    __typename
+                  }
+                  refundable
+                  __typename
+                }
+                descriptions {
+                  type
+                  text
+                  __typename
+                }
+                price {
+                  currency
+                  net
+                  __typename
+                }
+                occupancies {
+                  id
+                  paxes {
+                    age
+                    __typename
+                  }
+                  __typename
+                }
+                remarks
+                filters {
+                  code
+                  values
+                  __typename
+                }
+                rooms {
+                  facilities {
+                    code
+                    title
+                    items {
+                      code
+                      name
+                      __typename
+                    }
+                    __typename
+                  }
+                  tax {
+                    net
+                    currency
+                    __typename
+                  }
+                  amenities {
+                    amenityCodeSupplier
+                    code
+                    texts
+                    type
+                    value
+                    __typename
+                  }
+                  beds {
+                    count
+                    shared
+                    type
+                    __typename
+                  }
+                  code
+                  description
+                  features {
+                    code
+                    __typename
+                  }
+                  legacyRoomId
+                  medias {
+                    code
+                    label
+                    order
+                    type
+                    url
+                    __typename
+                  }
+                  name
+                  occupancyRefId
+                  promotions {
+                    code
+                    start
+                    end
+                    name
+                    __typename
+                  }
+                  ratePlans {
+                    code
+                    start
+                    end
+                    name
+                    supplierCode
+                    __typename
+                  }
+                  refundable
+                  roomPrice {
+                    breakdown {
+                      start
+                      end
+                      price {
+                        currency
+                        net
+                        __typename
+                      }
+                      __typename
+                    }
+                    price {
+                      currency
+                      net
+                      __typename
+                    }
+                    __typename
+                  }
+                  supplierCode
+                  surcharges {
+                    chargeType
+                    code
+                    description
+                    mandatory
+                    price {
+                      currency
+                      net
+                      __typename
+                    }
+                    __typename
+                  }
+                  units
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            maps {
+              label
+              slug
+              latitude
+              longitude
+              __typename
+            }
+            isStaticRecords
+            pagination {
+              current
+              full
+              page
+              total
+              __typename
+            }
+            filters {
+              code
+              label
+              options {
+                code
+                count
+                name
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+    ```graphql
+         {
+          "checkIn": "2024-04-04",
+          "checkOut": "2024-04-06",
+          "currentPage": 1,
+          "pageSize": 10,
+          "search": "",
+          "occupancies": [
+            {
+              "paxes": [
+                {
+                  "age": 25
+                },
+                {
+                  "age": 29
+                }
+              ]
+            }
+          ],
+          "destinations": [],
+          "slug": "lapita-dubai-parks-resorts-autograph-collection-in-united-arab-emirates-dubai--lapita_dubai_parks_and_resorts",
+          "filter": [],
+          "sort": {
+            "by": "price",
+            "order": "ASC"
+          }
+        }
+     ```
+-    **API:** `products`
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/7e0b456b-8294-4fff-b373-96190f7249cb)
+-    **Query:**
+     ```graphql
+         query products($filter: ProductAttributeFilterInput) {
+          products(filter: $filter) {
+            items {
+              uid
+              id
+              url_key
+              name
+              short_description {
+                html
+                __typename
+              }
+              description {
+                html
+                __typename
+              }
+              strike_price_value
+              strike_price_percentage
+              sku
+              type_id
+              hotel_property_type
+              hotel_rating
+              hotel_city_name
+              hotel_country_code
+              hotel_country_name
+              hotel_latitude
+              hotel_longitude
+              hotel_facilities
+              hotel_board_types
+              hotel_cancellation_policies
+              image {
+                url
+                __typename
+              }
+              price_range {
+                maximum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  final_price {
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                minimum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  final_price {
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              media_gallery {
+                url
+                label
+                disabled
+                __typename
+              }
+              __typename
+            }
+            sort_fields {
+              default
+              options {
+                label
+                value
+                __typename
+              }
+              __typename
+            }
+            related_search_terms
+            did_you_know
+            total_count
+            page_info {
+              current_page
+              page_size
+              total_pages
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+    ```graphql
+        {
+          "filter": {
+            "url_key": {
+              "eq": "lapita-dubai-parks-resorts-autograph-collection-in-united-arab-emirates-dubai--lapita_dubai_parks_and_resorts"
+            }
+          }
+        }
+    ```
