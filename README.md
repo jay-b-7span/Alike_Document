@@ -904,7 +904,7 @@
           }
         }
      ```
- ## **Product Page:**
+##  **Product Page:**
  -    **URL:** <https://alike.io/products/farewell-tour-half-day-dubai-city-tour>
  -    **API:** `products`
  -    This is GraphQl also used for product detail page.
@@ -1404,7 +1404,17 @@
           "product_id": "2074"
         }
       ```
-
+-  **API:** `storeConfig`
+-  **Query:**
+    ```grqphql
+        {
+          storeConfig {
+            custom_general_rental_price
+            custom_general_rental_free
+            __typename
+          }
+        }
+    ```
 ## **Hotel Page**
 -   **URL:** <https://alike.io/hotels/list?search=Dubai,%20United%20Arab%20Emirates&destinations=ChIJRcbZaklDXz4RYlEphFBu5r0&checkIn=2024-04-04&checkOut=2024-04-06&occupancies=%5B%7B%22paxes%22%3A%5B%7B%22age%22%3A25%7D,%7B%22age%22%3A29%7D%5D%7D%5D>
 -   **API:** `searchListGuzzleX`
