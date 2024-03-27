@@ -2673,5 +2673,5 @@
     ```graphql:
         {
           "identifier": "tourist-plan"
-        }
+        } 
      ```
