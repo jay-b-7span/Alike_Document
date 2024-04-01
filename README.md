@@ -3007,7 +3007,8 @@
           }
         }
      ```
-##  **My Studio**
+     
+##  **My Studio Page**
 -   **URL:** <https://app.alike.io/#/my-studio/dashboard>
 -   **API:** `MyDashboard`
 -   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/57a15daf-6bf8-4673-b2e7-acdb59914c76)
@@ -3246,3 +3247,427 @@
           "currentPage": 1
         }
     ```
+-   **API:** `Followers`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/37f0cfb1-a53c-4f58-9b66-5505babada5d)
+-   **Query:**
+    ```graphql
+        query Followers($search: String) {
+          Followers(search: $search) {
+            id
+            insider_id
+            nick_name
+            profile_picture
+            __typename
+          }
+        }
+    ```
+-   **API:** `Following`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/7c50804c-2c61-4d07-884d-76e03b7dbd2b)
+-   **Query:**
+     ```graphql
+        query Following($search: String) {
+          Following(search: $search) {
+            id
+            insider_id
+            nick_name
+            profile_picture
+            __typename
+          }
+        }
+     ```
+-   **API:** `CategoryImageId`
+-   This API is located at **MY Profile** page
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/1342ff2b-aea5-4471-bdce-272e2e3b300c)
+-   **Query:**
+    ```graphql
+        {
+          CategoryImageId {
+            attribute_id
+            category_id
+            category_image
+            city_name
+            __typename
+          }
+        }
+     ```
+-   **API:** `customAttributeMetadata`
+-   This API is used when creating a trip story.
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/f5c1ba85-0821-4811-83f8-63dfd761b81e)
+-   **Query:**
+    ```graphql
+        query customAttributeMetadata($attributes: [AttributeInput!]!) {
+          customAttributeMetadata(attributes: $attributes) {
+            items {
+              attribute_options {
+                label
+                value
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+     ```graphql
+         {
+          "attributes": [
+            {
+              "attribute_code": "ins_tags",
+              "entity_type": "catalog_product"
+            }
+          ]
+        }
+     ```
+-   **API:** `customAttributeMetadata` for **Suitable for** section.
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/572768b0-5dc4-45a8-9e51-f56f2a11c8bb)
+-   **Query:**
+      ```graphql
+        query customAttributeMetadata($attributes: [AttributeInput!]!) {
+          customAttributeMetadata(attributes: $attributes) {
+            items {
+              attribute_options {
+                label
+                value
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "attributes": [
+            {
+              "attribute_code": "ins_traveller_type",
+              "entity_type": "catalog_product"
+            }
+          ]
+        }
+    ```
+-   **API:** `customAttributeMetadata` for **Duration** section.
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/02b261eb-83b7-458f-abfd-5ccaa4d293a6)
+-   **Query:**
+     ```graphql
+        query customAttributeMetadata($attributes: [AttributeInput!]!) {
+          customAttributeMetadata(attributes: $attributes) {
+            items {
+              attribute_options {
+                label
+                value
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+     ```graphql
+        {
+          "attributes": [
+            {
+              "attribute_code": "ins_duration",
+              "entity_type": "catalog_product"
+            }
+          ]
+        }
+     ```
+-   **API:** `CategoryImageId`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/d2fca32b-ab7d-485f-80bc-f3c7d63ccb5c)
+-    This API is used for Background images.
+-    **Query:**
+     ```graphql
+        {
+          CategoryImageId {
+            attribute_id
+            category_id
+            category_image
+            city_name
+            __typename
+          }
+        }
+     ```
+-   **API:** `hotel_activity_search`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/80b6606f-000a-4f46-a4c5-5a5bfb498864)
+-   This API is used for hotel section.
+-   **Query:**
+     ```graphql
+        {
+          hotel_activity_search {
+            city
+            id
+            name
+            sku
+            price
+            strike_price
+            image
+            product_type
+            __typename
+          }
+        }
+    ```
+-   **API:** `CreateTripStory`
+-   This API is use for create trip story.
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/74f754e5-99a9-44a6-a19d-323b29607fbf)
+-   **Query:**
+     ```graphql
+        mutation CreateTripStory($input: CreateTripStoryInput!) {
+          CreateTripStory(input: $input) {
+            id
+            url_key
+            sku
+            name
+            preview_url_key
+            story_type
+            ins_city
+            short_description_alike
+            ins_days
+            number_of_persons
+            visited_months
+            ins_highlights
+            ins_custom_attributes {
+              ins_city
+              ins_tags
+              ins_traveller_type
+              visited_months
+              __typename
+            }
+            image {
+              url
+              __typename
+            }
+            price {
+              minimalPrice {
+                amount {
+                  currency
+                  value
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            ins_traveller_type
+            ins_tags
+            itinerary {
+              image_video_itinerary {
+                sub_products_image {
+                  images {
+                    image {
+                      label
+                      url
+                      __typename
+                    }
+                    day
+                    caption
+                    description
+                    caption
+                    location
+                    product_id
+                    product_name
+                    product_sku
+                    record_id
+                    sort_order
+                    record_id
+                    tags
+                    __typename
+                  }
+                  option_id
+                  __typename
+                }
+                sub_products_video {
+                  videos {
+                    video {
+                      label
+                      url
+                      video_url
+                      __typename
+                    }
+                    day
+                    caption
+                    description
+                    caption
+                    location
+                    product_id
+                    product_name
+                    product_sku
+                    record_id
+                    sort_order
+                    record_id
+                    tags
+                    __typename
+                  }
+                  option_id
+                  __typename
+                }
+                __typename
+              }
+              trip_itinerary {
+                days {
+                  day
+                  about
+                  city
+                  title
+                  option_id
+                  accommodation
+                  sort_order
+                  activities {
+                    activity
+                    duration
+                    initialize
+                    item_category
+                    duration
+                    product_images {
+                      label
+                      url
+                      __typename
+                    }
+                    product_name
+                    product_sku
+                    product_id
+                    website_url
+                    email
+                    mobile
+                    product_videos {
+                      label
+                      url
+                      video_url
+                      __typename
+                    }
+                    record_id
+                    sort_order
+                    __typename
+                  }
+                  hotels {
+                    hotel
+                    duration
+                    initialize
+                    item_category
+                    duration
+                    hotel_images {
+                      label
+                      url
+                      __typename
+                    }
+                    product_name
+                    product_sku
+                    product_id
+                    hotel_videos {
+                      label
+                      url
+                      video_url
+                      __typename
+                    }
+                    record_id
+                    sort_order
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              revenue {
+                activity_revenue {
+                  product_name
+                  product_revenue
+                  __typename
+                }
+                total
+                __typename
+              }
+              trip_location {
+                day
+                city
+                activity {
+                  label
+                  location {
+                    latitude
+                    longitude
+                    __typename
+                  }
+                  sort_order
+                  __typename
+                }
+                __typename
+              }
+              images {
+                url
+                label
+                __typename
+              }
+              videos {
+                video_url
+                label
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "input": {
+            "id": "7867",
+            "type": "insider_trip_story"
+          }
+        }
+    ```
+-   **API:** `ActivitiesSerach` for **Activity** section.
+-   This API is used to add activity to the trip story.
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/59d44321-4942-4121-9dc5-8f7ca10a2fdc)
+-   **Query:**
+     ```graphql
+        query ActivitiesSerach($category_ids: [String], $type: String) {
+          ActivitiesSerach(category_ids: $category_ids, type: $type) {
+            id
+            name
+            sku
+            city
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "category_ids": [
+            "720",
+            "721"
+          ],
+          "type": "attractions"
+        }
+    ```
+-   **API:** `ActivitiesSerach` for **SIM & WIFi** section.
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/05132141-0736-4f3f-a26e-35b97c245dbf)
+-   **Query:**
+    ```graphql
+        query ActivitiesSerach($category_ids: [String], $type: String) {
+          ActivitiesSerach(category_ids: $category_ids, type: $type) {
+            id
+            name
+            sku
+            city
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "category_ids": [
+            "720",
+            "721"
+          ],
+          "type": "sim"
+        }
+    ```
+    
