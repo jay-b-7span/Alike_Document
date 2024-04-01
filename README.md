@@ -2960,3 +2960,50 @@
         }
      ```
 
+##  **Sign in Page**
+-    **URL:** <https://app.alike.io/#/signin>
+-    **API:** `amSocialLoginButtonConfig`
+-    This API used for social login.
+-    ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/78efb95a-4800-4883-8256-73159538a96e)
+-    **Query:**
+     ```graphql
+        {
+          amSocialLoginButtonConfig {
+            label
+            type
+            url
+            __typename
+          }
+        }
+     ```
+     
+##  **Sign up Page**
+-   **URL:** <https://app.alike.io/#/signup>
+-   **API:** `createCustomerV2`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/6fb7f72f-8b73-4bf0-8208-8ba550007850)
+-   **Query:**
+     ```graphql
+        mutation createCustomerV2($input: CustomerCreateInput!) {
+          createCustomerV2(input: $input) {
+            customer {
+              email
+              group_id
+              id
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+        {
+          "input": {
+            "is_insider": false,
+            "firstname": "Firstname",
+            "lastname": "Lastname",
+            "email": "jay+1@alike.io",
+            "password": "password"
+          }
+        }
+     ```
