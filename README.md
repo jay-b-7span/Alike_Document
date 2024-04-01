@@ -2900,4 +2900,63 @@
           }
         }
      ```
-     
+
+##  **Dubai-Abu-Dhabi-Holidays Page**
+-   **URL:** <https://alike.io/dubai-abu-dhabi-holidays>
+-   **API:** `products`
+-   This API used for **Top Attraction** section.
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/c0a857d9-0d62-4cbb-b19c-2547ab9122ed)
+-   **Query:**
+    ```graphql
+        query products($filter: ProductAttributeFilterInput) {
+          products(filter: $filter) {
+            items {
+              sku
+              url_key
+              id
+              name
+              tour_cities
+              tour_category
+              strike_price_value
+              image {
+                url
+                __typename
+              }
+              price_range {
+                minimum_price {
+                  final_price {
+                    currency
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              dynamicAttributes(fields: ["tour_cities", "tour_category"])
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+     ```graphql
+        {
+          "filter": {
+            "sku": {
+              "in": [
+                "AE-B-1901-P-0",
+                "AE-B-1902-P-0",
+                "AE-B-1903-P-0",
+                "AE-B-1904-P-0",
+                "AE-B-1905-P-0",
+                "AE-V-1800-P-1",
+                "AE-E-1002-P-1",
+                "AE-E-1041-P-0"
+              ]
+            }
+          }
+        }
+     ```
+
