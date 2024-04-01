@@ -905,7 +905,7 @@
         }
      ```
      
-##  **Product Page:**
+##  **Product Page**
  -    **URL:** <https://alike.io/products/farewell-tour-half-day-dubai-city-tour>
  -    **API:** `products`
  -    This is GraphQl also used for product detail page.
@@ -3668,6 +3668,930 @@
             "721"
           ],
           "type": "sim"
+        }
+    ```
+-   **API:** `customer`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/3774b8e1-27fd-4b7e-ba3d-4fa3b820e553)
+-   **Query:**
+    ```query
+        {
+          customer {
+            email
+            firstname
+            lastname
+            profile_picture
+            is_insider
+            insider_id
+            is_info_upadte
+            username
+            addresses {
+              id
+              default_billing
+              default_shipping
+              city
+              company
+              country_code
+              postcode
+              telephone
+              street
+              __typename
+            }
+            wishlists {
+              id
+              items_count
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **API:** `InsiderAccount`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/206da2f6-5460-463a-bb27-3e2d16a4d4da)
+-   **Query:**
+    ```graphql
+        query InsiderAccount($username: String!) {
+          InsiderAccount(username: $username) {
+            social {
+              label
+              favicon_icon
+              link
+              status
+              type
+              sort_order
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+     ```graphql
+        {
+          "username": "jay0392"
+        }
+     ```
+-   **API:** `changeCustomerPassword`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/812b7b9b-4d92-4a79-a9d8-923be4bb508f)
+-   **Query:**
+    ```graphql
+        mutation changeCustomerPassword($currentPassword: String!, $newPassword: String!) {
+          changeCustomerPassword(
+            currentPassword: $currentPassword
+            newPassword: $newPassword
+          ) {
+            id
+            email
+            firstname
+            lastname
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+     ```graphql
+        {
+          "currentPassword": "***@123",
+          "newPassword": "*****@123"
+        }
+    ```
+
+##  **My Trips Page**
+-   **URL:** <https://app.alike.io/#/my-trips>
+-   **API:** `CategoryImageId`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/85a87c89-f4e8-4600-8497-3ff503ffa78e)
+-   **Query:**
+     ```graphql
+        {
+          CategoryImageId {
+            attribute_id
+            category_id
+            category_image
+            city_name
+            __typename
+          }
+        }
+    ```
+-   **API:** `hotel_activity_search`
+-   This API is used for the **Places to Stay** section on trip planner.
+-   **Query:**
+     ```graphql
+        {
+          hotel_activity_search {
+            city
+            id
+            name
+            sku
+            price
+            strike_price
+            image
+            product_type
+            __typename
+          }
+        }
+    ```
+-   **API:** `CreateTripPlanner`
+-   This API is used for create a trip planner.
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/7844a827-b618-4b9a-becb-b7f348a8b95d)
+-   **Query:**
+     ```graphql
+        mutation CreateTripPlanner($input: CreateTripPlannerInput!) {
+          CreateTripPlanner(input: $input) {
+            id
+            uid
+            name
+            image {
+              url
+              __typename
+            }
+            ins_days
+            ins_city
+            start_date
+            categories {
+              id
+              name
+              __typename
+            }
+            ins_custom_attributes {
+              ins_city
+              __typename
+            }
+            file_attachments {
+              file_label
+              record_id
+              upload_file
+              date
+              type
+              size
+              __typename
+            }
+            travel_notes {
+              is_require
+              notes
+              option_id
+              record_id
+              sort_order
+              title
+              type
+              values {
+                record_id
+                sort_order
+                title
+                value
+                __typename
+              }
+              __typename
+            }
+            trip_planner {
+              customer_sharing {
+                email
+                name
+                profile
+                role
+                __typename
+              }
+              trip_planner_data {
+                days {
+                  day
+                  date
+                  option_id
+                  record_id
+                  sort_order
+                  cities {
+                    city_name
+                    about
+                    city
+                    option_id
+                    record_id
+                    sort_order
+                    activities {
+                      activity_image
+                      notes
+                      product_id
+                      product_name
+                      product_sku
+                      duration
+                      record_id
+                      sort_order
+                      start_time
+                      end_time
+                      __typename
+                    }
+                    food_drink {
+                      activity_image
+                      notes
+                      product_id
+                      product_name
+                      product_sku
+                      duration
+                      record_id
+                      sort_order
+                      start_time
+                      end_time
+                      place_id
+                      __typename
+                    }
+                    hotels {
+                      activity_image
+                      notes
+                      product_id
+                      product_name
+                      product_sku
+                      duration
+                      record_id
+                      sort_order
+                      start_time
+                      end_time
+                      __typename
+                    }
+                    travel_essentials {
+                      activity_image
+                      notes
+                      product_id
+                      product_name
+                      product_sku
+                      duration
+                      record_id
+                      sort_order
+                      start_time
+                      end_time
+                      type
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              trip_planner_location {
+                activity {
+                  label
+                  location {
+                    label
+                    lat
+                    latitude
+                    long
+                    longitude
+                    __typename
+                  }
+                  price
+                  rating
+                  strike_price
+                  product_image
+                  sort_order
+                  tour_category
+                  city
+                  start_time
+                  end_time
+                  __typename
+                }
+                day
+                date
+                __typename
+              }
+              trip_planner_timeline {
+                activity {
+                  city
+                  end_time
+                  label
+                  record_id
+                  price
+                  product_image
+                  sort_order
+                  start_time
+                  strike_price
+                  tour_category
+                  __typename
+                }
+                date
+                day
+                __typename
+              }
+              trip_planner_summary {
+                count
+                label
+                data {
+                  city
+                  label
+                  product_image
+                  tour_category
+                  date
+                  start_time
+                  end_time
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+    ```graphql
+        {
+          "input": {
+            "id": "8162"
+          }
+        }
+    ```
+-   **API:** `customer` -> `wishlist_v2`
+-   This API is used to wishlist.
+-   Here in this API input `type` change it works like a filter.
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/2f20b1d3-d459-43af-a005-21b14590cbbf)
+-   **Query:**
+     ```graphql
+        query customer($id: ID!, $currentPage: Int!, $pageSize: Int, $type: String, $search: String) {
+          customer {
+            wishlist_v2(id: $id) {
+              id
+              items_count
+              total_count
+              items_v2(
+                currentPage: $currentPage
+                pageSize: $pageSize
+                type: $type
+                search: $search
+              ) {
+                page_info {
+                  current_page
+                  page_size
+                  total_pages
+                  __typename
+                }
+                items {
+                  id
+                  product {
+                    id
+                    uid
+                    name
+                    sku
+                    strike_price_value
+                    type
+                    image {
+                      url
+                      __typename
+                    }
+                    price_range {
+                      minimum_price {
+                        final_price {
+                          value
+                          __typename
+                        }
+                        __typename
+                      }
+                      __typename
+                    }
+                    dynamicAttributes(fields: ["tour_cities", "tour_category", "id"])
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-    **variables:**
+      ```graphql
+        {
+          "id": "13144",
+          "currentPage": 1,
+          "pageSize": 300,
+          "type": "hotels"
+        }
+      ```
+-   **API:** `tripPlannerActivitiesSerach`
+-   This API is similar to wishlist_v2 GraphQl just different is in this API load all product whech we passed type as filter.
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/a131c9b3-22e6-4707-a08b-058453ebaffe)
+-   **Query:**
+     ```graphql
+        query tripPlannerActivitiesSerach($category_ids: [String], $type: String!) {
+          tripPlannerActivitiesSerach(category_ids: $category_ids, type: $type) {
+            city
+            id
+            name
+            sku
+            price
+            strike_price
+            image
+            product_type
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+   ```graphql
+        {
+          "category_ids": "720",
+          "type": "things_to_do"
+        }
+   ```
+-   **API:** `CreateTripPlanner` -> `travel_notes`
+-   Here this API used for **Notes & Files** section.
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/a1d0a40d-4fcb-4bd0-af54-5c185f2b9b3d)
+-   **Query:**
+     ```graphql
+        mutation CreateTripPlanner($input: CreateTripPlannerInput!) {
+          CreateTripPlanner(input: $input) {
+            id
+            uid
+            name
+            image {
+              url
+              __typename
+            }
+            ins_days
+            ins_city
+            start_date
+            categories {
+              id
+              name
+              __typename
+            }
+            ins_custom_attributes {
+              ins_city
+              __typename
+            }
+            file_attachments {
+              file_label
+              record_id
+              upload_file
+              date
+              type
+              size
+              __typename
+            }
+            travel_notes {
+              is_require
+              notes
+              option_id
+              record_id
+              sort_order
+              title
+              type
+              values {
+                record_id
+                sort_order
+                title
+                value
+                __typename
+              }
+              __typename
+            }
+            trip_planner {
+              customer_sharing {
+                email
+                name
+                profile
+                role
+                __typename
+              }
+              trip_planner_data {
+                days {
+                  day
+                  date
+                  option_id
+                  record_id
+                  sort_order
+                  cities {
+                    city_name
+                    about
+                    city
+                    option_id
+                    record_id
+                    sort_order
+                    activities {
+                      activity_image
+                      notes
+                      product_id
+                      product_name
+                      product_sku
+                      duration
+                      record_id
+                      sort_order
+                      start_time
+                      end_time
+                      __typename
+                    }
+                    food_drink {
+                      activity_image
+                      notes
+                      product_id
+                      product_name
+                      product_sku
+                      duration
+                      record_id
+                      sort_order
+                      start_time
+                      end_time
+                      place_id
+                      __typename
+                    }
+                    hotels {
+                      activity_image
+                      notes
+                      product_id
+                      product_name
+                      product_sku
+                      duration
+                      record_id
+                      sort_order
+                      start_time
+                      end_time
+                      __typename
+                    }
+                    travel_essentials {
+                      activity_image
+                      notes
+                      product_id
+                      product_name
+                      product_sku
+                      duration
+                      record_id
+                      sort_order
+                      start_time
+                      end_time
+                      type
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              trip_planner_location {
+                activity {
+                  label
+                  location {
+                    label
+                    lat
+                    latitude
+                    long
+                    longitude
+                    __typename
+                  }
+                  price
+                  rating
+                  strike_price
+                  product_image
+                  sort_order
+                  tour_category
+                  city
+                  start_time
+                  end_time
+                  __typename
+                }
+                day
+                date
+                __typename
+              }
+              trip_planner_timeline {
+                activity {
+                  city
+                  end_time
+                  label
+                  record_id
+                  price
+                  product_image
+                  sort_order
+                  start_time
+                  strike_price
+                  tour_category
+                  __typename
+                }
+                date
+                day
+                __typename
+              }
+              trip_planner_summary {
+                count
+                label
+                data {
+                  city
+                  label
+                  product_image
+                  tour_category
+                  date
+                  start_time
+                  end_time
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+     ```graphql
+        {
+          "input": {
+            "id": 8162,
+            "name": "dubai",
+            "banner_image": {
+              "base64": null,
+              "status": "completed",
+              "url": "https://alike-asset.s3.eu-central-1.amazonaws.com/catalog/product/placeholder/default/trip-placeholder.jpg"
+            },
+            "category_id": [
+              "720"
+            ],
+            "ins_city": [
+              "720"
+            ],
+            "ins_days": "3",
+            "sku": null,
+            "start_date": "2024-04-02 00:00:00",
+            "travel_notes": [
+              {
+                "option_id": "211c1e0b83b9c69fa9c4bdede203c1e3",
+                "record_id": "211c1e0b83b9c69fa9c4bdede203c1e3",
+                "is_require": true,
+                "notes": "<p>dfsafds</p>",
+                "sort_order": 1,
+                "title": "abc",
+                "type": "area",
+                "values": []
+              },
+              {
+                "option_id": "861dc9bd7f4e7dd3cccd534d0ae2a2e9",
+                "record_id": "861dc9bd7f4e7dd3cccd534d0ae2a2e9",
+                "is_require": true,
+                "notes": null,
+                "sort_order": 2,
+                "title": null,
+                "type": "area",
+                "values": []
+              }
+            ],
+            "file_attachments": [],
+            "trip_planner_itinerary": [
+              {
+                "day": "1",
+                "date": "2024-04-02T06:59:10.221Z",
+                "option_id": "6e79ed05baec2754e25b4eac73a332d2",
+                "record_id": "6e79ed05baec2754e25b4eac73a332d2",
+                "sort_order": "1",
+                "cities": [
+                  {
+                    "about": null,
+                    "city": "720",
+                    "option_id": "7e448ed9dd44e6e22442dac8e21856ae",
+                    "record_id": "7e448ed9dd44e6e22442dac8e21856ae",
+                    "sort_order": null,
+                    "activities": [
+                      {
+                        "notes": null,
+                        "product_id": "34",
+                        "product_sku": "AE-E-1033-P-0",
+                        "duration": null,
+                        "record_id": "24368c745de15b3d2d6279667debcba3",
+                        "sort_order": 1,
+                        "start_time": null,
+                        "end_time": null,
+                        "type": "activity",
+                        "product_name": "Desert Safari",
+                        "activity_image": "https://alike-asset.s3.eu-central-1.amazonaws.com/catalog/product/b/a/base-image.jpg?store=alike&image-type=image"
+                      }
+                    ],
+                    "food_drink": [],
+                    "hotels": [],
+                    "travel_essentials": []
+                  }
+                ]
+              },
+              {
+                "day": "2",
+                "date": "2024-04-03T06:59:10.221Z",
+                "option_id": "fa2e8c4385712f9a1d24c363a2cbe5b8",
+                "record_id": "fa2e8c4385712f9a1d24c363a2cbe5b8",
+                "sort_order": "2",
+                "cities": [
+                  {
+                    "about": null,
+                    "city": "720",
+                    "option_id": "b31df16a88ce00fed951f24b46e08649",
+                    "record_id": "b31df16a88ce00fed951f24b46e08649",
+                    "sort_order": null,
+                    "activities": [],
+                    "food_drink": [],
+                    "hotels": [],
+                    "travel_essentials": []
+                  }
+                ]
+              },
+              {
+                "day": "3",
+                "date": "2024-04-04T06:59:10.221Z",
+                "option_id": "14678db82874f1456031fcc05a3afaf6",
+                "record_id": "14678db82874f1456031fcc05a3afaf6",
+                "sort_order": "3",
+                "cities": [
+                  {
+                    "about": null,
+                    "city": "720",
+                    "option_id": "7ab6acc5bbf252028d5ffa1b92e6beb1",
+                    "record_id": "7ab6acc5bbf252028d5ffa1b92e6beb1",
+                    "sort_order": null,
+                    "activities": [],
+                    "food_drink": [],
+                    "hotels": [],
+                    "travel_essentials": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+     ```
+-    **API:** `customer` -> `wishlist_v2`
+-    Here this GraphQl show all product which user add on bucket.
+-    ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/b4dc4765-edb1-4dc1-9bf7-1fa7137cc885)
+-    **Query:**
+     ```graphql
+        query customer($id: ID!, $currentPage: Int!, $pageSize: Int, $type: String, $search: String) {
+          customer {
+            wishlist_v2(id: $id) {
+              id
+              items_count
+              total_count
+              items_v2(
+                currentPage: $currentPage
+                pageSize: $pageSize
+                type: $type
+                search: $search
+              ) {
+                page_info {
+                  current_page
+                  page_size
+                  total_pages
+                  __typename
+                }
+                items {
+                  id
+                  product {
+                    id
+                    uid
+                    name
+                    sku
+                    strike_price_value
+                    type
+                    image {
+                      url
+                      __typename
+                    }
+                    price_range {
+                      minimum_price {
+                        final_price {
+                          value
+                          __typename
+                        }
+                        __typename
+                      }
+                      __typename
+                    }
+                    dynamicAttributes(fields: ["tour_cities", "tour_category", "id"])
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+        {
+          "pageSize": 8,
+          "currentPage": 1,
+          "id": "13144"
+        }
+     ```
+
+-    **API** `customer` ->`wishlist_v2` (used for search)
+-    ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/29961d51-744c-4d9a-9a93-5e6fdfb2a2fb)
+-    **Query:**
+     ```graphql
+        query customer($id: ID!, $currentPage: Int!, $pageSize: Int, $type: String, $search: String) {
+          customer {
+            wishlist_v2(id: $id) {
+              id
+              items_count
+              total_count
+              items_v2(
+                currentPage: $currentPage
+                pageSize: $pageSize
+                type: $type
+                search: $search
+              ) {
+                page_info {
+                  current_page
+                  page_size
+                  total_pages
+                  __typename
+                }
+                items {
+                  id
+                  product {
+                    id
+                    uid
+                    name
+                    sku
+                    strike_price_value
+                    type
+                    image {
+                      url
+                      __typename
+                    }
+                    price_range {
+                      minimum_price {
+                        final_price {
+                          value
+                          __typename
+                        }
+                        __typename
+                      }
+                      __typename
+                    }
+                    dynamicAttributes(fields: ["tour_cities", "tour_category", "id"])
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+      ```
+-    **variables:**
+      ```qraphql
+        {
+          "search": "dub",
+          "pageSize": 8,
+          "currentPage": 1,
+          "id": "13144"
+        }
+     ```
+-    **API:** `tripPlannerCollection`
+-    ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/bf03f784-c5a0-4961-b378-e2758d1a1176)
+-    **Query:**
+     ```graphql
+        query tripPlannerCollection($filters: TripPlannerCollectionFilter, $search: String, $currentPage: Int!, $pageSize: Int) {
+          tripPlannerCollection(
+            filter: $filters
+            search: $search
+            currentPage: $currentPage
+            pageSize: $pageSize
+          ) {
+            page_info {
+              current_page
+              page_size
+              total_pages
+              __typename
+            }
+            total_count
+            trip_planner {
+              base_image
+              customer_sharing {
+                email
+                name
+                profile
+                role
+                __typename
+              }
+              id
+              ins_duration
+              name
+              start_date
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+    ```graphql
+        {
+          "filters": {
+            "type": "upcoming"
+          },
+          "pageSize": 8,
+          "currentPage": 1
         }
     ```
     
