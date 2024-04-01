@@ -3007,3 +3007,242 @@
           }
         }
      ```
+##  **My Studio**
+-   **URL:** <https://app.alike.io/#/my-studio/dashboard>
+-   **API:** `MyDashboard`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/57a15daf-6bf8-4673-b2e7-acdb59914c76)
+-   **Query:**
+    ```graphql
+        query MyDashboard($input: MyDashboardInput) {
+          MyDashboard(input: $input) {
+            earning_percentage
+            goal_percenatge
+            customers_count
+            goal_earned_data
+            goal_remain_data
+            last_few_days_order_data {
+              data
+              xaxis
+              __typename
+            }
+            last_few_days_profit_data {
+              credit
+              spent
+              xaxis
+              __typename
+            }
+            last_month_profit_data
+            lifetime_sale
+            revenue {
+              credit
+              spent
+              xaxis
+              __typename
+            }
+            sale_count
+            sales_data {
+              data
+              xaxis
+              __typename
+            }
+            this_month_profit_data
+            total_booked_trips
+            total_products
+            total_revenue
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "input": {
+            "from": "2-3-2024",
+            "to": "1-4-2024"
+          }
+        }
+    ```
+-   **API:** `MyStudioAccount`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/84145dbf-d852-4431-bead-f8edc2a3f2de)
+-   **Query:**
+    ```graphql
+        query MyStudioAccount($section: String!) {
+          MyStudioAccount(section: $section) {
+            about
+            cover_photo
+            name
+            profile_picture
+            username
+            insider_username
+            join_date
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+     ```graphql
+        {
+          "section": "general"
+        }
+     ```
+
+-   **API:** `MyDashboard` -> `top_trips`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/c2d654a1-7b1e-42d5-9945-84308bec984a)
+-   **Query:**
+    ```graphql
+        query MyDashboard($sort: TopTripsSortInput) {
+          MyDashboard {
+            top_trips(sort: $sort) {
+              image
+              price
+              revenue
+              sales
+              tripstory
+              type_id
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **API:** `MyDashboard` -> `recent_transactions`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/9c735ca2-8e56-42fd-b58c-70592a5b02c4)
+-   **Query:**
+     ```graphql
+        query MyDashboard($sort: RecentTransactionSortInput) {
+          MyDashboard {
+            recent_transactions(sort: $sort) {
+              transactions {
+                amount
+                balance
+                created_at
+                transaction_type
+                status
+                debitCredit
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-   **API:** `wallets`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/9ba82770-8170-4517-ad58-a2ee1a2e1bd8)
+-    **Query:**
+      ```graphql
+        {
+          wallets {
+            credit {
+              balance
+              currency
+              __typename
+            }
+            __typename
+          }
+        }
+      ```
+-   **API:** `customAttributeMetadata`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/65d69019-1c17-4a0d-bb70-6c500287ff0a)
+-   **Query:**
+     ```graphql
+        query customAttributeMetadata($attributes: [AttributeInput!]!) {
+          customAttributeMetadata(attributes: $attributes) {
+            items {
+              attribute_options {
+                label
+                value
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "attributes": [
+            {
+              "attribute_code": "ins_duration",
+              "entity_type": "catalog_product"
+            }
+          ]
+        }
+    ```
+-   **API:** `customAttributeMetadata` for **City** selection
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/2e121a5c-e4d4-4ed8-98d3-82e9b75944f6)
+-   **Query:**
+     ```graphql
+        query customAttributeMetadata($attributes: [AttributeInput!]!) {
+          customAttributeMetadata(attributes: $attributes) {
+            items {
+              attribute_options {
+                label
+                value
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+     ```graphql
+        {
+          "attributes": [
+            {
+              "attribute_code": "ins_city",
+              "entity_type": "catalog_product"
+            }
+          ]
+        }
+     ```
+-   **API:** `MyTrips`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/d3a1a222-cc03-45f8-baaa-610451b50511)
+-   **Query:**
+    ```graphql
+        query MyTrips($filters: MyTripsFilterInput, $search: String, $currentPage: Int!, $pageSize: Int) {
+          MyTrips(
+            filter: $filters
+            search: $search
+            currentPage: $currentPage
+            pageSize: $pageSize
+          ) {
+            transactions {
+              id
+              sku
+              name
+              tags
+              image
+              price
+              status
+              type_id
+              no_of_days
+              preview_url_key
+              __typename
+            }
+            page_info {
+              current_page
+              page_size
+              total_pages
+              __typename
+            }
+            total_count
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "filters": {
+            "status": null,
+            "type_id": null
+          },
+          "pageSize": 10,
+          "currentPage": 1
+        }
+    ```
