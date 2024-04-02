@@ -1,4 +1,4 @@
-     **This Document for All backend API's**If anything is missing, please contact me as soon as possible.
+![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/fa1a6994-dad5-4ca0-a2d8-ebe46632cf48)     **This Document for All backend API's**If anything is missing, please contact me as soon as possible.
 
      
 ##  **Home Page**
@@ -2687,7 +2687,71 @@
           "identifier": "tourist-plan"
         } 
      ```
+-   **API:** `customerCart`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/f9b3afc0-93ae-4e9c-8554-5951bd75bd1a)
+-   **Query:**
+    ```graphql
+        {
+          customerCart {
+            id
+            items {
+              id
+              saved_price
+              strike_price_value
+              product {
+                name
+                sku
+                url_key
+                thumbnail {
+                  label
+                  url
+                  __typename
+                }
+                __typename
+              }
+              prices {
+                price {
+                  currency
+                  value
+                  __typename
+                }
+                __typename
+              }
+              quantity
+              custom_info {
+                tour_category
+                item_category
+                name
+                type
+                location
+                image
+                original_price
+                saving_price
+                custom_options {
+                  key
+                  label
+                  value
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            total_quantity
+            prices {
+              grand_total {
+                value
+                currency
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
 
+    
 ##  **Travel Passes Page**
 -   **URL:** <https://alike.io/travel-passes?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu>
 -   **API:** `categories`
@@ -6213,5 +6277,752 @@
     ```graphql
         {
           "orderId": "1051786"
+        }
+    ```
+
+##  **JCB Page**
+-   **URL:** <https://alike.io/jcb>
+-   **API:** `passProducts`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/4e062059-1904-4f2d-83f4-045d34e7a6dd)
+-   **Query:**
+     ```graphql
+        query passProducts($uid: String!) {
+          passProducts(uid: $uid) {
+            items {
+              uid
+              id
+              url_key
+              name
+              image {
+                url
+                __typename
+              }
+              thumbnail {
+                url
+                __typename
+              }
+              price_range {
+                minimum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              sku
+              adult_price
+              child_price
+              pass_adult_price
+              pass_child_price
+              pass_discount_label
+              pass_display_price
+              pass_variation_id
+              pass_variation_name
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "uid": "ODAwNg=="
+        }
+    ```
+-   **API:** `passPremium`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/4cbc0154-c3ea-4a36-9e9a-9379992970a8)
+-   **Query:**
+     ```graphql
+        query passPremium($uid: String!) {
+          passPremium(uid: $uid) {
+            items {
+              uid
+              id
+              url_key
+              name
+              image {
+                url
+                __typename
+              }
+              price_range {
+                minimum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              sku
+              adult_price
+              child_price
+              pass_adult_price
+              pass_child_price
+              pass_discount_label
+              pass_display_price
+              pass_variation_id
+              pass_variation_name
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "uid": "ODAwNg=="
+        }
+    ```
+-   **API:** `passTravel`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/e845ecd7-7c63-4eea-9703-d42d7176ac2a)
+-   **Query:**
+     ```graphql
+        query passTravel($uid: String!) {
+          passTravel(uid: $uid) {
+            items {
+              uid
+              id
+              url_key
+              name
+              image {
+                url
+                __typename
+              }
+              price_range {
+                minimum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              sku
+              adult_price
+              child_price
+              pass_adult_price
+              pass_child_price
+              pass_discount_label
+              pass_display_price
+              pass_variation_id
+              pass_variation_name
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "uid": "ODAwNg=="
+        }
+    ```
+
+##  **About Insider Page**
+-   ***URL:** <https://alike.io/trawheeling>
+-   **API:** `InsiderAccount`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/e2f66080-f9d6-43b1-a653-4804725e9fc4)
+-   **Query:**
+    ```graphql
+        query InsiderAccount($username: String!) {
+          InsiderAccount(username: $username) {
+            cover_photo
+            social {
+              label
+              favicon_icon
+              link
+              status
+              type
+              sort_order
+              __typename
+            }
+            visited_cities {
+              name
+              url_key
+              __typename
+            }
+            followers
+            following
+            is_followed
+            about
+            city
+            join_date
+            name
+            profile_picture
+            username
+            insider_id
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "username": "trawheeling"
+        }
+    ```
+-   **API:** `CategoryImageId`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/5c8cbd79-78f4-419a-99fe-15dcc3e2b978)
+-   **Query:**
+    ```graphql
+        {
+          CategoryImageId {
+            attribute_id
+            category_id
+            category_image
+            city_name
+            __typename
+          }
+        }
+    ```
+
+##  **Travel pass Detail Page**
+-   **URL:** <https://alike.io/products/the-london-passr>
+-   **API:** `products`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/07d83042-94e6-4312-90a9-ec58cc1bb3ba)
+-   **Query:**
+     ```graphql
+        query products($search: String, $filter: ProductAttributeFilterInput) {
+          products(search: $search, filter: $filter) {
+            items {
+              api_connected
+              api_connected_label
+              attribute_set_id
+              available_from
+              available_to
+              musement_id
+              url_key
+              sku
+              id
+              name
+              categories {
+                name
+                uid
+                url_key
+                level
+                __typename
+              }
+              ticket_advance_time
+              strike_price_value
+              strike_price_percentage
+              __typename
+              ... on BundleProduct {
+                items {
+                  options {
+                    position
+                    product {
+                      sku
+                      id
+                      name
+                      is_transfer
+                      strike_price_value
+                      strike_price_percentage
+                      pass_included_zomato
+                      pass_included_text_zomato
+                      pass_included_tour
+                      pass_included_text_tour
+                      pass_included_sim
+                      pass_included_text_sim
+                      pass_included_wifi
+                      pass_included_text_wifi
+                      pass_included_nol
+                      pass_included_text_nol
+                      pass_included_visa
+                      pass_included_text_visa
+                      price_range {
+                        minimum_price {
+                          final_price {
+                            value
+                            __typename
+                          }
+                          __typename
+                        }
+                        __typename
+                      }
+                      exp_included
+                      exp_excluded
+                      touristor_saver {
+                        final_price
+                        image
+                        label
+                        name
+                        original_price
+                        type
+                        __typename
+                      }
+                      hide_adult
+                      hide_child
+                      hide_infant
+                      kit_availability {
+                        available {
+                          from
+                          to
+                          __typename
+                        }
+                        kit_id
+                        name
+                        not_available
+                        price
+                        price_adult
+                        price_child
+                        timeslots
+                        transfer_type
+                        type
+                        __typename
+                      }
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              globaltix_availability {
+                activity_id
+                id
+                name
+                price
+                variations {
+                  id
+                  isOpenDated
+                  maximumPax
+                  minimumPax
+                  name
+                  type
+                  visitDate {
+                    advanceBookingDays
+                    advanceBookingHours
+                    advanceBookingMinutes
+                    class
+                    id
+                    isAdvanceBooking
+                    isRequestVisitDate
+                    isVisitDateCompulsory
+                    ticketTypeGroup {
+                      class
+                      id
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              is_transfer
+              adult_label
+              hide_adult
+              hide_child
+              hide_infant
+              kit_availability {
+                available {
+                  from
+                  to
+                  timeslots
+                  __typename
+                }
+                kit_id
+                name
+                not_available
+                price
+                price_adult
+                price_child
+                timeslots
+                transfer_type
+                type
+                __typename
+              }
+              image {
+                url
+                __typename
+              }
+              tour_cities
+              exp_itinerary
+              tour_category
+              exp_duration
+              exp_good_for
+              exp_languages
+              exp_transport_available
+              exp_ticket_confirmation
+              exp_type_of_ticket
+              exp_cancellation
+              exp_included_in_touristor
+              short_description_alike
+              exp_included
+              exp_excluded
+              exp_more_information
+              description_alike
+              exp_cancellation_policy
+              exp_child_policy
+              exp_activity_details
+              exp_address
+              exp_timings
+              rayna_id
+              rayna_country_id
+              rayna_city_id
+              rayna_contract_id
+              media_gallery {
+                url
+                label
+                disabled
+                __typename
+              }
+              included_in_touristors {
+                url_key
+                id
+                name
+                dynamicAttributes(fields: ["tour_cities", "tour_category"])
+                exp_cancellation
+                exp_duration
+                exp_good_for
+                price_range {
+                  minimum_price {
+                    final_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                image {
+                  url
+                  __typename
+                }
+                small_image {
+                  url
+                  __typename
+                }
+                thumbnail {
+                  url
+                  __typename
+                }
+                __typename
+              }
+              included_trips {
+                uid
+                id
+                url_key
+                product_likes
+                ins_days
+                name
+                short_description_alike
+                ins_tags
+                ins_city
+                is_liked
+                dynamicAttributes(fields: ["ins_city", "ins_traveller_type", "ins_tags"])
+                insider_data {
+                  insider_name
+                  insider_logo
+                  insider_id
+                  profile_url
+                  is_followed
+                  username
+                  __typename
+                }
+                ins_traveller_type
+                image {
+                  url
+                  __typename
+                }
+                small_image {
+                  url
+                  __typename
+                }
+                thumbnail {
+                  url
+                  __typename
+                }
+                story_icons_count
+                icons {
+                  icon_url
+                  label
+                  count
+                  __typename
+                }
+                sku
+                type_id
+                price_range {
+                  maximum_price {
+                    regular_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  minimum_price {
+                    regular_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              related_products {
+                url_key
+                id
+                name
+                dynamicAttributes(fields: ["tour_cities", "tour_category"])
+                exp_cancellation
+                exp_duration
+                exp_good_for
+                price_range {
+                  minimum_price {
+                    final_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                image {
+                  url
+                  __typename
+                }
+                small_image {
+                  url
+                  __typename
+                }
+                thumbnail {
+                  url
+                  __typename
+                }
+                __typename
+              }
+              price_range {
+                maximum_price {
+                  final_price {
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                minimum_price {
+                  final_price {
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              pass_included_zomato
+              pass_included_text_zomato
+              pass_included_tour
+              pass_included_text_tour
+              pass_included_sim
+              pass_included_text_sim
+              pass_included_wifi
+              pass_included_text_wifi
+              pass_included_nol
+              pass_included_text_nol
+              pass_included_visa
+              pass_included_text_visa
+              touristor_saver {
+                final_price
+                image
+                label
+                name
+                order
+                original_price
+                type
+                url_key
+                tour_category
+                __typename
+              }
+              dynamicAttributes(
+                fields: ["tour_cities", "exp_languages", "exp_good_for", "tour_category", "off_days", "api_connected", "api_connected_label"]
+              )
+            }
+            total_count
+            page_info {
+              current_page
+              page_size
+              total_pages
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "filter": {
+            "url_key": {
+              "eq": "the-london-passr"
+            }
+          },
+          "pageSize": 1,
+          "currentPage": 1
+        }
+    ```
+-   **API:** `getMusementActivity`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/84fca3e2-be42-4c99-8a5c-3fb74a797cd4)
+-   **Query:**
+    ```graphql
+        query getMusementActivity($input: MusementActivityInput) {
+          getMusementActivity(input: $input) {
+            booking_type
+            daily
+            open
+            order_box_elements
+            sold_out
+            uuid
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "input": {
+            "activity_uuid": "0f636ca4-2046-11e7-9cc9-06a7e332783f",
+            "pickup": ""
+          }
+        }
+    ```
+-   **API:** `getMusementActivityDates`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/9534014f-bb78-446a-8424-ca7d442926ba)
+-   **Query:**
+    ```graphql
+        query getMusementActivityDates($input: MusementActivityDatesInput) {
+          getMusementActivityDates(input: $input) {
+            day
+            price
+            sold_out
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "input": {
+            "activity_uuid": "0f636ca4-2046-11e7-9cc9-06a7e332783f",
+            "pickup": "",
+            "booking_type": "NO-CALENDAR-FIXED-VALIDITY",
+            "date_from": "",
+            "date_to": ""
+          }
+        }
+    ```
+-   **API:** `getMusementTickets`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/d8a71c7e-d049-4dc3-a106-fcc728d90d7f)
+-   **Query:**
+     ```graphql
+        query getMusementTickets($input: MusementActivityInput) {
+          getMusementTickets(input: $input) {
+            groups {
+              default
+              feature_code
+              name
+              slots {
+                languages {
+                  code
+                  name
+                  __typename
+                }
+                products {
+                  activity_uuid
+                  default
+                  discount_amount {
+                    currency
+                    formatted_iso_value
+                    formatted_value
+                    value
+                    __typename
+                  }
+                  holder_code
+                  holder_code_normalized
+                  max_buy
+                  merchant_price {
+                    currency
+                    formatted_iso_value
+                    formatted_value
+                    value
+                    __typename
+                  }
+                  min_buy
+                  name
+                  original_retail_price {
+                    currency
+                    formatted_iso_value
+                    formatted_value
+                    value
+                    __typename
+                  }
+                  original_retail_price_without_service_fee {
+                    currency
+                    formatted_iso_value
+                    formatted_value
+                    value
+                    __typename
+                  }
+                  product_id
+                  retail_price {
+                    currency
+                    formatted_iso_value
+                    formatted_value
+                    value
+                    __typename
+                  }
+                  retail_price_without_service_fee {
+                    currency
+                    formatted_iso_value
+                    formatted_value
+                    value
+                    __typename
+                  }
+                  service_fee {
+                    currency
+                    formatted_iso_value
+                    formatted_value
+                    value
+                    __typename
+                  }
+                  type
+                  __typename
+                }
+                tag
+                time
+                __typename
+              }
+              type
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "input": {
+            "product_id": 360,
+            "activity_uuid": "0f636ca4-2046-11e7-9cc9-06a7e332783f",
+            "pickup": "",
+            "day": null,
+            "booking_type": "NO-CALENDAR-FIXED-VALIDITY"
+          }
         }
     ```
