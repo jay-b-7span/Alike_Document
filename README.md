@@ -4595,3 +4595,1181 @@
         }
     ```
     
+##  **Trip Stories Page**
+-   **URL:** <https://alike.io/trip-stories?utm_source=site&utm_medium=menu-desktop&utm_campaign=menu>
+-   **API:** `products`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/f320b815-9089-4dc5-802a-5343ca1cb91e)
+-   **Query:**
+     ```graphql
+        query products($search: String, $filter: ProductAttributeFilterInput, $pageSize: Int, $currentPage: Int, $sort: ProductAttributeSortInput) {
+          products(
+            search: $search
+            filter: $filter
+            pageSize: $pageSize
+            currentPage: $currentPage
+            sort: $sort
+          ) {
+            aggregations {
+              attribute_code
+              count
+              label
+              options {
+                count
+                label
+                value
+                __typename
+              }
+              __typename
+            }
+            items {
+              id
+              url_key
+              product_likes
+              ins_days
+              name
+              short_description_alike
+              ins_tags
+              ins_city
+              story_icons_count
+              icons {
+                icon_url
+                label
+                count
+                __typename
+              }
+              dynamicAttributes(fields: ["ins_tags", "ins_city"])
+              is_liked
+              insider_data {
+                insider_name
+                insider_logo
+                insider_id
+                profile_url
+                is_followed
+                username
+                __typename
+              }
+              image {
+                url
+                __typename
+              }
+              small_image {
+                url
+                __typename
+              }
+              sku
+              type_id
+              price_range {
+                maximum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  __typename
+                }
+                minimum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            total_count
+            page_info {
+              current_page
+              page_size
+              total_pages
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+     ```graphql
+        {
+          "currentPage": 1,
+          "pageSize": 6,
+          "search": "",
+          "filter": {
+            "category_id": {
+              "eq": "722"
+            },
+            "ins_city": {
+              "in": []
+            },
+            "ins_traveller_type": {
+              "in": []
+            },
+            "ins_tags": {
+              "in": []
+            },
+            "insider_approval": {
+              "eq": "2"
+            },
+            "insider_id": {},
+            "item_category": {
+              "in": [
+                "7"
+              ]
+            },
+            "ins_days": {
+              "in": []
+            },
+            "type_id": {
+              "in": []
+            }
+          },
+          "sort": {}
+        }
+    ```
+
+##  **Trip Storie Detail Page**
+-   **URL:** <https://alike.io/trip-stories/dubai-delights-3-day-itinerary-pre-arrival>
+-   **API:** `products`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/cf85380f-64e3-4849-8ca8-16f18e25a2a5)
+-   **Query:**
+    ```graphql
+        query products($search: String, $filter: ProductAttributeFilterInput) {
+          products(search: $search, filter: $filter) {
+            items {
+              id
+              url_key
+              base_video
+              description {
+                html
+                __typename
+              }
+              image {
+                url
+                __typename
+              }
+              number_of_persons
+              name
+              ins_city
+              ins_city_image
+              product_likes
+              ins_days
+              short_description_alike
+              ins_tags
+              is_liked
+              ins_highlights
+              insider_data {
+                followers
+                insider_name
+                insider_logo
+                insider_id
+                is_followed
+                username
+                cover_image
+                __typename
+              }
+              ins_traveller_type
+              sku
+              story_type
+              type_id
+              price_range {
+                minimum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              itinerary {
+                image_video_itinerary {
+                  sub_products_image {
+                    images {
+                      image {
+                        label
+                        url
+                        __typename
+                      }
+                      day
+                      caption
+                      description
+                      caption
+                      location
+                      product_id
+                      product_name
+                      product_sku
+                      record_id
+                      sort_order
+                      record_id
+                      tags
+                      __typename
+                    }
+                    option_id
+                    __typename
+                  }
+                  sub_products_video {
+                    videos {
+                      video {
+                        label
+                        url
+                        video_url
+                        __typename
+                      }
+                      day
+                      caption
+                      description
+                      caption
+                      location
+                      product_id
+                      product_name
+                      product_sku
+                      record_id
+                      sort_order
+                      record_id
+                      tags
+                      __typename
+                    }
+                    option_id
+                    __typename
+                  }
+                  __typename
+                }
+                videos {
+                  caption
+                  url
+                  label
+                  day
+                  product_name
+                  price
+                  location
+                  video_url
+                  icon_url
+                  __typename
+                }
+                images {
+                  url
+                  label
+                  day
+                  product_name
+                  price
+                  location
+                  __typename
+                }
+                trip_itinerary {
+                  days {
+                    day
+                    title
+                    about
+                    option_id
+                    initialize
+                    record_id
+                    is_available
+                    sort_order
+                    accommodation
+                    city
+                    city_name
+                    city_image_url
+                    activities {
+                      activity
+                      api_connected
+                      product_sku
+                      product_name
+                      product_url
+                      product_id
+                      initialize
+                      record_id
+                      sort_order
+                      activity_description
+                      activity_price
+                      item_category
+                      icon_url
+                      duration
+                      activity_image
+                      attribute_set_id
+                      location
+                      product_images {
+                        url
+                        label
+                        __typename
+                      }
+                      product_videos {
+                        video_url
+                        url
+                        label
+                        __typename
+                      }
+                      __typename
+                    }
+                    hotels {
+                      hotel
+                      product_sku
+                      product_name
+                      product_url
+                      product_id
+                      initialize
+                      record_id
+                      sort_order
+                      hotel_description
+                      location
+                      hotel_price
+                      item_category
+                      icon_url
+                      duration
+                      hotel_image
+                      attribute_set_id
+                      hotel_images {
+                        url
+                        label
+                        __typename
+                      }
+                      hotel_videos {
+                        video_url
+                        url
+                        label
+                        __typename
+                      }
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                trip_location {
+                  day
+                  activity {
+                    location {
+                      latitude
+                      longitude
+                      __typename
+                    }
+                    label
+                    sort_order
+                    duration
+                    price
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              story_icons_count
+              icons {
+                icon_url
+                label
+                count
+                __typename
+              }
+              dynamicAttributes(fields: ["ins_traveller_type", "visited_months", "ins_tags"])
+              media_gallery {
+                url
+                label
+                __typename
+                ... on ProductVideo {
+                  video_content {
+                    media_type
+                    video_provider
+                    video_url
+                    video_title
+                    video_description
+                    video_metadata
+                    __typename
+                  }
+                  __typename
+                }
+              }
+              __typename
+            }
+            total_count
+            page_info {
+              current_page
+              page_size
+              total_pages
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+     ```graphql
+        {
+          "filter": {
+            "url_key": {
+              "eq": "dubai-delights-3-day-itinerary-pre-arrival"
+            }
+          },
+          "pageSize": 1,
+          "currentPage": 1
+        }
+     ```
+-   **API:** `products` -> `product_comment`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/72c63a44-b452-4e69-8fab-5f946b8ea347)
+-   **Query:**
+    ```graphql
+           query products($filter: ProductAttributeFilterInput, $currentPage: Int, $pageSize: Int) {
+          products(filter: $filter) {
+            items {
+              product_comment(currentPage: $currentPage, pageSize: $pageSize) {
+                page_info {
+                  current_page
+                  page_size
+                  total_pages
+                  __typename
+                }
+                total_count
+                comments {
+                  comment
+                  customer_photo
+                  date
+                  username
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+    ```graphql
+        {
+          "currentPage": 1,
+          "pageSize": 10,
+          "filter": {
+            "url_key": {
+              "eq": "dubai-delights-3-day-itinerary-pre-arrival"
+            }
+          }
+        }
+    ```
+-   **API:** `CategoryImageId`
+-   **Query:**
+     ```graphql
+        {
+          CategoryImageId {
+            attribute_id
+            category_id
+            category_image
+            city_name
+            __typename
+          }
+        }
+     ```
+-   **API:** `products`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/f95a942c-c935-4571-8536-a2f577add73b)
+-   **Query:**
+     ```graphql
+        query products($search: String, $filter: ProductAttributeFilterInput) {
+          products(search: $search, filter: $filter) {
+            items {
+              id
+              url_key
+              base_video
+              description {
+                html
+                __typename
+              }
+              image {
+                url
+                __typename
+              }
+              number_of_persons
+              name
+              ins_city
+              ins_city_image
+              product_likes
+              ins_days
+              short_description_alike
+              ins_tags
+              is_liked
+              ins_highlights
+              insider_data {
+                followers
+                insider_name
+                insider_logo
+                insider_id
+                is_followed
+                username
+                cover_image
+                __typename
+              }
+              ins_traveller_type
+              sku
+              story_type
+              type_id
+              price_range {
+                minimum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              itinerary {
+                image_video_itinerary {
+                  sub_products_image {
+                    images {
+                      image {
+                        label
+                        url
+                        __typename
+                      }
+                      day
+                      caption
+                      description
+                      caption
+                      location
+                      product_id
+                      product_name
+                      product_sku
+                      record_id
+                      sort_order
+                      record_id
+                      tags
+                      __typename
+                    }
+                    option_id
+                    __typename
+                  }
+                  sub_products_video {
+                    videos {
+                      video {
+                        label
+                        url
+                        video_url
+                        __typename
+                      }
+                      day
+                      caption
+                      description
+                      caption
+                      location
+                      product_id
+                      product_name
+                      product_sku
+                      record_id
+                      sort_order
+                      record_id
+                      tags
+                      __typename
+                    }
+                    option_id
+                    __typename
+                  }
+                  __typename
+                }
+                videos {
+                  caption
+                  url
+                  label
+                  day
+                  product_name
+                  price
+                  location
+                  video_url
+                  icon_url
+                  __typename
+                }
+                images {
+                  url
+                  label
+                  day
+                  product_name
+                  price
+                  location
+                  __typename
+                }
+                trip_itinerary {
+                  days {
+                    day
+                    title
+                    about
+                    option_id
+                    initialize
+                    record_id
+                    is_available
+                    sort_order
+                    accommodation
+                    city
+                    city_name
+                    city_image_url
+                    activities {
+                      activity
+                      api_connected
+                      product_sku
+                      product_name
+                      product_url
+                      product_id
+                      initialize
+                      record_id
+                      sort_order
+                      activity_description
+                      activity_price
+                      item_category
+                      icon_url
+                      duration
+                      activity_image
+                      attribute_set_id
+                      location
+                      product_images {
+                        url
+                        label
+                        __typename
+                      }
+                      product_videos {
+                        video_url
+                        url
+                        label
+                        __typename
+                      }
+                      __typename
+                    }
+                    hotels {
+                      hotel
+                      product_sku
+                      product_name
+                      product_url
+                      product_id
+                      initialize
+                      record_id
+                      sort_order
+                      hotel_description
+                      location
+                      hotel_price
+                      item_category
+                      icon_url
+                      duration
+                      hotel_image
+                      attribute_set_id
+                      hotel_images {
+                        url
+                        label
+                        __typename
+                      }
+                      hotel_videos {
+                        video_url
+                        url
+                        label
+                        __typename
+                      }
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                trip_location {
+                  day
+                  activity {
+                    location {
+                      latitude
+                      longitude
+                      __typename
+                    }
+                    label
+                    sort_order
+                    duration
+                    price
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              story_icons_count
+              icons {
+                icon_url
+                label
+                count
+                __typename
+              }
+              dynamicAttributes(fields: ["ins_traveller_type", "visited_months", "ins_tags"])
+              media_gallery {
+                url
+                label
+                __typename
+                ... on ProductVideo {
+                  video_content {
+                    media_type
+                    video_provider
+                    video_url
+                    video_title
+                    video_description
+                    video_metadata
+                    __typename
+                  }
+                  __typename
+                }
+              }
+              __typename
+            }
+            total_count
+            page_info {
+              current_page
+              page_size
+              total_pages
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```garphql
+        {
+          "filter": {
+            "url_key": {
+              "eq": "travelosaur-dubai-delights-5-days-of-thrills-culture-and-magi"
+            }
+          },
+          "pageSize": 1,
+          "currentPage": 1
+        }
+     ```
+-   **API:** `insiderTickets`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/97a8dcee-0d9a-4ac5-8bb6-3e40e1fe7c3d)
+-   **Query:**
+     ```graphql
+        mutation ($input: InsiderTicketInput!) {
+          insiderTickets(input: $input) {
+            data {
+              age
+              hide_adult
+              hide_child
+              hide_infant
+              adult_label
+              tickets {
+                exp_excluded
+                id
+                label
+                optionDescription
+                adultPrice
+                childPrice
+                infantPrice
+                transfer_types {
+                  code
+                  id
+                  label
+                  __typename
+                }
+                __typename
+              }
+              type
+              __typename
+            }
+            error
+            success
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+     ```graphql
+        {
+          "input": {
+            "itinerary_id": 7651,
+            "product_id": 2431,
+            "date": "02/04/2024"
+          }
+        }
+     ```
+-   **API:** `itineraryPrice`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/631a94d1-a7b0-4e57-bf8e-187033550285)
+-   **Query:**
+    ```graphql
+        mutation ($input: ItineraryPriceInput!) {
+          itineraryPrice(input: $input) {
+            data {
+              actual_price
+              adult_price
+              child_price
+              adult_qty
+              child_qty
+              qty
+              saved_price
+              special_price
+              type
+              timeslots {
+                available
+                event_id
+                id
+                label
+                start_time
+                total
+                used
+                __typename
+              }
+              __typename
+            }
+            error
+            success
+            __typename
+          }
+        }
+    ```
+-   **variables:**]
+     ```graphql
+        {
+          "input": {
+            "itinerary_id": 7651,
+            "product_id": 2431,
+            "date": "02/04/2024",
+            "qty": 1,
+            "ticket_id": "e3e9602ef57d2ddd50d0abaa98d2a6a6",
+            "transfer_id": "no_transfer",
+            "adult_qty": 1,
+            "child_qty": 1,
+            "pickup_address": ""
+          }
+        }
+     ```
+-   **API:** `storeConfig`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/7fcbdecb-4649-47f5-a38c-075ae92658dc)
+-   **Query:**
+    ```graphql
+        {
+          storeConfig {
+            custom_general_rental_price
+            custom_general_rental_free
+            __typename
+          }
+        }
+    ```
+
+##  **Cart Page**
+-   **URL:** <https://alike.io/cart>
+-   **API:** `addActivityProductsToCart`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/a1cb20be-cca7-4096-8b5c-90a69047eda6)
+-   **Query:**
+    ```graphql
+         mutation ($cartId: String!, $cartItems: [ActivityCartItemInput!]!) {
+          addActivityProductsToCart(cartId: $cartId, cartItems: $cartItems) {
+            cart {
+              prices {
+                grand_total {
+                  currency
+                  value
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+     ```graphql
+        {
+          "cartId": "aM2BXkeToWfsAqnbqe8fF3T0EBk6I7MT",
+          "cartItems": [
+            {
+              "insider": true,
+              "itinerary_id": 7651,
+              "product_id": 2431,
+              "ticket_id": "e3e9602ef57d2ddd50d0abaa98d2a6a6",
+              "ticket_label": "30 Days Tourist Visa",
+              "date": "2024/04/02",
+              "qty": 1,
+              "timeslot_info": null,
+              "adult_qty": 1,
+              "child_qty": 0,
+              "transfer_id": "no_transfer",
+              "pickup_address": ""
+            }
+          ]
+        }
+     ```
+-   **API:** `addProductToCart`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/8b7dd01a-060e-445f-9fbf-d97be852a054)
+-   **Query:**
+    ```graphql
+        mutation ($cartId: String!, $cartItems: [ProductToCartInput!]!) {
+          addProductToCart(cartId: $cartId, cartItems: $cartItems) {
+            cart {
+              prices {
+                grand_total {
+                  currency
+                  value
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+     ```graphql
+        {
+          "cartId": "aM2BXkeToWfsAqnbqe8fF3T0EBk6I7MT",
+          "cartItems": [
+            {
+              "product_id": 1995,
+              "qty": 1,
+              "additional_options": {
+                "tour_date": "",
+                "start_from": "2024/04/05",
+                "rental_days": 0
+              }
+            }
+          ]
+        }
+     ```
+-    **API:** `cart`
+-    ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/b77ab05d-43a7-4554-adb6-179f29bb66fa)
+-    **Query:**
+     ```graphql
+        query cart($cart_id: String!) {
+          cart(cart_id: $cart_id) {
+            email
+            is_virtual
+            available_payment_methods {
+              code
+              title
+              description
+              know_more
+              icon
+              merchant_icons
+              __typename
+            }
+            wallet {
+              canUseWallet
+              walletBalance {
+                currency
+                value
+                __typename
+              }
+              usedWallet {
+                currency
+                value
+                __typename
+              }
+              __typename
+            }
+            billing_address {
+              city
+              country {
+                code
+                label
+                __typename
+              }
+              mobile_country_code
+              firstname
+              lastname
+              postcode
+              region {
+                code
+                label
+                __typename
+              }
+              street
+              telephone
+              __typename
+            }
+            shipping_addresses {
+              firstname
+              lastname
+              street
+              city
+              region {
+                code
+                label
+                __typename
+              }
+              country {
+                code
+                label
+                __typename
+              }
+              telephone
+              available_shipping_methods {
+                amount {
+                  currency
+                  value
+                  __typename
+                }
+                available
+                carrier_code
+                carrier_title
+                error_message
+                method_code
+                method_title
+                price_excl_tax {
+                  value
+                  currency
+                  __typename
+                }
+                price_incl_tax {
+                  value
+                  currency
+                  __typename
+                }
+                __typename
+              }
+              selected_shipping_method {
+                amount {
+                  value
+                  currency
+                  __typename
+                }
+                carrier_code
+                carrier_title
+                method_code
+                method_title
+                __typename
+              }
+              __typename
+            }
+            items {
+              id
+              saved_price
+              strike_price_value
+              product {
+                name
+                sku
+                url_key
+                thumbnail {
+                  label
+                  url
+                  __typename
+                }
+                strike_price_value
+                strike_price_percentage
+                __typename
+              }
+              prices {
+                price {
+                  currency
+                  value
+                  __typename
+                }
+                row_total {
+                  currency
+                  value
+                  __typename
+                }
+                row_total_including_tax {
+                  currency
+                  value
+                  __typename
+                }
+                total_item_discount {
+                  currency
+                  value
+                  __typename
+                }
+                __typename
+              }
+              quantity
+              custom_info {
+                tour_category
+                item_category
+                name
+                type
+                location
+                image
+                original_price
+                saving_price
+                custom_options {
+                  key
+                  label
+                  value
+                  __typename
+                }
+                dtpass_jcb_pass_type
+                __typename
+              }
+              __typename
+            }
+            selected_payment_method {
+              code
+              title
+              __typename
+            }
+            applied_coupons {
+              code
+              label
+              __typename
+            }
+            prices {
+              applied_taxes {
+                amount {
+                  currency
+                  value
+                  __typename
+                }
+                label
+                __typename
+              }
+              discounts {
+                amount {
+                  currency
+                  value
+                  __typename
+                }
+                label
+                __typename
+              }
+              discount {
+                amount {
+                  currency
+                  value
+                  __typename
+                }
+                __typename
+              }
+              grand_total {
+                value
+                currency
+                __typename
+              }
+              subtotal_excluding_tax {
+                currency
+                value
+                __typename
+              }
+              subtotal_including_tax {
+                currency
+                value
+                __typename
+              }
+              subtotal_with_discount_excluding_tax {
+                currency
+                value
+                __typename
+              }
+              fee {
+                currency
+                value
+                __typename
+              }
+              credit {
+                currency
+                value
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+        {
+          "cart_id": "aM2BXkeToWfsAqnbqe8fF3T0EBk6I7MT"
+        }
+     ```
+  
