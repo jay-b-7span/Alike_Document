@@ -5772,4 +5772,445 @@
           "cart_id": "aM2BXkeToWfsAqnbqe8fF3T0EBk6I7MT"
         }
      ```
-  
+-   **API:** `setShippingAddressesOnCart`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/3470d880-7d38-474b-ba01-db8ec9c228cb)
+-   **Query:**
+    ```graphql
+        mutation ($input: SetShippingAddressesOnCartInput!) {
+          setShippingAddressesOnCart(input: $input) {
+            cart {
+              shipping_addresses {
+                firstname
+                lastname
+                company
+                street
+                city
+                region {
+                  code
+                  label
+                  __typename
+                }
+                postcode
+                telephone
+                country {
+                  code
+                  label
+                  __typename
+                }
+                available_shipping_methods {
+                  carrier_code
+                  carrier_title
+                  method_code
+                  method_title
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "input": {
+            "cart_id": "aM2BXkeToWfsAqnbqe8fF3T0EBk6I7MT",
+            "shipping_addresses": [
+              {
+                "address": {
+                  "firstname": "test",
+                  "lastname": "test",
+                  "company": "",
+                  "street": [
+                    "Digital Sale"
+                  ],
+                  "city": "Digital Sale",
+                  "region": "test",
+                  "region_id": 0,
+                  "postcode": "12345",
+                  "telephone": "2025550114",
+                  "save_in_address_book": false,
+                  "mobile_country_code": "US",
+                  "country_code": "US"
+                }
+              }
+            ]
+          }
+        }
+    ```
+-    **API:** `abandonedCartCapture`
+-    ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/20bf6bbd-1ea8-4a9d-8d92-76c6ae75df4d)
+-    **Query:**
+     ```graphql
+        mutation ($input: AbandonedCartInput!) {
+          abandonedCartCapture(input: $input) {
+            status
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+     ```graphql
+        {
+          "input": {
+            "cart_id": "aM2BXkeToWfsAqnbqe8fF3T0EBk6I7MT",
+            "email": "jay@alike.io",
+            "name": "jay"
+          }
+        }
+     ```
+-   **API:** `setGuestEmailOnCart`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/193c793d-af77-4ac6-bf30-2e3a15cca077)
+-   **Query:**
+    ```graphql
+        mutation ($input: SetGuestEmailOnCartInput) {
+          setGuestEmailOnCart(input: $input) {
+            cart {
+              email
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "input": {
+            "cart_id": "aM2BXkeToWfsAqnbqe8fF3T0EBk6I7MT",
+            "email": "jay@alike.io"
+          }
+        }
+    ```
+-   **API:** `setBillingAddressOnCart`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/def9a842-c8ac-448f-aff0-d8067d4eef64)
+-   **Query:**
+     ```graphql
+        mutation ($input: SetBillingAddressOnCartInput!) {
+          setBillingAddressOnCart(input: $input) {
+            cart {
+              email
+              is_virtual
+              available_payment_methods {
+                code
+                title
+                description
+                know_more
+                icon
+                merchant_icons
+                __typename
+              }
+              wallet {
+                canUseWallet
+                walletBalance {
+                  currency
+                  value
+                  __typename
+                }
+                usedWallet {
+                  currency
+                  value
+                  __typename
+                }
+                __typename
+              }
+              billing_address {
+                city
+                country {
+                  code
+                  label
+                  __typename
+                }
+                mobile_country_code
+                firstname
+                lastname
+                postcode
+                region {
+                  code
+                  label
+                  __typename
+                }
+                street
+                telephone
+                __typename
+              }
+              shipping_addresses {
+                firstname
+                lastname
+                street
+                city
+                region {
+                  code
+                  label
+                  __typename
+                }
+                country {
+                  code
+                  label
+                  __typename
+                }
+                telephone
+                available_shipping_methods {
+                  amount {
+                    currency
+                    value
+                    __typename
+                  }
+                  available
+                  carrier_code
+                  carrier_title
+                  error_message
+                  method_code
+                  method_title
+                  price_excl_tax {
+                    value
+                    currency
+                    __typename
+                  }
+                  price_incl_tax {
+                    value
+                    currency
+                    __typename
+                  }
+                  __typename
+                }
+                selected_shipping_method {
+                  amount {
+                    value
+                    currency
+                    __typename
+                  }
+                  carrier_code
+                  carrier_title
+                  method_code
+                  method_title
+                  __typename
+                }
+                __typename
+              }
+              items {
+                id
+                saved_price
+                strike_price_value
+                product {
+                  name
+                  sku
+                  url_key
+                  thumbnail {
+                    label
+                    url
+                    __typename
+                  }
+                  strike_price_value
+                  strike_price_percentage
+                  __typename
+                }
+                prices {
+                  price {
+                    currency
+                    value
+                    __typename
+                  }
+                  row_total {
+                    currency
+                    value
+                    __typename
+                  }
+                  row_total_including_tax {
+                    currency
+                    value
+                    __typename
+                  }
+                  total_item_discount {
+                    currency
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                quantity
+                custom_info {
+                  tour_category
+                  item_category
+                  name
+                  type
+                  location
+                  image
+                  original_price
+                  saving_price
+                  custom_options {
+                    key
+                    label
+                    value
+                    __typename
+                  }
+                  dtpass_jcb_pass_type
+                  __typename
+                }
+                __typename
+              }
+              selected_payment_method {
+                code
+                title
+                __typename
+              }
+              applied_coupons {
+                code
+                label
+                __typename
+              }
+              prices {
+                applied_taxes {
+                  amount {
+                    currency
+                    value
+                    __typename
+                  }
+                  label
+                  __typename
+                }
+                discounts {
+                  amount {
+                    currency
+                    value
+                    __typename
+                  }
+                  label
+                  __typename
+                }
+                discount {
+                  amount {
+                    currency
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                grand_total {
+                  value
+                  currency
+                  __typename
+                }
+                subtotal_excluding_tax {
+                  currency
+                  value
+                  __typename
+                }
+                subtotal_including_tax {
+                  currency
+                  value
+                  __typename
+                }
+                subtotal_with_discount_excluding_tax {
+                  currency
+                  value
+                  __typename
+                }
+                fee {
+                  currency
+                  value
+                  __typename
+                }
+                credit {
+                  currency
+                  value
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "input": {
+            "cart_id": "aM2BXkeToWfsAqnbqe8fF3T0EBk6I7MT",
+            "billing_address": {
+              "address": {
+                "firstname": "jay",
+                "lastname": "bhuva",
+                "company": "",
+                "street": [
+                  "Digital Sale"
+                ],
+                "city": "Digital Sale",
+                "region": "test",
+                "region_id": 0,
+                "postcode": "12345",
+                "telephone": "+91 83838 38383",
+                "save_in_address_book": true,
+                "mobile_country_code": "IN",
+                "country_code": "IN"
+              },
+              "hotel_remarks": ""
+            }
+          }
+        }
+    ```
+-   **API:** `popularOffers`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/e2b8de22-dbbe-48ef-91ad-afa4efcb50d1)
+-   **Query:**
+     ```graphql
+        {
+          popularOffers {
+            badgeText
+            coupon
+            description
+            shortDescription
+            termsAndConditions
+            title
+            __typename
+          }
+        }
+    ```
+-   **API:** `placeOrder`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/bf772254-5cae-4330-926e-b62127676418)
+-   **Query:**
+    ```graphql
+        mutation ($input: PlaceOrderInput!) {
+          placeOrder(input: $input) {
+            order {
+              order_number
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "input": {
+            "cart_id": "aM2BXkeToWfsAqnbqe8fF3T0EBk6I7MT",
+            "guest_email_confirm": false
+          }
+        }
+    ```
+-   **API:** `placeRazorpayOrder`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/ed6836d5-8a9c-4704-bfc7-12ef040a279d)
+-   **Query:**
+    ```graphql
+        mutation ($orderId: String) {
+          placeRazorpayOrder(order_id: $orderId) {
+            success
+            rzp_order_id
+            order_id
+            amount
+            currency
+            message
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+    ```graphql
+        {
+          "orderId": "1051786"
+        }
+    ```
