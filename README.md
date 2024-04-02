@@ -3041,7 +3041,22 @@
           }
         }
      ```
-     
+-   **API:** `requestPasswordResetEmail`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/bb2a4f97-1b2a-4f25-8fe9-caaa41d7c7c2)
+-   **Query:**
+     ```graphql
+          mutation requestPasswordResetEmail($email: String!) {
+            requestPasswordResetEmail(email: $email)
+          }
+      ```
+-   **variables:**
+    ```graphql
+          {
+            "email": "jay.b@7span.com"
+          }
+    ```
+
+    
 ##  **Sign up Page**
 -   **URL:** <https://app.alike.io/#/signup>
 -   **API:** `createCustomerV2`
