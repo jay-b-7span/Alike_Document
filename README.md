@@ -4,7 +4,7 @@
 
 -    **URL**: <https://alike.io/>.
 -    **API**: `homepage_stories_products`
--    This Graphql used for **Handcrafted Holiday Packages** section.
+-    This API used for **Handcrafted Holiday Packages** section.
 -    ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/713bc382-539b-47a3-a219-a99290e6d42f)
 -    **Query**:
      ```graphql
