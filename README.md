@@ -4,10 +4,10 @@
 
 -    **URL**: <https://alike.io/>.
 -    **API**: `homepage_stories_products`
-    -  This Graphql used for **Handcrafted Holiday Packages** section.
-      -  ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/004f3825-6818-4189-9c37-40309ff6f235)
-      - **Query**:
-        ```graphql
+-    This Graphql used for **Handcrafted Holiday Packages** section.
+-    [image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/004f3825-6818-4189-9c37-40309ff6f235)
+-    **Query**:
+     ```graphql
         query homepage_stories_products($pageSize: Int) {
           homepage_stories_products(pageSize: $pageSize) {
             items { 
@@ -94,10 +94,10 @@
               }
           }
       ```
-  - **API:** `new_products`
-    - this Graphql used for **Best Selling Experiences** section.
-    - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/2ad1088a-b293-447b-bf7d-8f1f37701048)
-    - **Query:**
+-    **API:** `new_products`
+-    this Graphql used for **Best Selling Experiences** section.
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/2ad1088a-b293-447b-bf7d-8f1f37701048)
+-    **Query:**
         ```graphql
             query new_products($input: NewProductsLimit!) {
            new_products(input: $input) {
@@ -150,18 +150,18 @@
           }
         }
         ```
-    - **variables:**
-       - ```graphql
+-    **variables:**
+        ```graphql
              {
                 "input": {
                  "limit": 9
                 }
              } 
           ```
-    - **API:** `cart`
-    - Cart GraphQl and Currency GraphQl default set for all pages.
-    - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/316ced0b-c97b-48eb-9a0b-158c2edee01a)
-    - **Query:**
+-    **API:** `cart`
+-    Cart GraphQl and Currency GraphQl default set for all pages.
+-   ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/316ced0b-c97b-48eb-9a0b-158c2edee01a)
+-   **Query:**
        ```graphql
          query cart($cart_id: String!) {
           cart(cart_id: $cart_id) {
