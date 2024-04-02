@@ -1,5 +1,3 @@
-![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/fa1a6994-dad5-4ca0-a2d8-ebe46632cf48)     **This Document for All backend API's**If anything is missing, please contact me as soon as possible.
-
      
 ##  **Home Page**
 
