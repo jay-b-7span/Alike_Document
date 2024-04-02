@@ -470,7 +470,7 @@
         }
    ```
 -   **API:** `Cities`
--   This GraphQl used for **Best Places to visit** section.
+-   This API used for **Best Places to visit** section.
 -   ![image](https://github.com/jay-b-7span/alike_api_document/assets/114227263/4392e211-fc8a-4051-b4b6-baf7121dffbb)
 -   **Query:**
     ```graphql
@@ -538,7 +538,7 @@
 ## **City Detail Page**
 -    **URL:** <https://alike.host/cities/dubai>
 -    **API:** `categories`
--    Here categories GraphQl used for preticular city details and also used fro **faq** section.
+-    Here categories API used for preticular city details and also used fro **faq** section.
 -    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/aede09c7-df8e-44c0-bb86-443ebc2025cf)
 -    **Query:**
      ```graphql
@@ -585,7 +585,7 @@
         }
      ```
 -    **API:** `products`
--    This GraphQl used for a particular product's detail here **Filters** block.
+-    This API used for a particular product's detail here **Filters** block.
 -    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/c9427ad2-9078-4114-9af1-0ee94f8ee5e0)
 -    **Query:**
 -    ```graphql
@@ -908,7 +908,7 @@
 ##  **Product Page**
  -    **URL:** <https://alike.io/products/farewell-tour-half-day-dubai-city-tour>
  -    **API:** `products`
- -    This is GraphQl also used for product detail page.
+ -    This is API also used for product detail page.
  -    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/e865a99d-800f-4286-af2e-49b22e2e8054)
 -    **Query:**
      ```graphql
