@@ -404,6 +404,23 @@
              "cart_id": "o7WaADKQ6ICyNefpLatbPgMZBqC013hZ"
            }
        ```
+-    **API:** `subscribeEmailToNewsletter`
+-    ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/46dc6830-7508-49c2-ae0a-e51ada297fcc)
+-    **Query:**
+     ```graphql
+        mutation ($email: String!) {
+          subscribeEmailToNewsletter(email: $email) {
+            status
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+        {
+          "email": "jay@alike.io"
+        }
+     ```
 
 ## **City Page**
 -    **URL:** <https://alike.io/cities/>
@@ -3086,7 +3103,26 @@
           }
         }
      ```
-     
+-   **API:** `generateCustomerToken`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/437212e0-bc32-4372-b0a8-1206adae369c)
+-   **Query:**
+     ```graphql
+        mutation generateCustomerToken($email: String!, $password: String!) {
+          generateCustomerToken(email: $email, password: $password) {
+            token
+            is_insider
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+     ```graphql
+        {
+          "email": "jay+121@alike.io",
+          "password": "***@123"
+        }
+     ```
+
 ##  **My Studio Page**
 -   **URL:** <https://app.alike.io/#/my-studio/dashboard>
 -   **API:** `MyDashboard`
@@ -6294,6 +6330,48 @@
         }
     ```
 
+##  **Order Detail Page:**
+-   **URl:** <https://uat.alike.host/success/NDA4MjUx>
+-   **API:** `abandonedCartRemove`
+-   ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/4e0c5091-a933-435b-9e11-5c50b915ca1f)
+-   **Query:**
+    ```graphql
+        mutation ($input: AbandonedCartInput!) {
+          abandonedCartRemove(input: $input) {
+            status
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+     ```graphql
+        {
+          "email": "jay.b@7span.com"
+        }
+     ```
+
+-    **API:** `getDubaiPass`
+-    ![image](https://github.com/jay-b-7span/Alike_Document/assets/114227263/83dfc428-4ae8-4e77-a53a-90f1709119f7)
+-    **Query:**
+     ```graphql
+        query ($input: OrderSummaryInput!) {
+          getDubaiPass(input: $input) {
+            url
+            pass_type
+            pass_sub_type
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+    ```graphql
+        {
+          "quote_id": "NDA4MjUx",
+          "order_id": null
+        }
+    ```
+
+    
 ##  **JCB Page**
 -   **URL:** <https://alike.io/jcb>
 -   **API:** `passProducts`
